@@ -1,0 +1,371 @@
+name: Release Aircraft
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    if: github.event.issue.state == 'open' && contains(github.event.issue.labels.*.name, 'automated-sync') && startsWith(github.event.comment.body, '!')
+
+    steps:
+    - name: Parse command
+      id: parse
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const comment = context.payload.comment.body.trim();
+          console.log(`Processing comment: "${comment}"`);
+
+          // Parse release commands
+          const releaseMatch = comment.match(/^!release\s+(patch|minor|major)(?:\s+(.+))?$/i);
+          const rejectMatch = comment.match(/^!reject(?:\s+(.+))?$/i);
+
+          if (releaseMatch) {
+            const versionType = releaseMatch[1].toLowerCase();
+            const description = releaseMatch[2] || '';
+
+            core.setOutput('action', 'release');
+            core.setOutput('version_type', versionType);
+            core.setOutput('description', description);
+
+            console.log(`Release command detected: ${versionType}`);
+            return;
+          }
+
+          if (rejectMatch) {
+            const reason = rejectMatch[1] || 'No reason provided';
+
+            core.setOutput('action', 'reject');
+            core.setOutput('reason', reason);
+
+            console.log('Reject command detected');
+            return;
+          }
+
+          console.log('No valid command detected');
+          core.setOutput('action', 'none');
+
+    - name: React to comment
+      if: steps.parse.outputs.action != 'none'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const action = '${{ steps.parse.outputs.action }}';
+          const reaction = action === 'release' ? 'rocket' : 'confused';
+
+          await github.rest.reactions.createForIssueComment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            comment_id: context.payload.comment.id,
+            content: reaction
+          });
+
+    - name: Handle rejection
+      if: steps.parse.outputs.action == 'reject'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const reason = '${{ steps.parse.outputs.reason }}';
+
+          // Close the issue with rejection comment
+          await github.rest.issues.createComment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.issue.number,
+            body: `## ❌ Release Rejected
+
+            **Reason**: ${reason}
+
+            The staging changes will remain uncommitted. If you change your mind, you can still approve with \`!release patch\` (or \`minor\`/\`major\`).
+
+            ---
+            *This issue was automatically closed due to rejection.*`
+          });
+
+          await github.rest.issues.update({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.issue.number,
+            state: 'closed',
+            labels: ['automated-sync', 'rejected']
+          });
+
+    - name: Checkout repository
+      if: steps.parse.outputs.action == 'release'
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
+
+    - name: Set up Python
+      if: steps.parse.outputs.action == 'release'
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      if: steps.parse.outputs.action == 'release'
+      run: |
+        pip install -r requirements.txt
+
+    - name: Validate staging data
+      if: steps.parse.outputs.action == 'release'
+      id: validate
+      run: |
+        echo "🔍 Validating staging data..."
+
+        if [ ! -f "aircraft-staging.json" ]; then
+          echo "❌ Staging file not found"
+          exit 1
+        fi
+
+        # Validate JSON structure
+        python3 -c "
+        import json
+        import sys
+
+        try:
+            with open('aircraft-staging.json', 'r') as f:
+                data = json.load(f)
+
+            required_fields = ['version', 'last_updated', 'total_count', 'aircraft']
+            for field in required_fields:
+                if field not in data:
+                    print(f'❌ Missing required field: {field}')
+                    sys.exit(1)
+
+            if not isinstance(data['aircraft'], list):
+                print('❌ Aircraft must be a list')
+                sys.exit(1)
+
+            if data['total_count'] != len(data['aircraft']):
+                print(f'❌ Count mismatch: total_count={data[\"total_count\"]}, actual={len(data[\"aircraft\"])}')
+                sys.exit(1)
+
+            print(f'✅ Validation passed: {len(data[\"aircraft\"])} aircraft')
+        except Exception as e:
+            print(f'❌ Validation failed: {e}')
+            sys.exit(1)
+        "
+
+    - name: Calculate version bump
+      if: steps.parse.outputs.action == 'release'
+      id: version
+      run: |
+        echo "🏷️ Calculating version bump..."
+
+        # Get current version
+        CURRENT_VERSION=$(cat VERSION 2>/dev/null || echo "1.0.0")
+        echo "Current version: $CURRENT_VERSION"
+
+        # Parse version components
+        IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT_VERSION"
+
+        # Bump version based on type
+        VERSION_TYPE="${{ steps.parse.outputs.version_type }}"
+        case $VERSION_TYPE in
+          "patch")
+            PATCH=$((PATCH + 1))
+            ;;
+          "minor")
+            MINOR=$((MINOR + 1))
+            PATCH=0
+            ;;
+          "major")
+            MAJOR=$((MAJOR + 1))
+            MINOR=0
+            PATCH=0
+            ;;
+          *)
+            echo "❌ Invalid version type: $VERSION_TYPE"
+            exit 1
+            ;;
+        esac
+
+        NEW_VERSION="$MAJOR.$MINOR.$PATCH"
+        echo "New version: $NEW_VERSION"
+
+        # Output for next steps
+        echo "current_version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
+        echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
+
+    - name: Create backup
+      if: steps.parse.outputs.action == 'release'
+      run: |
+        echo "💾 Creating backup of current production..."
+
+        if [ -f "aircraft.json" ]; then
+          mkdir -p backups
+          TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+          BACKUP_FILE="backups/aircraft_backup_${TIMESTAMP}.json"
+          cp aircraft.json "$BACKUP_FILE"
+          echo "✅ Backup created: $BACKUP_FILE"
+          echo "backup_file=$BACKUP_FILE" >> $GITHUB_ENV
+        else
+          echo "⚠️ No production file to backup (first release?)"
+        fi
+
+    - name: Release to production
+      if: steps.parse.outputs.action == 'release'
+      run: |
+        echo "🚀 Releasing to production..."
+
+        # Copy staging to production
+        cp aircraft-staging.json aircraft.json
+
+        # Update production metadata
+        python3 -c "
+        import json
+        from datetime import datetime
+
+        with open('aircraft.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        # Add release metadata
+        data['released_at'] = datetime.now().strftime('%Y-%m-%dT%H:%M:%S%z')
+        data['version'] = '${{ steps.version.outputs.new_version }}'
+
+        with open('aircraft.json', 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+
+        print(f'✅ Production updated with {data[\"total_count\"]} aircraft')
+        print(f'🏷️ Version: {data[\"version\"]}')
+        print(f'🕐 Released at: {data[\"released_at\"]}')
+        "
+
+        # Update VERSION file
+        echo "${{ steps.version.outputs.new_version }}" > VERSION
+        echo "✅ VERSION file updated"
+
+    - name: Commit and tag release
+      if: steps.parse.outputs.action == 'release'
+      run: |
+        echo "📝 Committing release..."
+
+        # Configure git
+        git config --local user.email "action@github.com"
+        git config --local user.name "Aircraft Release Bot"
+
+        # Get statistics for commit message
+        TOTAL_COUNT=$(jq '.total_count' aircraft.json)
+        DESCRIPTION="${{ steps.parse.outputs.description }}"
+        NEW_VERSION="${{ steps.version.outputs.new_version }}"
+
+        # Add files and commit
+        git add aircraft.json VERSION
+        git add backups/ 2>/dev/null || true  # Add backup if exists
+
+        # Create commit message
+        COMMIT_MSG="🏷️ Release v${NEW_VERSION}"
+        if [ -n "$DESCRIPTION" ]; then
+          COMMIT_MSG="${COMMIT_MSG} - ${DESCRIPTION}"
+        fi
+
+        COMMIT_MSG="${COMMIT_MSG}
+
+        📊 Total aircraft: ${TOTAL_COUNT}
+        🕐 Released: $(date -u +'%Y-%m-%d %H:%M:%S UTC')
+        🤖 Automated release from GitHub Actions"
+
+        git commit -m "$COMMIT_MSG"
+
+        # Create and push tag
+        git tag -a "v${NEW_VERSION}" -m "Release v${NEW_VERSION}"
+
+        echo "✅ Commit and tag created"
+
+    - name: Push changes
+      if: steps.parse.outputs.action == 'release'
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
+        tags: true
+
+    - name: Close issue with success
+      if: steps.parse.outputs.action == 'release'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const newVersion = '${{ steps.version.outputs.new_version }}';
+          const description = '${{ steps.parse.outputs.description }}';
+          const totalCount = require('fs').readFileSync('aircraft.json', 'utf8');
+          const data = JSON.parse(totalCount);
+
+          let releaseTitle = `Release v${newVersion}`;
+          if (description) {
+            releaseTitle += ` - ${description}`;
+          }
+
+          await github.rest.issues.createComment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.issue.number,
+            body: `## 🚀 Release Completed Successfully!
+
+            ### 📦 **${releaseTitle}**
+
+            ✅ **Production Updated**: ${data.total_count.toLocaleString()} aircraft
+            🏷️ **Version**: v${newVersion}
+            🕐 **Released**: ${data.released_at}
+            📝 **Git Tag**: [v${newVersion}](https://github.com/${context.repo.owner}/${context.repo.repo}/releases/tag/v${newVersion})
+
+            ### 🔄 What Happened
+
+            1. ✅ Staging data validated
+            2. ✅ Production backup created
+            3. ✅ Version bumped: ${{ steps.version.outputs.current_version }} → v${newVersion}
+            4. ✅ Production registry updated
+            5. ✅ Changes committed and tagged
+
+            ### 📱 Downstream Impact
+
+            All applications using this registry will receive the updated data on their next sync.
+
+            ---
+
+            *🤖 This release was automatically processed from your \`!release ${{ steps.parse.outputs.version_type }}\` command.*`
+          });
+
+          await github.rest.issues.update({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.issue.number,
+            state: 'closed',
+            labels: ['automated-sync', 'released']
+          });
+
+    - name: Handle workflow failure
+      if: failure() && steps.parse.outputs.action == 'release'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          await github.rest.issues.createComment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.issue.number,
+            body: `## ❌ Release Failed
+
+            The automated release process encountered an error. Please check the [workflow logs](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}) for details.
+
+            ### 🔧 Manual Steps Required
+
+            You may need to run the release manually:
+
+            1. \`git pull\` to get latest changes
+            2. \`python3 review_changes.py\` to review changes
+            3. \`python3 release.py\` to complete the release
+
+            ### 🆘 Common Issues
+
+            - Staging data validation failed
+            - Version conflict
+            - Git permission issues
+            - Missing dependencies
+
+            ---
+
+            *🤖 This issue remains open for manual intervention.*`
+          });

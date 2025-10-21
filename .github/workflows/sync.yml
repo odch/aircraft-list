@@ -1,0 +1,230 @@
+name: Sync Aircraft
+
+on:
+  schedule:
+    # Run daily at 6:00 AM UTC during initial validation phase
+    # Change back to '0 6 * * 1' (Monday only) once system is stable
+    - cron: '0 6 * * *'
+
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Run aircraft sync
+      run: |
+        echo "🔄 Starting automated aircraft sync..."
+        python3 sync_aircraft.py
+
+        echo "📊 Sync completed, checking for changes..."
+        if [ -f "aircraft-staging.json" ]; then
+          echo "✅ Staging file created successfully"
+
+          # Validate the staging data before proceeding
+          echo "🔍 Validating staging data against schema..."
+          # Temporarily modify validate script to check staging file
+          sed 's/aircraft\.json/aircraft-staging.json/' validate.py > validate_staging.py
+          if python3 validate_staging.py; then
+            echo "✅ Staging data validation passed"
+            rm validate_staging.py
+          else
+            echo "❌ Staging data validation failed - aborting workflow"
+            rm validate_staging.py
+            exit 1
+          fi
+
+          # Check if there are meaningful changes (ignore timestamp differences)
+          echo "🔍 Checking for meaningful changes in aircraft data..."
+          # Compare only the aircraft arrays, ignoring timestamps
+          PROD_COUNT=$(jq '.total_count' aircraft.json 2>/dev/null || echo "0")
+          STAGING_COUNT=$(jq '.total_count' aircraft-staging.json)
+          PROD_AIRCRAFT=$(jq -S '.aircraft' aircraft.json 2>/dev/null || echo "[]")
+          STAGING_AIRCRAFT=$(jq -S '.aircraft' aircraft-staging.json)
+
+          if [ "$PROD_COUNT" != "$STAGING_COUNT" ] || [ "$PROD_AIRCRAFT" != "$STAGING_AIRCRAFT" ]; then
+            echo "🔍 Meaningful changes detected in aircraft data"
+            echo "📋 Changes will be available for manual review"
+
+            # Create a summary of changes for the commit
+            python3 review_changes.py > changes_summary.txt || true
+
+            echo "CHANGES_DETECTED=true" >> $GITHUB_ENV
+          else
+            echo "✅ No changes detected - staging matches production"
+            echo "CHANGES_DETECTED=false" >> $GITHUB_ENV
+          fi
+        else
+          echo "❌ Staging file not created - sync may have failed"
+          exit 1
+        fi
+
+    - name: Commit staging changes
+      if: env.CHANGES_DETECTED == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "Aircraft Sync Bot"
+
+        git add aircraft-staging.json
+        git add changes_summary.txt 2>/dev/null || true
+
+        # Create descriptive commit message
+        STAGING_COUNT=$(jq '.total_count' aircraft-staging.json)
+        PROD_COUNT=$(jq '.total_count' aircraft.json 2>/dev/null || echo "0")
+        CHANGE_COUNT=$((STAGING_COUNT - PROD_COUNT))
+
+        git commit -m "🤖 Auto-sync: Update aircraft staging data
+
+        📊 Total aircraft: ${STAGING_COUNT}
+        📈 Change count: ${CHANGE_COUNT:+${CHANGE_COUNT}}
+        🕐 Sync time: $(date -u +'%Y-%m-%d %H:%M:%S UTC')
+
+        ⚠️ MANUAL REVIEW REQUIRED
+        Run 'python3 review_changes.py' to see changes
+        Run 'python3 release.py' to promote to production"
+
+        echo "📝 Staged changes committed"
+
+    - name: Push changes
+      if: env.CHANGES_DETECTED == 'true'
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
+
+    - name: Create Issue for Review
+      if: env.CHANGES_DETECTED == 'true'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+
+          // Close any existing open automated-sync issues first
+          console.log("🔍 Checking for existing open automated-sync issues...");
+          const existingIssues = await github.rest.issues.listForRepo({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            state: 'open',
+            labels: 'automated-sync'
+          });
+
+          if (existingIssues.data.length > 0) {
+            console.log(`📝 Found ${existingIssues.data.length} existing open automated-sync issues`);
+
+            for (const issue of existingIssues.data) {
+              console.log(`🔒 Closing stale issue #${issue.number}: ${issue.title}`);
+
+              // Add a comment explaining why it's being closed
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: `## 🔄 Superseded by Newer Sync
+
+                This issue has been automatically closed because a newer sync has detected changes.
+
+                **Only the latest staging data is relevant for releases.**
+
+                ➡️ Please refer to the newest automated-sync issue for current changes.
+
+                ---
+                *🤖 Auto-closed by sync workflow*`
+              });
+
+              // Close the issue
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: 'closed',
+                labels: ['automated-sync', 'superseded']
+              });
+            }
+
+            console.log("✅ All previous automated-sync issues have been closed");
+          } else {
+            console.log("✅ No existing open automated-sync issues found");
+          }
+
+          let changesSummary = "Changes summary not available";
+          try {
+            changesSummary = fs.readFileSync('changes_summary.txt', 'utf8');
+          } catch (e) {
+            console.log("Could not read changes summary");
+          }
+
+          const issueTitle = `🤖 Aircraft Registry Update Available - Manual Review Required`;
+          const issueBody = `
+          ## 🔄 Automated Sync Completed
+
+          A new aircraft registry sync has been completed and is ready for your review.
+
+          ## 📋 Changes Summary
+
+          \`\`\`
+          ${changesSummary}
+          \`\`\`
+
+          ## 🚀 Next Steps - Choose Your Release Method
+
+          ### 🤖 **Automated Release (Recommended)**
+
+          **To approve and release**: Comment on this issue with:
+          - \`!release patch\` - For data updates, new aircraft, corrections
+          - \`!release minor\` - For new fields, backward-compatible changes  
+          - \`!release major\` - For breaking changes, schema updates
+          - Add optional description: \`!release patch Fixed aircraft data\`
+
+          **To reject**: Comment \`!reject\` or \`!reject Reason for rejection\`
+
+          The automated workflow will handle version bumping, backups, and release automatically!
+
+          ### 🖥️ **Manual Release (Legacy)**
+
+          1. **Review changes**: Run \`python3 review_changes.py\`
+          2. **If approved**: Run \`python3 release.py\`
+          3. **If rejected**: No action needed, changes stay in staging
+
+          ## 📁 Files Modified
+
+          - \`aircraft-staging.json\` - Updated with latest data
+          - \`changes_summary.txt\` - Detailed change report
+
+          ## ⏰ Sync Details
+
+          - **Sync Time**: ${new Date().toISOString()}
+          - **Workflow**: ${context.runId}
+          - **Commit**: ${context.sha.substring(0, 7)}
+
+          ---
+
+          This issue was created automatically. Close it after reviewing and releasing (or rejecting) the changes.
+          `;
+
+          github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: issueTitle,
+            body: issueBody,
+            labels: ['automated-sync', 'review-required']
+          });
+
+    - name: No changes detected
+      if: env.CHANGES_DETECTED == 'false'
+      run: |
+        echo "✅ No changes detected - aircraft registry is up to date"
+        echo "📊 No action required"

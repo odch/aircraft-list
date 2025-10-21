@@ -1,0 +1,26 @@
+{
+  "_comment": "Custom aircraft overrides and additions",
+  "_description": "This file allows you to override data for existing aircraft or add completely new aircraft to the registry. Keys should be the aircraft registration codes.",
+  
+  "N2200R": {
+    "icao_aircraft_type": "M20K",
+    "aircraft_type": "Aeroplane",
+    "mtom": 1420
+  },
+  "T7AMC": {
+    "icao_aircraft_type": "SF260",
+    "aircraft_type": "Aeroplane",
+    "mtom": 1300
+  },
+  "N101BJ": {
+    "icao_aircraft_type": "EAGL",
+    "aircraft_type": "Homebuilt Airplane",
+    "mtom": 720
+  },
+  "N246RL": {
+    "icao_aircraft_type": "EAGL",
+    "aircraft_type": "Homebuilt Airplane",
+    "mtom": 726
+  }
+}
+

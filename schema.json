@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/odch/aircraft-list/aircraft-schema.json",
+  "title": "Aircraft Registry Schema",
+  "description": "Schema for validating aircraft registry data",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semantic version of the data structure"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of when the data was last updated"
+    },
+    "total_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total number of aircraft in the registry"
+    },
+    "aircraft": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "registration": {
+            "type": "string",
+            "description": "Aircraft registration code (e.g., HB-1234)"
+          },
+          "icao_aircraft_type": {
+            "type": "string",
+            "description": "ICAO aircraft type designator"
+          },
+          "aircraft_type": {
+            "type": "string",
+            "description": "Aircraft type description"
+          },
+          "mtom": {
+            "type": ["integer", "null"],
+            "minimum": 0,
+            "description": "Maximum Take-Off Mass in kg"
+          }
+        },
+        "required": ["registration", "icao_aircraft_type", "aircraft_type"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["version", "last_updated", "total_count", "aircraft"],
+  "additionalProperties": false
+}
