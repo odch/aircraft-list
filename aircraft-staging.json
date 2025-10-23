@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "last_updated": "2025-10-21T16:42:06.367206+00:00",
-  "total_count": 3145,
+  "last_updated": "2025-10-23T06:20:51.842255+00:00",
+  "total_count": 3148,
   "aircraft": [
     {
       "registration": "HB-1000",
@@ -4624,6 +4624,12 @@
       "mtom": 975
     },
     {
+      "registration": "HB-BBO",
+      "icao_aircraft_type": "BALL",
+      "aircraft_type": "Balloon (Hot-air)",
+      "mtom": 1040
+    },
+    {
       "registration": "HB-BBQ",
       "icao_aircraft_type": "BALL",
       "aircraft_type": "Balloon (Hot-air)",
@@ -6326,6 +6332,12 @@
       "icao_aircraft_type": "RALL",
       "aircraft_type": "Aeroplane",
       "mtom": 1100
+    },
+    {
+      "registration": "HB-EPH",
+      "icao_aircraft_type": "BR23",
+      "aircraft_type": "Aeroplane",
+      "mtom": 750
     },
     {
       "registration": "HB-EPK",
@@ -15251,6 +15263,12 @@
     },
     {
       "registration": "HB-VSJ5",
+      "icao_aircraft_type": "PC24",
+      "aircraft_type": "Aeroplane",
+      "mtom": 8500
+    },
+    {
+      "registration": "HB-VSK5",
       "icao_aircraft_type": "PC24",
       "aircraft_type": "Aeroplane",
       "mtom": 8500

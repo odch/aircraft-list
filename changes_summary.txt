@@ -1,0 +1,33 @@
+Loading aircraft registries...
+
+======================================================================
+AIRCRAFT REGISTRY CHANGE SUMMARY
+======================================================================
+
+Staging:    aircraft-staging.json
+            Version: 1.0.0
+            Updated: 2025-10-23T06:20:51.842255+00:00
+            Count:   3,148
+
+Production: aircraft.json
+            Version: 1.0.0
+            Updated: 2025-10-21T16:42:06.367206+00:00
+            Count:   3,145
+
+CHANGE STATISTICS:
+  Added aircraft:         3
+  Removed aircraft:       0
+  Modified aircraft:      0
+  Total changes:          3
+
+📍 ADDED AIRCRAFT (3)
+----------------------------------------------------------------------
+  HB-BBO       | BALL     | Balloon (Hot-air)
+  HB-EPH       | BR23     | Aeroplane
+  HB-VSK5      | PC24     | Aeroplane
+
+======================================================================
+NEXT STEPS:
+  To approve changes: python3 release.py
+  To reject changes:  Do nothing (changes remain in staging)
+======================================================================
