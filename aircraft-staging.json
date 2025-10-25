@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "last_updated": "2025-10-24T06:19:53.975782+00:00",
-  "total_count": 3148,
+  "last_updated": "2025-10-25T06:18:20.228715+00:00",
+  "total_count": 3149,
   "aircraft": [
     {
       "registration": "HB-1000",
@@ -15902,6 +15902,12 @@
       "icao_aircraft_type": "AS32",
       "aircraft_type": "Helicopter",
       "mtom": 8600
+    },
+    {
+      "registration": "HB-XWR",
+      "icao_aircraft_type": "AS50",
+      "aircraft_type": "Helicopter",
+      "mtom": 2250
     },
     {
       "registration": "HB-XWW",
