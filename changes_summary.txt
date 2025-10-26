@@ -6,7 +6,7 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
-            Updated: 2025-10-25T06:18:20.228715+00:00
+            Updated: 2025-10-26T06:18:58.261767+00:00
             Count:   3,149
 
 Production: aircraft.json
