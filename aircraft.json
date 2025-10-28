@@ -1,7 +1,7 @@
 {
-  "version": "1.0.1",
-  "last_updated": "2025-10-26T06:18:58.261767+00:00",
-  "total_count": 3149,
+  "version": "1.0.2",
+  "last_updated": "2025-10-28T06:21:52.818964+00:00",
+  "total_count": 3150,
   "aircraft": [
     {
       "registration": "HB-1000",
@@ -6826,12 +6826,6 @@
       "mtom": 4740
     },
     {
-      "registration": "HB-FQP27",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
       "registration": "HB-FQR27",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
@@ -6887,6 +6881,12 @@
     },
     {
       "registration": "HB-FRD27",
+      "icao_aircraft_type": "PC12",
+      "aircraft_type": "Aeroplane",
+      "mtom": 4740
+    },
+    {
+      "registration": "HB-FRF26",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
       "mtom": 4740
@@ -10070,6 +10070,12 @@
       "icao_aircraft_type": "PTS2",
       "aircraft_type": "Aeroplane",
       "mtom": 714
+    },
+    {
+      "registration": "HB-MSK",
+      "icao_aircraft_type": "HI27",
+      "aircraft_type": "Aeroplane",
+      "mtom": 700
     },
     {
       "registration": "HB-MSO",
@@ -18898,5 +18904,5 @@
       "mtom": 1300
     }
   ],
-  "released_at": "2025-10-26T07:02:28"
+  "released_at": "2025-10-28T06:41:58"
 }
