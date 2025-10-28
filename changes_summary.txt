@@ -6,31 +6,28 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2025-10-28T06:21:52.818964+00:00
+            Count:   3,150
+
+Production: aircraft.json
+            Version: 1.0.1
             Updated: 2025-10-26T06:18:58.261767+00:00
             Count:   3,149
 
-Production: aircraft.json
-            Version: 1.0.0
-            Updated: 2025-10-21T16:42:06.367206+00:00
-            Count:   3,145
-
 CHANGE STATISTICS:
-  Added aircraft:         5
+  Added aircraft:         2
   Removed aircraft:       1
   Modified aircraft:      0
-  Total changes:          6
+  Total changes:          3
 
-📍 ADDED AIRCRAFT (5)
+📍 ADDED AIRCRAFT (2)
 ----------------------------------------------------------------------
-  HB-BBO       | BALL     | Balloon (Hot-air)
-  HB-EPH       | BR23     | Aeroplane
-  HB-VSK5      | PC24     | Aeroplane
-  HB-XFX       | AS50     | Helicopter
-  HB-XWR       | AS50     | Helicopter
+  HB-FRF26     | PC12     | Aeroplane
+  HB-MSK       | HI27     | Aeroplane
 
 🗑️  REMOVED AIRCRAFT (1)
 ----------------------------------------------------------------------
-  HB-WZC       | BREZ     | Aeroplane
+  HB-FQP27     | PC12     | Aeroplane
 
 ======================================================================
 NEXT STEPS:
