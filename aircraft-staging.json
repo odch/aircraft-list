@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "last_updated": "2025-10-28T06:21:52.818964+00:00",
-  "total_count": 3150,
+  "last_updated": "2025-10-29T06:22:05.367889+00:00",
+  "total_count": 3154,
   "aircraft": [
     {
       "registration": "HB-1000",
@@ -6863,6 +6863,12 @@
     },
     {
       "registration": "HB-FQY27",
+      "icao_aircraft_type": "PC12",
+      "aircraft_type": "Aeroplane",
+      "mtom": 4740
+    },
+    {
+      "registration": "HB-FRA26",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
       "mtom": 4740
@@ -15280,6 +15286,12 @@
       "mtom": 8500
     },
     {
+      "registration": "HB-VSP5",
+      "icao_aircraft_type": "PC24",
+      "aircraft_type": "Aeroplane",
+      "mtom": 8500
+    },
+    {
       "registration": "HB-VTM",
       "icao_aircraft_type": "PC24",
       "aircraft_type": "Aeroplane",
@@ -18880,6 +18892,12 @@
       "mtom": 2250
     },
     {
+      "registration": "IMRMG",
+      "icao_aircraft_type": "R44",
+      "aircraft_type": "Helicopter",
+      "mtom": 1134
+    },
+    {
       "registration": "N101BJ",
       "icao_aircraft_type": "EAGL",
       "aircraft_type": "Homebuilt Airplane",
@@ -18896,6 +18914,12 @@
       "icao_aircraft_type": "EAGL",
       "aircraft_type": "Homebuilt Airplane",
       "mtom": 726
+    },
+    {
+      "registration": "OEIIS",
+      "icao_aircraft_type": "GLF5",
+      "aircraft_type": "Aeroplane",
+      "mtom": 40000
     },
     {
       "registration": "T7AMC",

@@ -6,28 +6,26 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2025-10-29T06:22:05.367889+00:00
+            Count:   3,154
+
+Production: aircraft.json
+            Version: 1.0.2
             Updated: 2025-10-28T06:21:52.818964+00:00
             Count:   3,150
 
-Production: aircraft.json
-            Version: 1.0.1
-            Updated: 2025-10-26T06:18:58.261767+00:00
-            Count:   3,149
-
 CHANGE STATISTICS:
-  Added aircraft:         2
-  Removed aircraft:       1
+  Added aircraft:         4
+  Removed aircraft:       0
   Modified aircraft:      0
-  Total changes:          3
+  Total changes:          4
 
-📍 ADDED AIRCRAFT (2)
+📍 ADDED AIRCRAFT (4)
 ----------------------------------------------------------------------
-  HB-FRF26     | PC12     | Aeroplane
-  HB-MSK       | HI27     | Aeroplane
-
-🗑️  REMOVED AIRCRAFT (1)
-----------------------------------------------------------------------
-  HB-FQP27     | PC12     | Aeroplane
+  HB-FRA26     | PC12     | Aeroplane
+  HB-VSP5      | PC24     | Aeroplane
+  IMRMG        | R44      | Helicopter
+  OEIIS        | GLF5     | Aeroplane
 
 ======================================================================
 NEXT STEPS:
