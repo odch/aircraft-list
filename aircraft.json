@@ -1,7 +1,7 @@
 {
-  "version": "1.0.3",
-  "last_updated": "2025-10-29T09:43:14.125454+00:00",
-  "total_count": 3154,
+  "version": "1.0.4",
+  "last_updated": "2025-10-30T06:20:37.583170+00:00",
+  "total_count": 3155,
   "aircraft": [
     {
       "registration": "HB-1000",
@@ -7271,6 +7271,12 @@
     },
     {
       "registration": "HB-HWO4",
+      "icao_aircraft_type": "PC21",
+      "aircraft_type": "Aeroplane",
+      "mtom": 3600
+    },
+    {
+      "registration": "HB-HWP4",
       "icao_aircraft_type": "PC21",
       "aircraft_type": "Aeroplane",
       "mtom": 3600
@@ -18928,5 +18934,5 @@
       "mtom": 1300
     }
   ],
-  "released_at": "2025-10-29T09:44:09"
+  "released_at": "2025-10-30T06:44:30"
 }
