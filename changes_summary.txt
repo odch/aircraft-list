@@ -6,23 +6,27 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
-            Updated: 2025-10-30T06:20:37.583170+00:00
+            Updated: 2025-10-31T06:20:52.376429+00:00
             Count:   3,155
 
 Production: aircraft.json
-            Version: 1.0.3
-            Updated: 2025-10-29T09:43:14.125454+00:00
-            Count:   3,154
+            Version: 1.0.4
+            Updated: 2025-10-30T06:20:37.583170+00:00
+            Count:   3,155
 
 CHANGE STATISTICS:
   Added aircraft:         1
-  Removed aircraft:       0
+  Removed aircraft:       1
   Modified aircraft:      0
-  Total changes:          1
+  Total changes:          2
 
 📍 ADDED AIRCRAFT (1)
 ----------------------------------------------------------------------
-  HB-HWP4      | PC21     | Aeroplane
+  HB-FRE27     | PC12     | Aeroplane
+
+🗑️  REMOVED AIRCRAFT (1)
+----------------------------------------------------------------------
+  HB-ZQN       | EC45     | Helicopter
 
 ======================================================================
 NEXT STEPS:
