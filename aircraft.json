@@ -1,6 +1,6 @@
 {
-  "version": "1.0.5",
-  "last_updated": "2025-10-31T06:20:52.376429+00:00",
+  "version": "1.0.6",
+  "last_updated": "2025-11-01T06:18:43.199689+00:00",
   "total_count": 3155,
   "aircraft": [
     {
@@ -6814,12 +6814,6 @@
       "mtom": 4740
     },
     {
-      "registration": "HB-FQN26",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
       "registration": "HB-FQO27",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
@@ -6899,6 +6893,12 @@
     },
     {
       "registration": "HB-FRF26",
+      "icao_aircraft_type": "PC12",
+      "aircraft_type": "Aeroplane",
+      "mtom": 4740
+    },
+    {
+      "registration": "HB-FRH27",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
       "mtom": 4740
@@ -9086,6 +9086,12 @@
       "icao_aircraft_type": "BR23",
       "aircraft_type": "Aeroplane",
       "mtom": 750
+    },
+    {
+      "registration": "HB-KKI",
+      "icao_aircraft_type": "S22T",
+      "aircraft_type": "Aeroplane",
+      "mtom": 1633
     },
     {
       "registration": "HB-KKM",
@@ -18040,12 +18046,6 @@
       "mtom": 6800
     },
     {
-      "registration": "HB-ZQM",
-      "icao_aircraft_type": "EC45",
-      "aircraft_type": "Helicopter",
-      "mtom": 3700
-    },
-    {
       "registration": "HB-ZQO",
       "icao_aircraft_type": "EC45",
       "aircraft_type": "Helicopter",
@@ -18934,5 +18934,5 @@
       "mtom": 1300
     }
   ],
-  "released_at": "2025-10-31T06:30:07"
+  "released_at": "2025-11-01T06:36:28"
 }
