@@ -6,29 +6,24 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
-            Updated: 2025-11-01T06:18:43.199689+00:00
-            Count:   3,155
+            Updated: 2025-11-04T06:21:40.998442+00:00
+            Count:   3,157
 
 Production: aircraft.json
-            Version: 1.0.5
-            Updated: 2025-10-31T06:20:52.376429+00:00
+            Version: 1.0.6
+            Updated: 2025-11-01T06:18:43.199689+00:00
             Count:   3,155
 
 CHANGE STATISTICS:
   Added aircraft:         2
-  Removed aircraft:       2
+  Removed aircraft:       0
   Modified aircraft:      0
-  Total changes:          4
+  Total changes:          2
 
 📍 ADDED AIRCRAFT (2)
 ----------------------------------------------------------------------
-  HB-FRH27     | PC12     | Aeroplane
-  HB-KKI       | S22T     | Aeroplane
-
-🗑️  REMOVED AIRCRAFT (2)
-----------------------------------------------------------------------
-  HB-FQN26     | PC12     | Aeroplane
-  HB-ZQM       | EC45     | Helicopter
+  HB-BAW       | BALL     | Balloon (Hot-air)
+  HB-VSN5      | PC24     | Aeroplane
 
 ======================================================================
 NEXT STEPS:
