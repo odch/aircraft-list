@@ -1,7 +1,7 @@
 {
-  "version": "1.0.7",
-  "last_updated": "2025-11-04T06:21:40.998442+00:00",
-  "total_count": 3157,
+  "version": "1.0.8",
+  "last_updated": "2025-11-05T06:21:27.330892+00:00",
+  "total_count": 3155,
   "aircraft": [
     {
       "registration": "HB-1000",
@@ -554,12 +554,6 @@
       "icao_aircraft_type": "GLID",
       "aircraft_type": "Glider",
       "mtom": 472
-    },
-    {
-      "registration": "HB-1716",
-      "icao_aircraft_type": "GLID",
-      "aircraft_type": "Glider",
-      "mtom": 750
     },
     {
       "registration": "HB-1732",
@@ -6868,6 +6862,12 @@
       "mtom": 4740
     },
     {
+      "registration": "HB-FQZ27",
+      "icao_aircraft_type": "PC12",
+      "aircraft_type": "Aeroplane",
+      "mtom": 4740
+    },
+    {
       "registration": "HB-FRA26",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
@@ -6905,12 +6905,6 @@
     },
     {
       "registration": "HB-FRH27",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
-      "registration": "HB-FSZ24",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
       "mtom": 4740
@@ -15268,12 +15262,6 @@
       "mtom": 8500
     },
     {
-      "registration": "HB-VSE5",
-      "icao_aircraft_type": "PC24",
-      "aircraft_type": "Aeroplane",
-      "mtom": 8500
-    },
-    {
       "registration": "HB-VSF4",
       "icao_aircraft_type": "PC24",
       "aircraft_type": "Aeroplane",
@@ -18946,5 +18934,5 @@
       "mtom": 1300
     }
   ],
-  "released_at": "2025-11-04T06:33:05"
+  "released_at": "2025-11-05T06:23:11"
 }
