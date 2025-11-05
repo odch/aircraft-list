@@ -6,24 +6,29 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2025-11-05T06:21:27.330892+00:00
+            Count:   3,155
+
+Production: aircraft.json
+            Version: 1.0.7
             Updated: 2025-11-04T06:21:40.998442+00:00
             Count:   3,157
 
-Production: aircraft.json
-            Version: 1.0.6
-            Updated: 2025-11-01T06:18:43.199689+00:00
-            Count:   3,155
-
 CHANGE STATISTICS:
-  Added aircraft:         2
-  Removed aircraft:       0
+  Added aircraft:         1
+  Removed aircraft:       3
   Modified aircraft:      0
-  Total changes:          2
+  Total changes:          4
 
-📍 ADDED AIRCRAFT (2)
+📍 ADDED AIRCRAFT (1)
 ----------------------------------------------------------------------
-  HB-BAW       | BALL     | Balloon (Hot-air)
-  HB-VSN5      | PC24     | Aeroplane
+  HB-FQZ27     | PC12     | Aeroplane
+
+🗑️  REMOVED AIRCRAFT (3)
+----------------------------------------------------------------------
+  HB-1716      | GLID     | Glider
+  HB-FSZ24     | PC12     | Aeroplane
+  HB-VSE5      | PC24     | Aeroplane
 
 ======================================================================
 NEXT STEPS:
