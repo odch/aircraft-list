@@ -1,7 +1,7 @@
 {
-  "version": "1.0.8",
-  "last_updated": "2025-11-05T06:21:27.330892+00:00",
-  "total_count": 3155,
+  "version": "1.0.9",
+  "last_updated": "2025-11-06T06:21:42.972596+00:00",
+  "total_count": 3152,
   "aircraft": [
     {
       "registration": "HB-1000",
@@ -7247,18 +7247,6 @@
     },
     {
       "registration": "HB-HWJ4",
-      "icao_aircraft_type": "PC21",
-      "aircraft_type": "Aeroplane",
-      "mtom": 3600
-    },
-    {
-      "registration": "HB-HWK4",
-      "icao_aircraft_type": "PC21",
-      "aircraft_type": "Aeroplane",
-      "mtom": 3600
-    },
-    {
-      "registration": "HB-HWL4",
       "icao_aircraft_type": "PC21",
       "aircraft_type": "Aeroplane",
       "mtom": 3600
@@ -15448,12 +15436,6 @@
       "mtom": 630
     },
     {
-      "registration": "HB-WEG",
-      "icao_aircraft_type": "AC4",
-      "aircraft_type": "Aeroplane",
-      "mtom": 630
-    },
-    {
       "registration": "HB-WGA",
       "icao_aircraft_type": "MM16",
       "aircraft_type": "Ultralight Gyrocopter",
@@ -18934,5 +18916,5 @@
       "mtom": 1300
     }
   ],
-  "released_at": "2025-11-05T06:23:11"
+  "released_at": "2025-11-06T10:35:19"
 }
