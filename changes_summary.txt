@@ -6,28 +6,23 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2025-11-11T06:21:45.145946+00:00
+            Count:   3,153
+
+Production: aircraft.json
+            Version: 1.0.11
             Updated: 2025-11-08T06:18:50.782204+00:00
             Count:   3,154
 
-Production: aircraft.json
-            Version: 1.0.10
-            Updated: 2025-11-07T06:21:27.699880+00:00
-            Count:   3,153
-
 CHANGE STATISTICS:
-  Added aircraft:         2
+  Added aircraft:         0
   Removed aircraft:       1
   Modified aircraft:      0
-  Total changes:          3
-
-📍 ADDED AIRCRAFT (2)
-----------------------------------------------------------------------
-  HB-AFJ       | AT72     | Aeroplane
-  HB-FRI26     | PC12     | Aeroplane
+  Total changes:          1
 
 🗑️  REMOVED AIRCRAFT (1)
 ----------------------------------------------------------------------
-  HB-FQR27     | PC12     | Aeroplane
+  HB-FQV27     | PC12     | Aeroplane
 
 ======================================================================
 NEXT STEPS:

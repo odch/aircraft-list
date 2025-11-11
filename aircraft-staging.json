@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "last_updated": "2025-11-08T06:18:50.782204+00:00",
-  "total_count": 3154,
+  "last_updated": "2025-11-11T06:21:45.145946+00:00",
+  "total_count": 3153,
   "aircraft": [
     {
       "registration": "HB-1000",
@@ -6833,12 +6833,6 @@
     },
     {
       "registration": "HB-FQU27",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
-      "registration": "HB-FQV27",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
       "mtom": 4740
