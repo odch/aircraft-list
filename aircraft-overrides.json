@@ -2,6 +2,11 @@
   "_comment": "Custom aircraft overrides and additions",
   "_description": "This file allows you to override data for existing aircraft or add completely new aircraft to the registry. Keys should be the aircraft registration codes.",
 
+  "D-ABBA": {
+    "icao_aircraft_type": "F900",
+    "aircraft_type": "Aeroplane",
+    "mtom": 22226
+  },
   "I-MRMG": {
     "icao_aircraft_type": "R44",
     "aircraft_type": "Helicopter",
