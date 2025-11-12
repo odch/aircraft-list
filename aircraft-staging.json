@@ -1,8 +1,14 @@
 {
   "version": "1.0.0",
-  "last_updated": "2025-11-11T06:21:45.145946+00:00",
-  "total_count": 3153,
+  "last_updated": "2025-11-12T06:21:35.976746+00:00",
+  "total_count": 3151,
   "aircraft": [
+    {
+      "registration": "D-ABBA",
+      "icao_aircraft_type": "F900",
+      "aircraft_type": "Aeroplane",
+      "mtom": 22226
+    },
     {
       "registration": "HB-1000",
       "icao_aircraft_type": "GLID",
@@ -2474,12 +2480,6 @@
       "icao_aircraft_type": "GLID",
       "aircraft_type": "Glider",
       "mtom": 360
-    },
-    {
-      "registration": "HB-3022",
-      "icao_aircraft_type": "GLID",
-      "aircraft_type": "Glider",
-      "mtom": 525
     },
     {
       "registration": "HB-3024",
@@ -15250,12 +15250,6 @@
       "mtom": 8500
     },
     {
-      "registration": "HB-VSF4",
-      "icao_aircraft_type": "PC24",
-      "aircraft_type": "Aeroplane",
-      "mtom": 8500
-    },
-    {
       "registration": "HB-VSH5",
       "icao_aircraft_type": "PC24",
       "aircraft_type": "Aeroplane",
@@ -16007,12 +16001,6 @@
     },
     {
       "registration": "HB-XZN",
-      "icao_aircraft_type": "R22",
-      "aircraft_type": "Helicopter",
-      "mtom": 621
-    },
-    {
-      "registration": "HB-XZV",
       "icao_aircraft_type": "R22",
       "aircraft_type": "Helicopter",
       "mtom": 621
