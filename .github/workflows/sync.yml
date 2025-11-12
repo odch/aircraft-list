@@ -2,9 +2,8 @@ name: Sync Aircraft
 
 on:
   schedule:
-    # Run daily at 6:00 AM UTC during initial validation phase
-    # Change back to '0 6 * * 1' (Monday only) once system is stable
-    - cron: '0 6 * * *'
+    # Run mondays at 6:00 AM UTC
+    - cron: '0 6 * * 1'
 
   # Allow manual trigger
   workflow_dispatch:
