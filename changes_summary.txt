@@ -6,29 +6,33 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
-            Updated: 2025-11-12T06:21:35.976746+00:00
+            Updated: 2025-11-17T06:23:52.314394+00:00
             Count:   3,151
 
 Production: aircraft.json
-            Version: 1.0.12
-            Updated: 2025-11-11T06:21:45.145946+00:00
-            Count:   3,153
+            Version: 1.0.13
+            Updated: 2025-11-12T06:21:35.976746+00:00
+            Count:   3,151
 
 CHANGE STATISTICS:
-  Added aircraft:         1
-  Removed aircraft:       3
+  Added aircraft:         4
+  Removed aircraft:       4
   Modified aircraft:      0
-  Total changes:          4
+  Total changes:          8
 
-📍 ADDED AIRCRAFT (1)
+📍 ADDED AIRCRAFT (4)
 ----------------------------------------------------------------------
-  D-ABBA       | F900     | Aeroplane
+  HB-FRM27     | PC12     | Aeroplane
+  HB-JAM       | GL5T     | Aeroplane
+  HB-JRH       | GLEX     | Aeroplane
+  HB-VSM5      | PC24     | Aeroplane
 
-🗑️  REMOVED AIRCRAFT (3)
+🗑️  REMOVED AIRCRAFT (4)
 ----------------------------------------------------------------------
-  HB-3022      | GLID     | Glider
-  HB-VSF4      | PC24     | Aeroplane
-  HB-XZV       | R22      | Helicopter
+  HB-FQT27     | PC12     | Aeroplane
+  HB-FRD27     | PC12     | Aeroplane
+  HB-JIN       | F900     | Aeroplane
+  HB-QTH       | BALL     | Balloon (Hot-air)
 
 ======================================================================
 NEXT STEPS:
