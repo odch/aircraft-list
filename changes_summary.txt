@@ -6,33 +6,37 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2025-11-24T06:24:14.303678+00:00
+            Count:   3,149
+
+Production: aircraft.json
+            Version: 1.0.14
             Updated: 2025-11-17T06:23:52.314394+00:00
             Count:   3,151
 
-Production: aircraft.json
-            Version: 1.0.13
-            Updated: 2025-11-12T06:21:35.976746+00:00
-            Count:   3,151
-
 CHANGE STATISTICS:
-  Added aircraft:         4
-  Removed aircraft:       4
+  Added aircraft:         5
+  Removed aircraft:       7
   Modified aircraft:      0
-  Total changes:          8
+  Total changes:         12
 
-📍 ADDED AIRCRAFT (4)
+📍 ADDED AIRCRAFT (5)
 ----------------------------------------------------------------------
-  HB-FRM27     | PC12     | Aeroplane
-  HB-JAM       | GL5T     | Aeroplane
-  HB-JRH       | GLEX     | Aeroplane
-  HB-VSM5      | PC24     | Aeroplane
+  HB-FAM       | PC12     | Aeroplane
+  HB-FRJ26     | PC12     | Aeroplane
+  HB-FRS23     | PC12     | Aeroplane
+  HB-FRW27     | PC12     | Aeroplane
+  HB-VSO4      | PC24     | Aeroplane
 
-🗑️  REMOVED AIRCRAFT (4)
+🗑️  REMOVED AIRCRAFT (7)
 ----------------------------------------------------------------------
-  HB-FQT27     | PC12     | Aeroplane
-  HB-FRD27     | PC12     | Aeroplane
-  HB-JIN       | F900     | Aeroplane
-  HB-QTH       | BALL     | Balloon (Hot-air)
+  HB-FQU27     | PC12     | Aeroplane
+  HB-FRC27     | PC12     | Aeroplane
+  HB-JVM       | E190     | Aeroplane
+  HB-ORK       | PA18     | Aeroplane
+  HB-QTR       | BALL     | Balloon (Hot-air)
+  HB-VSD5      | PC24     | Aeroplane
+  HB-VSI4      | PC24     | Aeroplane
 
 ======================================================================
 NEXT STEPS:
