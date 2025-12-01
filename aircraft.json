@@ -1,13 +1,43 @@
 {
-  "version": "1.0.16",
-  "last_updated": "2025-12-01T06:26:23.558164+00:00",
-  "total_count": 3143,
+  "version": "1.0.17",
+  "last_updated": "2025-12-01T10:02:02.441899+00:00",
+  "total_count": 3151,
   "aircraft": [
+    {
+      "registration": "D-0074",
+      "icao_aircraft_type": "GLID",
+      "aircraft_type": "Glider",
+      "mtom": 660
+    },
     {
       "registration": "D-ABBA",
       "icao_aircraft_type": "F900",
       "aircraft_type": "Aeroplane",
       "mtom": 22226
+    },
+    {
+      "registration": "D-KACB",
+      "icao_aircraft_type": "GLID",
+      "aircraft_type": "Glider",
+      "mtom": 600
+    },
+    {
+      "registration": "D-KDMH",
+      "icao_aircraft_type": "GLID",
+      "aircraft_type": "Glider",
+      "mtom": 660
+    },
+    {
+      "registration": "D-KYDS",
+      "icao_aircraft_type": "GLID",
+      "aircraft_type": "Glider",
+      "mtom": 525
+    },
+    {
+      "registration": "D-MELH",
+      "icao_aircraft_type": "G3",
+      "aircraft_type": "Ecolight",
+      "mtom": 473
     },
     {
       "registration": "HB-1000",
@@ -6911,6 +6941,12 @@
     },
     {
       "registration": "HB-FRW27",
+      "icao_aircraft_type": "PC12",
+      "aircraft_type": "Aeroplane",
+      "mtom": 4740
+    },
+    {
+      "registration": "HB-FRY26",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
       "mtom": 4740
@@ -18850,6 +18886,18 @@
       "mtom": 726
     },
     {
+      "registration": "N47KP",
+      "icao_aircraft_type": "M20K",
+      "aircraft_type": "Aeroplane",
+      "mtom": 1420
+    },
+    {
+      "registration": "N90354",
+      "icao_aircraft_type": "GC1",
+      "aircraft_type": "Aeroplane",
+      "mtom": 895
+    },
+    {
       "registration": "OE-IIS",
       "icao_aircraft_type": "GLF5",
       "aircraft_type": "Aeroplane",
@@ -18862,5 +18910,5 @@
       "mtom": 1300
     }
   ],
-  "released_at": "2025-12-01T07:02:27"
+  "released_at": "2025-12-01T10:03:19"
 }
