@@ -6,37 +6,47 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2025-12-01T06:26:23.558164+00:00
+            Count:   3,143
+
+Production: aircraft.json
+            Version: 1.0.15
             Updated: 2025-11-24T06:24:14.303678+00:00
             Count:   3,149
 
-Production: aircraft.json
-            Version: 1.0.14
-            Updated: 2025-11-17T06:23:52.314394+00:00
-            Count:   3,151
-
 CHANGE STATISTICS:
-  Added aircraft:         5
-  Removed aircraft:       7
-  Modified aircraft:      0
-  Total changes:         12
+  Added aircraft:         6
+  Removed aircraft:      12
+  Modified aircraft:      1
+  Total changes:         19
 
-📍 ADDED AIRCRAFT (5)
+📍 ADDED AIRCRAFT (6)
 ----------------------------------------------------------------------
-  HB-FAM       | PC12     | Aeroplane
-  HB-FRJ26     | PC12     | Aeroplane
-  HB-FRS23     | PC12     | Aeroplane
-  HB-FRW27     | PC12     | Aeroplane
-  HB-VSO4      | PC24     | Aeroplane
+  HB-BBB       | BALL     | Balloon (Hot-air)
+  HB-ERD       | DR40     | Aeroplane
+  HB-FRU26     | PC12     | Aeroplane
+  HB-VSS5      | PC24     | Aeroplane
+  HB-XVX       | AS50     | Helicopter
+  HB-XWS       | AS50     | Helicopter
 
-🗑️  REMOVED AIRCRAFT (7)
+🗑️  REMOVED AIRCRAFT (12)
 ----------------------------------------------------------------------
-  HB-FQU27     | PC12     | Aeroplane
-  HB-FRC27     | PC12     | Aeroplane
-  HB-JVM       | E190     | Aeroplane
-  HB-ORK       | PA18     | Aeroplane
-  HB-QTR       | BALL     | Balloon (Hot-air)
-  HB-VSD5      | PC24     | Aeroplane
-  HB-VSI4      | PC24     | Aeroplane
+  HB-1168      | GLID     | Glider
+  HB-FKS       | PC12     | Aeroplane
+  HB-FRF26     | PC12     | Aeroplane
+  HB-HWM4      | PC21     | Aeroplane
+  HB-HWN4      | PC21     | Aeroplane
+  HB-HWO4      | PC21     | Aeroplane
+  HB-QQP       | BALL     | Balloon (Hot-air)
+  HB-VSP5      | PC24     | Aeroplane
+  HB-VZN4      | PC24     | Aeroplane
+  HB-YFL       | EXEC     | Homebuilt Helicopter
+  ... and 2 more
+
+✏️  MODIFIED AIRCRAFT (1)
+----------------------------------------------------------------------
+  HB-3394:
+    mtom: 750 → 790
 
 ======================================================================
 NEXT STEPS:
