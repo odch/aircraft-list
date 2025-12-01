@@ -6,47 +6,30 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2025-12-01T10:02:02.441899+00:00
+            Count:   3,151
+
+Production: aircraft.json
+            Version: 1.0.16
             Updated: 2025-12-01T06:26:23.558164+00:00
             Count:   3,143
 
-Production: aircraft.json
-            Version: 1.0.15
-            Updated: 2025-11-24T06:24:14.303678+00:00
-            Count:   3,149
-
 CHANGE STATISTICS:
-  Added aircraft:         6
-  Removed aircraft:      12
-  Modified aircraft:      1
-  Total changes:         19
+  Added aircraft:         8
+  Removed aircraft:       0
+  Modified aircraft:      0
+  Total changes:          8
 
-📍 ADDED AIRCRAFT (6)
+📍 ADDED AIRCRAFT (8)
 ----------------------------------------------------------------------
-  HB-BBB       | BALL     | Balloon (Hot-air)
-  HB-ERD       | DR40     | Aeroplane
-  HB-FRU26     | PC12     | Aeroplane
-  HB-VSS5      | PC24     | Aeroplane
-  HB-XVX       | AS50     | Helicopter
-  HB-XWS       | AS50     | Helicopter
-
-🗑️  REMOVED AIRCRAFT (12)
-----------------------------------------------------------------------
-  HB-1168      | GLID     | Glider
-  HB-FKS       | PC12     | Aeroplane
-  HB-FRF26     | PC12     | Aeroplane
-  HB-HWM4      | PC21     | Aeroplane
-  HB-HWN4      | PC21     | Aeroplane
-  HB-HWO4      | PC21     | Aeroplane
-  HB-QQP       | BALL     | Balloon (Hot-air)
-  HB-VSP5      | PC24     | Aeroplane
-  HB-VZN4      | PC24     | Aeroplane
-  HB-YFL       | EXEC     | Homebuilt Helicopter
-  ... and 2 more
-
-✏️  MODIFIED AIRCRAFT (1)
-----------------------------------------------------------------------
-  HB-3394:
-    mtom: 750 → 790
+  D-0074       | GLID     | Glider
+  D-KACB       | GLID     | Glider
+  D-KDMH       | GLID     | Glider
+  D-KYDS       | GLID     | Glider
+  D-MELH       | G3       | Ecolight
+  HB-FRY26     | PC12     | Aeroplane
+  N47KP        | M20K     | Aeroplane
+  N90354       | GC1      | Aeroplane
 
 ======================================================================
 NEXT STEPS:
