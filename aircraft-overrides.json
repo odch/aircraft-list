@@ -2,10 +2,35 @@
   "_comment": "Custom aircraft overrides and additions",
   "_description": "This file allows you to override data for existing aircraft or add completely new aircraft to the registry. Keys should be the aircraft registration codes.",
 
+  "D-0074": {
+    "icao_aircraft_type": "GLID",
+    "aircraft_type": "Glider",
+    "mtom": 660
+  },
   "D-ABBA": {
     "icao_aircraft_type": "F900",
     "aircraft_type": "Aeroplane",
     "mtom": 22226
+  },
+  "D-KACB": {
+    "icao_aircraft_type": "GLID",
+    "aircraft_type": "Glider",
+    "mtom": 600
+  },
+  "D-KDMH": {
+    "icao_aircraft_type": "GLID",
+    "aircraft_type": "Glider",
+    "mtom": 660
+  },
+  "D-KYDS": {
+    "icao_aircraft_type": "GLID",
+    "aircraft_type": "Glider",
+    "mtom": 525
+  },
+  "D-MELH": {
+    "icao_aircraft_type": "G3",
+    "aircraft_type": "Ecolight",
+    "mtom": 473
   },
   "I-MRMG": {
     "icao_aircraft_type": "R44",
@@ -26,6 +51,16 @@
     "icao_aircraft_type": "EAGL",
     "aircraft_type": "Homebuilt Airplane",
     "mtom": 726
+  },
+  "N47KP": {
+    "icao_aircraft_type": "M20K",
+    "aircraft_type": "Aeroplane",
+    "mtom": 1420
+  },
+  "N90354": {
+    "icao_aircraft_type": "GC1",
+    "aircraft_type": "Aeroplane",
+    "mtom": 895
   },
   "OE-IIS": {
     "icao_aircraft_type": "GLF5",
