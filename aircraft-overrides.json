@@ -65,7 +65,7 @@
   "OE-IIS": {
     "icao_aircraft_type": "GLF5",
     "aircraft_type": "Aeroplane",
-    "mtom": 40000
+    "mtom": 41150
   },
   "T7-AMC": {
     "icao_aircraft_type": "SF260",
