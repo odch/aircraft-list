@@ -6,30 +6,44 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2025-12-05T07:28:31.238129+00:00
+            Count:   3,149
+
+Production: aircraft.json
+            Version: 1.0.17
             Updated: 2025-12-01T10:02:02.441899+00:00
             Count:   3,151
 
-Production: aircraft.json
-            Version: 1.0.16
-            Updated: 2025-12-01T06:26:23.558164+00:00
-            Count:   3,143
-
 CHANGE STATISTICS:
-  Added aircraft:         8
-  Removed aircraft:       0
-  Modified aircraft:      0
-  Total changes:          8
+  Added aircraft:         6
+  Removed aircraft:       8
+  Modified aircraft:      1
+  Total changes:         15
 
-📍 ADDED AIRCRAFT (8)
+📍 ADDED AIRCRAFT (6)
 ----------------------------------------------------------------------
-  D-0074       | GLID     | Glider
-  D-KACB       | GLID     | Glider
-  D-KDMH       | GLID     | Glider
-  D-KYDS       | GLID     | Glider
-  D-MELH       | G3       | Ecolight
-  HB-FRY26     | PC12     | Aeroplane
-  N47KP        | M20K     | Aeroplane
-  N90354       | GC1      | Aeroplane
+  HB-BMW       | BALL     | Balloon (Hot-air)
+  HB-FRL27     | PC12     | Aeroplane
+  HB-FRQ23     | PC12     | Aeroplane
+  HB-HXA5      | PC21     | Aeroplane
+  HB-IHA       | A359     | Aeroplane
+  HB-JPG       | A21N     | Aeroplane
+
+🗑️  REMOVED AIRCRAFT (8)
+----------------------------------------------------------------------
+  HB-FQE27     | PC12     | Aeroplane
+  HB-FRB27     | PC12     | Aeroplane
+  HB-IJI       | A320     | Aeroplane
+  HB-JMG       | A343     | Aeroplane
+  HB-VSC5      | PC24     | Aeroplane
+  HB-XBX       | AS50     | Helicopter
+  HB-XYX       | AS50     | Helicopter
+  HB-ZZP       | EC35     | Helicopter
+
+✏️  MODIFIED AIRCRAFT (1)
+----------------------------------------------------------------------
+  OE-IIS:
+    mtom: 40000 → 41150
 
 ======================================================================
 NEXT STEPS:
