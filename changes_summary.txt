@@ -6,44 +6,28 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2025-12-08T06:27:07.290837+00:00
+            Count:   3,148
+
+Production: aircraft.json
+            Version: 1.0.18
             Updated: 2025-12-05T07:28:31.238129+00:00
             Count:   3,149
 
-Production: aircraft.json
-            Version: 1.0.17
-            Updated: 2025-12-01T10:02:02.441899+00:00
-            Count:   3,151
-
 CHANGE STATISTICS:
-  Added aircraft:         6
-  Removed aircraft:       8
-  Modified aircraft:      1
-  Total changes:         15
+  Added aircraft:         1
+  Removed aircraft:       2
+  Modified aircraft:      0
+  Total changes:          3
 
-📍 ADDED AIRCRAFT (6)
+📍 ADDED AIRCRAFT (1)
 ----------------------------------------------------------------------
-  HB-BMW       | BALL     | Balloon (Hot-air)
-  HB-FRL27     | PC12     | Aeroplane
-  HB-FRQ23     | PC12     | Aeroplane
-  HB-HXA5      | PC21     | Aeroplane
-  HB-IHA       | A359     | Aeroplane
-  HB-JPG       | A21N     | Aeroplane
+  HB-ZQS       | A109     | Helicopter
 
-🗑️  REMOVED AIRCRAFT (8)
+🗑️  REMOVED AIRCRAFT (2)
 ----------------------------------------------------------------------
-  HB-FQE27     | PC12     | Aeroplane
-  HB-FRB27     | PC12     | Aeroplane
-  HB-IJI       | A320     | Aeroplane
-  HB-JMG       | A343     | Aeroplane
-  HB-VSC5      | PC24     | Aeroplane
-  HB-XBX       | AS50     | Helicopter
-  HB-XYX       | AS50     | Helicopter
-  HB-ZZP       | EC35     | Helicopter
-
-✏️  MODIFIED AIRCRAFT (1)
-----------------------------------------------------------------------
-  OE-IIS:
-    mtom: 40000 → 41150
+  HB-3223      | GLID     | Glider
+  HB-FQX26     | PC12     | Aeroplane
 
 ======================================================================
 NEXT STEPS:

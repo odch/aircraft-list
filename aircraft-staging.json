@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "last_updated": "2025-12-05T07:28:31.238129+00:00",
-  "total_count": 3149,
+  "last_updated": "2025-12-08T06:27:07.290837+00:00",
+  "total_count": 3148,
   "aircraft": [
     {
       "registration": "D-0074",
@@ -2924,12 +2924,6 @@
       "icao_aircraft_type": "GLID",
       "aircraft_type": "Glider",
       "mtom": 525
-    },
-    {
-      "registration": "HB-3223",
-      "icao_aircraft_type": "GLID",
-      "aircraft_type": "Glider",
-      "mtom": 700
     },
     {
       "registration": "HB-3224",
@@ -6863,12 +6857,6 @@
     },
     {
       "registration": "HB-FQW27",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
-      "registration": "HB-FQX26",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
       "mtom": 4740
@@ -18008,6 +17996,12 @@
       "icao_aircraft_type": "EC45",
       "aircraft_type": "Helicopter",
       "mtom": 3800
+    },
+    {
+      "registration": "HB-ZQS",
+      "icao_aircraft_type": "A109",
+      "aircraft_type": "Helicopter",
+      "mtom": 3175
     },
     {
       "registration": "HB-ZQT",
