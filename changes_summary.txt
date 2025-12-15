@@ -6,28 +6,41 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
-            Updated: 2025-12-08T06:27:07.290837+00:00
+            Updated: 2025-12-15T06:27:44.769804+00:00
             Count:   3,148
 
 Production: aircraft.json
-            Version: 1.0.18
-            Updated: 2025-12-05T07:28:31.238129+00:00
-            Count:   3,149
+            Version: 1.0.19
+            Updated: 2025-12-08T06:27:07.290837+00:00
+            Count:   3,148
 
 CHANGE STATISTICS:
-  Added aircraft:         1
-  Removed aircraft:       2
+  Added aircraft:         8
+  Removed aircraft:       8
   Modified aircraft:      0
-  Total changes:          3
+  Total changes:         16
 
-📍 ADDED AIRCRAFT (1)
+📍 ADDED AIRCRAFT (8)
 ----------------------------------------------------------------------
-  HB-ZQS       | A109     | Helicopter
+  HB-2570      | N/A      | Powered Glider
+  HB-FRK27     | PC12     | Aeroplane
+  HB-FUG       | PC12     | Aeroplane
+  HB-KNN       | P208     | Aeroplane
+  HB-KNP       | P208     | Aeroplane
+  HB-TIL       | EC45     | Helicopter
+  HB-VSQ5      | PC24     | Aeroplane
+  HB-VSW5      | PC24     | Aeroplane
 
-🗑️  REMOVED AIRCRAFT (2)
+🗑️  REMOVED AIRCRAFT (8)
 ----------------------------------------------------------------------
-  HB-3223      | GLID     | Glider
-  HB-FQX26     | PC12     | Aeroplane
+  HB-FPA       | PC12     | Aeroplane
+  HB-FRH27     | PC12     | Aeroplane
+  HB-LWE       | C340     | Aeroplane
+  HB-QJD       | BALL     | Balloon (Hot-air)
+  HB-QVA       | BALL     | Balloon (Hot-air)
+  HB-VVN       | PC24     | Aeroplane
+  HB-XEX       | EC30     | Helicopter
+  HB-ZSL       | AS50     | Helicopter
 
 ======================================================================
 NEXT STEPS:
