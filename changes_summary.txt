@@ -6,41 +6,43 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2025-12-22T06:27:09.386820+00:00
+            Count:   3,140
+
+Production: aircraft.json
+            Version: 1.0.20
             Updated: 2025-12-15T06:27:44.769804+00:00
             Count:   3,148
 
-Production: aircraft.json
-            Version: 1.0.19
-            Updated: 2025-12-08T06:27:07.290837+00:00
-            Count:   3,148
-
 CHANGE STATISTICS:
-  Added aircraft:         8
-  Removed aircraft:       8
+  Added aircraft:         7
+  Removed aircraft:      15
   Modified aircraft:      0
-  Total changes:         16
+  Total changes:         22
 
-📍 ADDED AIRCRAFT (8)
+📍 ADDED AIRCRAFT (7)
 ----------------------------------------------------------------------
-  HB-2570      | N/A      | Powered Glider
-  HB-FRK27     | PC12     | Aeroplane
-  HB-FUG       | PC12     | Aeroplane
-  HB-KNN       | P208     | Aeroplane
-  HB-KNP       | P208     | Aeroplane
-  HB-TIL       | EC45     | Helicopter
-  HB-VSQ5      | PC24     | Aeroplane
-  HB-VSW5      | PC24     | Aeroplane
+  HB-FQA27     | PC12     | Aeroplane
+  HB-FRO24     | PC12     | Aeroplane
+  HB-FSA26     | PC12     | Aeroplane
+  HB-IXX       | FA8X     | Aeroplane
+  HB-KNL       | P208     | Aeroplane
+  HB-KNM       | P208     | Aeroplane
+  HB-VSR5      | PC24     | Aeroplane
 
-🗑️  REMOVED AIRCRAFT (8)
+🗑️  REMOVED AIRCRAFT (15)
 ----------------------------------------------------------------------
-  HB-FPA       | PC12     | Aeroplane
-  HB-FRH27     | PC12     | Aeroplane
-  HB-LWE       | C340     | Aeroplane
-  HB-QJD       | BALL     | Balloon (Hot-air)
-  HB-QVA       | BALL     | Balloon (Hot-air)
-  HB-VVN       | PC24     | Aeroplane
-  HB-XEX       | EC30     | Helicopter
-  HB-ZSL       | AS50     | Helicopter
+  HB-FQM27     | PC12     | Aeroplane
+  HB-FQO27     | PC12     | Aeroplane
+  HB-FQW27     | PC12     | Aeroplane
+  HB-FRA26     | PC12     | Aeroplane
+  HB-FRG27     | PC12     | Aeroplane
+  HB-FRI26     | PC12     | Aeroplane
+  HB-FRS23     | PC12     | Aeroplane
+  HB-FUW       | PC12     | Aeroplane
+  HB-IJJ       | A320     | Aeroplane
+  HB-JVN       | E190     | Aeroplane
+  ... and 5 more
 
 ======================================================================
 NEXT STEPS:
