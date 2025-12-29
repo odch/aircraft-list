@@ -6,43 +6,30 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2025-12-29T06:27:45.186885+00:00
+            Count:   3,132
+
+Production: aircraft.json
+            Version: 1.0.21
             Updated: 2025-12-22T06:27:09.386820+00:00
             Count:   3,140
 
-Production: aircraft.json
-            Version: 1.0.20
-            Updated: 2025-12-15T06:27:44.769804+00:00
-            Count:   3,148
-
 CHANGE STATISTICS:
-  Added aircraft:         7
-  Removed aircraft:      15
+  Added aircraft:         0
+  Removed aircraft:       8
   Modified aircraft:      0
-  Total changes:         22
+  Total changes:          8
 
-📍 ADDED AIRCRAFT (7)
+🗑️  REMOVED AIRCRAFT (8)
 ----------------------------------------------------------------------
-  HB-FQA27     | PC12     | Aeroplane
-  HB-FRO24     | PC12     | Aeroplane
-  HB-FSA26     | PC12     | Aeroplane
-  HB-IXX       | FA8X     | Aeroplane
-  HB-KNL       | P208     | Aeroplane
-  HB-KNM       | P208     | Aeroplane
-  HB-VSR5      | PC24     | Aeroplane
-
-🗑️  REMOVED AIRCRAFT (15)
-----------------------------------------------------------------------
-  HB-FQM27     | PC12     | Aeroplane
-  HB-FQO27     | PC12     | Aeroplane
-  HB-FQW27     | PC12     | Aeroplane
-  HB-FRA26     | PC12     | Aeroplane
-  HB-FRG27     | PC12     | Aeroplane
-  HB-FRI26     | PC12     | Aeroplane
-  HB-FRS23     | PC12     | Aeroplane
-  HB-FUW       | PC12     | Aeroplane
-  HB-IJJ       | A320     | Aeroplane
-  HB-JVN       | E190     | Aeroplane
-  ... and 5 more
+  HB-DHL       | M20P     | Aeroplane
+  HB-FRE27     | PC12     | Aeroplane
+  HB-FRJ26     | PC12     | Aeroplane
+  HB-IAA       | FA7X     | Aeroplane
+  HB-JRQ       | CL60     | Aeroplane
+  HB-PQR       | P28A     | Aeroplane
+  HB-QUN       | BALL     | Balloon (Hot-air)
+  HB-QWL       | BALL     | Balloon (Hot-air)
 
 ======================================================================
 NEXT STEPS:

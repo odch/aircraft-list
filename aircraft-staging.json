@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "last_updated": "2025-12-22T06:27:09.386820+00:00",
-  "total_count": 3140,
+  "last_updated": "2025-12-29T06:27:45.186885+00:00",
+  "total_count": 3132,
   "aircraft": [
     {
       "registration": "D-0074",
@@ -5926,12 +5926,6 @@
       "mtom": 1243
     },
     {
-      "registration": "HB-DHL",
-      "icao_aircraft_type": "M20P",
-      "aircraft_type": "Aeroplane",
-      "mtom": 1243
-    },
-    {
       "registration": "HB-DHP",
       "icao_aircraft_type": "M20T",
       "aircraft_type": "Aeroplane",
@@ -6856,18 +6850,6 @@
       "mtom": 4740
     },
     {
-      "registration": "HB-FRE27",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
-      "registration": "HB-FRJ26",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
       "registration": "HB-FRK27",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
@@ -7286,12 +7268,6 @@
       "icao_aircraft_type": "PC21",
       "aircraft_type": "Aeroplane",
       "mtom": 3780
-    },
-    {
-      "registration": "HB-IAA",
-      "icao_aircraft_type": "FA7X",
-      "aircraft_type": "Aeroplane",
-      "mtom": 31751
     },
     {
       "registration": "HB-IAW",
@@ -8252,12 +8228,6 @@
       "icao_aircraft_type": "GLEX",
       "aircraft_type": "Aeroplane",
       "mtom": 45132
-    },
-    {
-      "registration": "HB-JRQ",
-      "icao_aircraft_type": "CL60",
-      "aircraft_type": "Aeroplane",
-      "mtom": 21863
     },
     {
       "registration": "HB-JSB",
@@ -11794,12 +11764,6 @@
       "mtom": 1315
     },
     {
-      "registration": "HB-PQR",
-      "icao_aircraft_type": "P28A",
-      "aircraft_type": "Aeroplane",
-      "mtom": 1157
-    },
-    {
       "registration": "HB-PQS",
       "icao_aircraft_type": "P28A",
       "aircraft_type": "Aeroplane",
@@ -12880,12 +12844,6 @@
       "mtom": 878
     },
     {
-      "registration": "HB-QUN",
-      "icao_aircraft_type": "BALL",
-      "aircraft_type": "Balloon (Hot-air)",
-      "mtom": 590
-    },
-    {
       "registration": "HB-QUO",
       "icao_aircraft_type": "BALL",
       "aircraft_type": "Balloon (Hot-air)",
@@ -13100,12 +13058,6 @@
       "icao_aircraft_type": "BALL",
       "aircraft_type": "Balloon (Hot-air)",
       "mtom": 1032
-    },
-    {
-      "registration": "HB-QWL",
-      "icao_aircraft_type": "BALL",
-      "aircraft_type": "Balloon (Hot-air)",
-      "mtom": 973
     },
     {
       "registration": "HB-QWM",
