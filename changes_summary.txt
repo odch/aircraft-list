@@ -6,30 +6,23 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-01-05T06:31:38.016403+00:00
+            Count:   3,131
+
+Production: aircraft.json
+            Version: 1.0.22
             Updated: 2025-12-29T06:27:45.186885+00:00
             Count:   3,132
 
-Production: aircraft.json
-            Version: 1.0.21
-            Updated: 2025-12-22T06:27:09.386820+00:00
-            Count:   3,140
-
 CHANGE STATISTICS:
   Added aircraft:         0
-  Removed aircraft:       8
+  Removed aircraft:       1
   Modified aircraft:      0
-  Total changes:          8
+  Total changes:          1
 
-🗑️  REMOVED AIRCRAFT (8)
+🗑️  REMOVED AIRCRAFT (1)
 ----------------------------------------------------------------------
-  HB-DHL       | M20P     | Aeroplane
-  HB-FRE27     | PC12     | Aeroplane
-  HB-FRJ26     | PC12     | Aeroplane
-  HB-IAA       | FA7X     | Aeroplane
-  HB-JRQ       | CL60     | Aeroplane
-  HB-PQR       | P28A     | Aeroplane
-  HB-QUN       | BALL     | Balloon (Hot-air)
-  HB-QWL       | BALL     | Balloon (Hot-air)
+  HB-JFX       | GLEX     | Aeroplane
 
 ======================================================================
 NEXT STEPS:

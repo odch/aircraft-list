@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "last_updated": "2025-12-29T06:27:45.186885+00:00",
-  "total_count": 3132,
+  "last_updated": "2026-01-05T06:31:38.016403+00:00",
+  "total_count": 3131,
   "aircraft": [
     {
       "registration": "D-0074",
@@ -7760,12 +7760,6 @@
       "icao_aircraft_type": "FA7X",
       "aircraft_type": "Aeroplane",
       "mtom": 31751
-    },
-    {
-      "registration": "HB-JFX",
-      "icao_aircraft_type": "GLEX",
-      "aircraft_type": "Aeroplane",
-      "mtom": 45132
     },
     {
       "registration": "HB-JGB",
