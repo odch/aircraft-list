@@ -6,37 +6,43 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-01-19T06:30:55.229579+00:00
+            Count:   3,127
+
+Production: aircraft.json
+            Version: 1.0.24
             Updated: 2026-01-12T06:29:09.279372+00:00
             Count:   3,133
 
-Production: aircraft.json
-            Version: 1.0.23
-            Updated: 2026-01-05T06:31:38.016403+00:00
-            Count:   3,131
-
 CHANGE STATISTICS:
   Added aircraft:         7
-  Removed aircraft:       5
+  Removed aircraft:      13
   Modified aircraft:      0
-  Total changes:         12
+  Total changes:         20
 
 📍 ADDED AIRCRAFT (7)
 ----------------------------------------------------------------------
-  HB-FRP23     | PC12     | Aeroplane
-  HB-FSC26     | PC12     | Aeroplane
-  HB-GLC       | BE20     | Aeroplane
-  HB-HKK       | PC7      | Aeroplane
-  HB-MTC       | E300     | Aeroplane
-  HB-TCM       | C182     | Aeroplane
-  HB-VVO       | PC24     | Aeroplane
+  HB-BDL       | BALL     | Balloon (Hot-air)
+  HB-DAR       | DA50     | Aeroplane
+  HB-FRR23     | PC12     | Aeroplane
+  HB-FRT23     | PC12     | Aeroplane
+  HB-FSE26     | PC12     | Aeroplane
+  HB-VST5      | PC24     | Aeroplane
+  HB-XTX       | R44      | Helicopter
 
-🗑️  REMOVED AIRCRAFT (5)
+🗑️  REMOVED AIRCRAFT (13)
 ----------------------------------------------------------------------
-  HB-FRM27     | PC12     | Aeroplane
-  HB-QNV       | BALL     | Balloon (Hot-air)
-  HB-YPB       | FOX      | Homebuilt Airplane
-  HB-ZEN       | EC35     | Helicopter
-  HB-ZLX       | G2CA     | Helicopter
+  HB-1018      | GLID     | Glider
+  HB-1561      | GLID     | Glider
+  HB-BMY       | BALL     | Balloon (Hot-air)
+  HB-FRU26     | PC12     | Aeroplane
+  HB-FRW27     | PC12     | Aeroplane
+  HB-HKK       | PC7      | Aeroplane
+  HB-HWJ4      | PC21     | Aeroplane
+  HB-MTC       | E300     | Aeroplane
+  HB-QNB       | BALL     | Balloon (Hot-air)
+  HB-TCM       | C182     | Aeroplane
+  ... and 3 more
 
 ======================================================================
 NEXT STEPS:
