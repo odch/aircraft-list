@@ -6,43 +6,43 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-01-26T06:29:42.502751+00:00
+            Count:   3,122
+
+Production: aircraft.json
+            Version: 1.0.25
             Updated: 2026-01-19T06:30:55.229579+00:00
             Count:   3,127
 
-Production: aircraft.json
-            Version: 1.0.24
-            Updated: 2026-01-12T06:29:09.279372+00:00
-            Count:   3,133
-
 CHANGE STATISTICS:
-  Added aircraft:         7
-  Removed aircraft:      13
-  Modified aircraft:      0
-  Total changes:         20
+  Added aircraft:         4
+  Removed aircraft:       9
+  Modified aircraft:      1
+  Total changes:         14
 
-📍 ADDED AIRCRAFT (7)
+📍 ADDED AIRCRAFT (4)
 ----------------------------------------------------------------------
-  HB-BDL       | BALL     | Balloon (Hot-air)
-  HB-DAR       | DA50     | Aeroplane
-  HB-FRR23     | PC12     | Aeroplane
-  HB-FRT23     | PC12     | Aeroplane
-  HB-FSE26     | PC12     | Aeroplane
-  HB-VST5      | PC24     | Aeroplane
-  HB-XTX       | R44      | Helicopter
+  HB-FQB28     | PC12     | Aeroplane
+  HB-FRV27     | PC12     | Aeroplane
+  HB-HXB5      | PC21     | Aeroplane
+  HB-VUB5      | PC24     | Aeroplane
 
-🗑️  REMOVED AIRCRAFT (13)
+🗑️  REMOVED AIRCRAFT (9)
 ----------------------------------------------------------------------
-  HB-1018      | GLID     | Glider
-  HB-1561      | GLID     | Glider
-  HB-BMY       | BALL     | Balloon (Hot-air)
-  HB-FRU26     | PC12     | Aeroplane
-  HB-FRW27     | PC12     | Aeroplane
-  HB-HKK       | PC7      | Aeroplane
-  HB-HWJ4      | PC21     | Aeroplane
-  HB-MTC       | E300     | Aeroplane
-  HB-QNB       | BALL     | Balloon (Hot-air)
-  HB-TCM       | C182     | Aeroplane
-  ... and 3 more
+  HB-FPP       | PC12     | Aeroplane
+  HB-FQZ27     | PC12     | Aeroplane
+  HB-FRL27     | PC12     | Aeroplane
+  HB-FUA       | PC12     | Aeroplane
+  HB-JJT       | C680     | Aeroplane
+  HB-KBP       | DR40     | Aeroplane
+  HB-VSL5      | PC24     | Aeroplane
+  HB-VSO4      | PC24     | Aeroplane
+  HB-ZNW       | B407     | Helicopter
+
+✏️  MODIFIED AIRCRAFT (1)
+----------------------------------------------------------------------
+  HB-JLQ:
+    mtom: 73500 → 77000
 
 ======================================================================
 NEXT STEPS:
