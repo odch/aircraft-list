@@ -32,6 +32,11 @@
     "aircraft_type": "Ecolight",
     "mtom": 473
   },
+  "I-EASR": {
+    "icao_aircraft_type": "N/A",
+    "aircraft_type": "Helicopter",
+    "mtom": 2650
+  },
   "I-MRMG": {
     "icao_aircraft_type": "R44",
     "aircraft_type": "Helicopter",
