@@ -1,7 +1,7 @@
 {
-  "version": "1.0.26",
-  "last_updated": "2026-01-26T06:29:42.502751+00:00",
-  "total_count": 3122,
+  "version": "1.0.27",
+  "last_updated": "2026-01-29T11:22:00.000000+00:00",
+  "total_count": 3123,
   "aircraft": [
     {
       "registration": "D-0074",
@@ -18688,6 +18688,12 @@
       "mtom": 2250
     },
     {
+      "registration": "I-EASR",
+      "icao_aircraft_type": "N/A",
+      "aircraft_type": "Helicopter",
+      "mtom": 2650
+    },
+    {
       "registration": "I-MRMG",
       "icao_aircraft_type": "R44",
       "aircraft_type": "Helicopter",
@@ -18736,5 +18742,5 @@
       "mtom": 1300
     }
   ],
-  "released_at": "2026-01-26T07:20:45"
+  "released_at": "2026-01-29T12:32:46"
 }
