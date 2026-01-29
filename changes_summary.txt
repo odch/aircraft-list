@@ -6,43 +6,37 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-01-29T10:53:09.302109+00:00
+            Count:   15
+
+Production: aircraft.json
+            Version: 1.0.26
             Updated: 2026-01-26T06:29:42.502751+00:00
             Count:   3,122
 
-Production: aircraft.json
-            Version: 1.0.25
-            Updated: 2026-01-19T06:30:55.229579+00:00
-            Count:   3,127
-
 CHANGE STATISTICS:
-  Added aircraft:         4
-  Removed aircraft:       9
-  Modified aircraft:      1
-  Total changes:         14
+  Added aircraft:         1
+  Removed aircraft:   3,108
+  Modified aircraft:      0
+  Total changes:      3,109
 
-📍 ADDED AIRCRAFT (4)
+📍 ADDED AIRCRAFT (1)
 ----------------------------------------------------------------------
-  HB-FQB28     | PC12     | Aeroplane
-  HB-FRV27     | PC12     | Aeroplane
-  HB-HXB5      | PC21     | Aeroplane
-  HB-VUB5      | PC24     | Aeroplane
+  I-EASR       | N/A      | Helicopter
 
-🗑️  REMOVED AIRCRAFT (9)
+🗑️  REMOVED AIRCRAFT (3108)
 ----------------------------------------------------------------------
-  HB-FPP       | PC12     | Aeroplane
-  HB-FQZ27     | PC12     | Aeroplane
-  HB-FRL27     | PC12     | Aeroplane
-  HB-FUA       | PC12     | Aeroplane
-  HB-JJT       | C680     | Aeroplane
-  HB-KBP       | DR40     | Aeroplane
-  HB-VSL5      | PC24     | Aeroplane
-  HB-VSO4      | PC24     | Aeroplane
-  HB-ZNW       | B407     | Helicopter
-
-✏️  MODIFIED AIRCRAFT (1)
-----------------------------------------------------------------------
-  HB-JLQ:
-    mtom: 73500 → 77000
+  HB-1000      | GLID     | Glider
+  HB-1016      | GLID     | Glider
+  HB-1029      | GLID     | Glider
+  HB-1036      | GLID     | Glider
+  HB-1043      | GLID     | Glider
+  HB-1052      | GLID     | Glider
+  HB-1055      | GLID     | Glider
+  HB-1066      | GLID     | Glider
+  HB-1080      | GLID     | Glider
+  HB-1082      | GLID     | Glider
+  ... and 3098 more
 
 ======================================================================
 NEXT STEPS:
