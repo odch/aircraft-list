@@ -220,7 +220,12 @@ class AircraftSyncer:
             
             # Parse CSV
             aircraft_list = self.parse_csv_data(csv_content)
-            print(f"Parsed {len(aircraft_list)} aircraft from CSV")
+
+            if len(aircraft_list) == 0:
+                print(f"CSV download contained 0 aircraft, which cannot be correct. Aborting...")
+                exit(1)
+            else:
+                print(f"Parsed {len(aircraft_list)} aircraft from CSV")
             
             # Apply overrides
             aircraft_list = self.apply_overrides(aircraft_list)
