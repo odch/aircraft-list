@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-01-29T11:22:00.000000+00:00",
-  "total_count": 3123,
+  "last_updated": "2026-02-04T20:41:00.000000+00:00",
+  "total_count": 3124,
   "aircraft": [
     {
       "registration": "D-0074",
@@ -14,6 +14,12 @@
       "icao_aircraft_type": "F900",
       "aircraft_type": "Aeroplane",
       "mtom": 22226
+    },
+    {
+      "registration": "D-HIPY",
+      "icao_aircraft_type": "B06",
+      "aircraft_type": "Helicopter",
+      "mtom": 1451
     },
     {
       "registration": "D-KACB",

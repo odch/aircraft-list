@@ -12,6 +12,11 @@
     "aircraft_type": "Aeroplane",
     "mtom": 22226
   },
+  "D-HIPY": {
+    "icao_aircraft_type": "B06",
+    "aircraft_type": "Helicopter",
+    "mtom": 1451
+  },
   "D-KACB": {
     "icao_aircraft_type": "GLID",
     "aircraft_type": "Glider",
