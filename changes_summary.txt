@@ -6,33 +6,47 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
-            Updated: 2026-02-02T06:56:37.176743+00:00
-            Count:   15
+            Updated: 2026-02-23T06:57:50.795909+00:00
+            Count:   3,126
 
 Production: aircraft.json
-            Version: 1.0.27
-            Updated: 2026-01-29T11:22:00.000000+00:00
-            Count:   3,123
+            Version: 1.0.28
+            Updated: 2026-02-04T20:41:00.000000+00:00
+            Count:   3,124
 
 CHANGE STATISTICS:
-  Added aircraft:         0
-  Removed aircraft:   3,108
+  Added aircraft:        22
+  Removed aircraft:      20
   Modified aircraft:      0
-  Total changes:      3,108
+  Total changes:         42
 
-🗑️  REMOVED AIRCRAFT (3108)
+📍 ADDED AIRCRAFT (22)
 ----------------------------------------------------------------------
-  HB-1000      | GLID     | Glider
-  HB-1016      | GLID     | Glider
-  HB-1029      | GLID     | Glider
-  HB-1036      | GLID     | Glider
-  HB-1043      | GLID     | Glider
-  HB-1052      | GLID     | Glider
-  HB-1055      | GLID     | Glider
-  HB-1066      | GLID     | Glider
-  HB-1080      | GLID     | Glider
-  HB-1082      | GLID     | Glider
-  ... and 3098 more
+  HB-BDW       | BALL     | Balloon (Hot-air)
+  HB-BOX       | BALL     | Balloon (Hot-air)
+  HB-DZH       | M20P     | Aeroplane
+  HB-EBR       | BR23     | Aeroplane
+  HB-FRX27     | PC12     | Aeroplane
+  HB-FRZ27     | PC12     | Aeroplane
+  HB-FSB27     | PC12     | Aeroplane
+  HB-FSD26     | PC12     | Aeroplane
+  HB-FSF27     | PC12     | Aeroplane
+  HB-FSG27     | PC12     | Aeroplane
+  ... and 12 more
+
+🗑️  REMOVED AIRCRAFT (20)
+----------------------------------------------------------------------
+  HB-2626      | JS3E     | Powered Glider
+  HB-ALM       | AT72     | Aeroplane
+  HB-FRK27     | PC12     | Aeroplane
+  HB-FRO24     | PC12     | Aeroplane
+  HB-FRP23     | PC12     | Aeroplane
+  HB-FRQ23     | PC12     | Aeroplane
+  HB-FRR23     | PC12     | Aeroplane
+  HB-FRY26     | PC12     | Aeroplane
+  HB-GKB       | BE20     | Aeroplane
+  HB-HWA4      | PC21     | Aeroplane
+  ... and 10 more
 
 ======================================================================
 NEXT STEPS:
