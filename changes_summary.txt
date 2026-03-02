@@ -6,47 +6,33 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-03-02T06:50:32.135258+00:00
+            Count:   3,130
+
+Production: aircraft.json
+            Version: 1.0.29
             Updated: 2026-02-23T06:57:50.795909+00:00
             Count:   3,126
 
-Production: aircraft.json
-            Version: 1.0.28
-            Updated: 2026-02-04T20:41:00.000000+00:00
-            Count:   3,124
-
 CHANGE STATISTICS:
-  Added aircraft:        22
-  Removed aircraft:      20
+  Added aircraft:         6
+  Removed aircraft:       2
   Modified aircraft:      0
-  Total changes:         42
+  Total changes:          8
 
-📍 ADDED AIRCRAFT (22)
+📍 ADDED AIRCRAFT (6)
 ----------------------------------------------------------------------
-  HB-BDW       | BALL     | Balloon (Hot-air)
-  HB-BOX       | BALL     | Balloon (Hot-air)
-  HB-DZH       | M20P     | Aeroplane
-  HB-EBR       | BR23     | Aeroplane
-  HB-FRX27     | PC12     | Aeroplane
-  HB-FRZ27     | PC12     | Aeroplane
-  HB-FSB27     | PC12     | Aeroplane
-  HB-FSD26     | PC12     | Aeroplane
-  HB-FSF27     | PC12     | Aeroplane
-  HB-FSG27     | PC12     | Aeroplane
-  ... and 12 more
+  HB-FSI27     | PC12     | Aeroplane
+  HB-FSL27     | PC12     | Aeroplane
+  HB-FSN27     | PC12     | Aeroplane
+  HB-HXD5      | PC21     | Aeroplane
+  HB-TIN       | EC45     | Helicopter
+  HB-VUD5      | PC24     | Aeroplane
 
-🗑️  REMOVED AIRCRAFT (20)
+🗑️  REMOVED AIRCRAFT (2)
 ----------------------------------------------------------------------
-  HB-2626      | JS3E     | Powered Glider
-  HB-ALM       | AT72     | Aeroplane
-  HB-FRK27     | PC12     | Aeroplane
-  HB-FRO24     | PC12     | Aeroplane
-  HB-FRP23     | PC12     | Aeroplane
-  HB-FRQ23     | PC12     | Aeroplane
-  HB-FRR23     | PC12     | Aeroplane
-  HB-FRY26     | PC12     | Aeroplane
-  HB-GKB       | BE20     | Aeroplane
-  HB-HWA4      | PC21     | Aeroplane
-  ... and 10 more
+  HB-IJK       | A320     | Aeroplane
+  HB-VWX       | C510     | Aeroplane
 
 ======================================================================
 NEXT STEPS:
