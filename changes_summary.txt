@@ -6,33 +6,38 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-03-09T06:54:49.445003+00:00
+            Count:   3,127
+
+Production: aircraft.json
+            Version: 1.0.30
             Updated: 2026-03-02T06:50:32.135258+00:00
             Count:   3,130
 
-Production: aircraft.json
-            Version: 1.0.29
-            Updated: 2026-02-23T06:57:50.795909+00:00
-            Count:   3,126
-
 CHANGE STATISTICS:
-  Added aircraft:         6
-  Removed aircraft:       2
+  Added aircraft:         5
+  Removed aircraft:       8
   Modified aircraft:      0
-  Total changes:          8
+  Total changes:         13
 
-📍 ADDED AIRCRAFT (6)
+📍 ADDED AIRCRAFT (5)
 ----------------------------------------------------------------------
-  HB-FSI27     | PC12     | Aeroplane
-  HB-FSL27     | PC12     | Aeroplane
-  HB-FSN27     | PC12     | Aeroplane
-  HB-HXD5      | PC21     | Aeroplane
-  HB-TIN       | EC45     | Helicopter
-  HB-VUD5      | PC24     | Aeroplane
+  HB-FSM27     | PC12     | Aeroplane
+  HB-FSP25     | PC12     | Aeroplane
+  HB-TIO       | EC45     | Helicopter
+  HB-VUE5      | PC24     | Aeroplane
+  HB-YPY       | RV14     | Homebuilt Airplane
 
-🗑️  REMOVED AIRCRAFT (2)
+🗑️  REMOVED AIRCRAFT (8)
 ----------------------------------------------------------------------
-  HB-IJK       | A320     | Aeroplane
-  HB-VWX       | C510     | Aeroplane
+  HB-FRT23     | PC12     | Aeroplane
+  HB-FRV27     | PC12     | Aeroplane
+  HB-FRX27     | PC12     | Aeroplane
+  HB-FUD       | PC12     | Aeroplane
+  HB-PNX       | P32R     | Aeroplane
+  HB-VST5      | PC24     | Aeroplane
+  HB-VSV5      | PC24     | Aeroplane
+  HB-ZWH       | R66      | Helicopter
 
 ======================================================================
 NEXT STEPS:
