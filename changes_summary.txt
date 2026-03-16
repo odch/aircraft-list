@@ -6,38 +6,42 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-03-16T07:09:16.322288+00:00
+            Count:   3,122
+
+Production: aircraft.json
+            Version: 1.0.31
             Updated: 2026-03-09T06:54:49.445003+00:00
             Count:   3,127
 
-Production: aircraft.json
-            Version: 1.0.30
-            Updated: 2026-03-02T06:50:32.135258+00:00
-            Count:   3,130
-
 CHANGE STATISTICS:
-  Added aircraft:         5
-  Removed aircraft:       8
+  Added aircraft:         6
+  Removed aircraft:      11
   Modified aircraft:      0
-  Total changes:         13
+  Total changes:         17
 
-📍 ADDED AIRCRAFT (5)
+📍 ADDED AIRCRAFT (6)
 ----------------------------------------------------------------------
-  HB-FSM27     | PC12     | Aeroplane
-  HB-FSP25     | PC12     | Aeroplane
-  HB-TIO       | EC45     | Helicopter
-  HB-VUE5      | PC24     | Aeroplane
-  HB-YPY       | RV14     | Homebuilt Airplane
+  HB-FSO26     | PC12     | Aeroplane
+  HB-FSQ27     | PC12     | Aeroplane
+  HB-KNI       | P208     | Aeroplane
+  HB-KNS       | P208     | Aeroplane
+  HB-WEF       | AC4      | Aeroplane
+  HB-YPK       | RV10     | Homebuilt Airplane
 
-🗑️  REMOVED AIRCRAFT (8)
+🗑️  REMOVED AIRCRAFT (11)
 ----------------------------------------------------------------------
-  HB-FRT23     | PC12     | Aeroplane
-  HB-FRV27     | PC12     | Aeroplane
-  HB-FRX27     | PC12     | Aeroplane
-  HB-FUD       | PC12     | Aeroplane
-  HB-PNX       | P32R     | Aeroplane
-  HB-VST5      | PC24     | Aeroplane
-  HB-VSV5      | PC24     | Aeroplane
-  HB-ZWH       | R66      | Helicopter
+  HB-1896      | GLID     | Glider
+  HB-DGE       | M20T     | Aeroplane
+  HB-EYP       | R100     | Aeroplane
+  HB-FSA26     | PC12     | Aeroplane
+  HB-IJM       | A320     | Aeroplane
+  HB-JES       | GLF5     | Aeroplane
+  HB-QSD       | BALL     | Balloon (Hot-air)
+  HB-SYI       | PIVE     | Aeroplane
+  HB-TDH       | C208     | Aeroplane
+  HB-VZX4      | PC24     | Aeroplane
+  ... and 1 more
 
 ======================================================================
 NEXT STEPS:
