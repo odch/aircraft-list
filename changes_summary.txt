@@ -6,42 +6,37 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-03-23T07:02:52.795637+00:00
+            Count:   3,126
+
+Production: aircraft.json
+            Version: 1.0.32
             Updated: 2026-03-16T07:09:16.322288+00:00
             Count:   3,122
 
-Production: aircraft.json
-            Version: 1.0.31
-            Updated: 2026-03-09T06:54:49.445003+00:00
-            Count:   3,127
-
 CHANGE STATISTICS:
-  Added aircraft:         6
-  Removed aircraft:      11
+  Added aircraft:         8
+  Removed aircraft:       4
   Modified aircraft:      0
-  Total changes:         17
+  Total changes:         12
 
-📍 ADDED AIRCRAFT (6)
+📍 ADDED AIRCRAFT (8)
 ----------------------------------------------------------------------
-  HB-FSO26     | PC12     | Aeroplane
-  HB-FSQ27     | PC12     | Aeroplane
-  HB-KNI       | P208     | Aeroplane
-  HB-KNS       | P208     | Aeroplane
-  HB-WEF       | AC4      | Aeroplane
-  HB-YPK       | RV10     | Homebuilt Airplane
-
-🗑️  REMOVED AIRCRAFT (11)
-----------------------------------------------------------------------
-  HB-1896      | GLID     | Glider
-  HB-DGE       | M20T     | Aeroplane
-  HB-EYP       | R100     | Aeroplane
+  HB-FQC26     | PC12     | Aeroplane
   HB-FSA26     | PC12     | Aeroplane
-  HB-IJM       | A320     | Aeroplane
-  HB-JES       | GLF5     | Aeroplane
-  HB-QSD       | BALL     | Balloon (Hot-air)
-  HB-SYI       | PIVE     | Aeroplane
-  HB-TDH       | C208     | Aeroplane
-  HB-VZX4      | PC24     | Aeroplane
-  ... and 1 more
+  HB-FSK27     | PC12     | Aeroplane
+  HB-FSR27     | PC12     | Aeroplane
+  HB-VUG5      | PC24     | Aeroplane
+  HB-WEP       | AC4      | Aeroplane
+  HB-ZXU       | G2CA     | Helicopter
+  HB-ZYX       | G2CA     | Helicopter
+
+🗑️  REMOVED AIRCRAFT (4)
+----------------------------------------------------------------------
+  HB-FSD26     | PC12     | Aeroplane
+  HB-FSE26     | PC12     | Aeroplane
+  HB-VUA5      | PC24     | Aeroplane
+  HB-VUB5      | PC24     | Aeroplane
 
 ======================================================================
 NEXT STEPS:
