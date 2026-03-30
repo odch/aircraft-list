@@ -6,37 +6,37 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-03-30T07:19:42.041176+00:00
+            Count:   3,124
+
+Production: aircraft.json
+            Version: 1.0.33
             Updated: 2026-03-23T07:02:52.795637+00:00
             Count:   3,126
 
-Production: aircraft.json
-            Version: 1.0.32
-            Updated: 2026-03-16T07:09:16.322288+00:00
-            Count:   3,122
-
 CHANGE STATISTICS:
-  Added aircraft:         8
-  Removed aircraft:       4
+  Added aircraft:         5
+  Removed aircraft:       7
   Modified aircraft:      0
   Total changes:         12
 
-📍 ADDED AIRCRAFT (8)
+📍 ADDED AIRCRAFT (5)
 ----------------------------------------------------------------------
-  HB-FQC26     | PC12     | Aeroplane
-  HB-FSA26     | PC12     | Aeroplane
-  HB-FSK27     | PC12     | Aeroplane
-  HB-FSR27     | PC12     | Aeroplane
-  HB-VUG5      | PC24     | Aeroplane
-  HB-WEP       | AC4      | Aeroplane
-  HB-ZXU       | G2CA     | Helicopter
-  HB-ZYX       | G2CA     | Helicopter
+  HB-FSS27     | PC12     | Aeroplane
+  HB-FST27     | PC12     | Aeroplane
+  HB-KSL       | TWEN     | Aeroplane
+  HB-LAR       | DA42     | Aeroplane
+  HB-VUI5      | PC24     | Aeroplane
 
-🗑️  REMOVED AIRCRAFT (4)
+🗑️  REMOVED AIRCRAFT (7)
 ----------------------------------------------------------------------
-  HB-FSD26     | PC12     | Aeroplane
-  HB-FSE26     | PC12     | Aeroplane
-  HB-VUA5      | PC24     | Aeroplane
-  HB-VUB5      | PC24     | Aeroplane
+  HB-1909      | GLID     | Glider
+  HB-3144      | GLID     | Glider
+  HB-FRZ27     | PC12     | Aeroplane
+  HB-FSB27     | PC12     | Aeroplane
+  HB-FSF27     | PC12     | Aeroplane
+  HB-VSX5      | PC24     | Aeroplane
+  HB-ZMY       | AS50     | Helicopter
 
 ======================================================================
 NEXT STEPS:
