@@ -6,37 +6,37 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-04-06T07:22:03.167327+00:00
+            Count:   3,128
+
+Production: aircraft.json
+            Version: 1.0.34
             Updated: 2026-03-30T07:19:42.041176+00:00
             Count:   3,124
 
-Production: aircraft.json
-            Version: 1.0.33
-            Updated: 2026-03-23T07:02:52.795637+00:00
-            Count:   3,126
-
 CHANGE STATISTICS:
-  Added aircraft:         5
-  Removed aircraft:       7
+  Added aircraft:         8
+  Removed aircraft:       4
   Modified aircraft:      0
   Total changes:         12
 
-📍 ADDED AIRCRAFT (5)
+📍 ADDED AIRCRAFT (8)
 ----------------------------------------------------------------------
-  HB-FSS27     | PC12     | Aeroplane
-  HB-FST27     | PC12     | Aeroplane
-  HB-KSL       | TWEN     | Aeroplane
-  HB-LAR       | DA42     | Aeroplane
-  HB-VUI5      | PC24     | Aeroplane
+  HB-FSU27     | PC12     | Aeroplane
+  HB-FSW27     | PC12     | Aeroplane
+  HB-FSZ25     | PC12     | Aeroplane
+  HB-JAA       | FA8X     | Aeroplane
+  HB-SFC       | DA40     | Aeroplane
+  HB-VUH5      | PC24     | Aeroplane
+  HB-VUK5      | PC24     | Aeroplane
+  HB-YHC       | GLAS     | Homebuilt Airplane
 
-🗑️  REMOVED AIRCRAFT (7)
+🗑️  REMOVED AIRCRAFT (4)
 ----------------------------------------------------------------------
-  HB-1909      | GLID     | Glider
-  HB-3144      | GLID     | Glider
-  HB-FRZ27     | PC12     | Aeroplane
-  HB-FSB27     | PC12     | Aeroplane
-  HB-FSF27     | PC12     | Aeroplane
-  HB-VSX5      | PC24     | Aeroplane
-  HB-ZMY       | AS50     | Helicopter
+  HB-FSG27     | PC12     | Aeroplane
+  HB-FSI27     | PC12     | Aeroplane
+  HB-FSL27     | PC12     | Aeroplane
+  HB-XSK       | H269     | Helicopter
 
 ======================================================================
 NEXT STEPS:
