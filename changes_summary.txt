@@ -6,37 +6,32 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-04-13T07:54:24.949263+00:00
+            Count:   3,131
+
+Production: aircraft.json
+            Version: 1.0.35
             Updated: 2026-04-06T07:22:03.167327+00:00
             Count:   3,128
 
-Production: aircraft.json
-            Version: 1.0.34
-            Updated: 2026-03-30T07:19:42.041176+00:00
-            Count:   3,124
-
 CHANGE STATISTICS:
-  Added aircraft:         8
-  Removed aircraft:       4
+  Added aircraft:         5
+  Removed aircraft:       2
   Modified aircraft:      0
-  Total changes:         12
+  Total changes:          7
 
-📍 ADDED AIRCRAFT (8)
+📍 ADDED AIRCRAFT (5)
 ----------------------------------------------------------------------
-  HB-FSU27     | PC12     | Aeroplane
-  HB-FSW27     | PC12     | Aeroplane
-  HB-FSZ25     | PC12     | Aeroplane
-  HB-JAA       | FA8X     | Aeroplane
-  HB-SFC       | DA40     | Aeroplane
-  HB-VUH5      | PC24     | Aeroplane
-  HB-VUK5      | PC24     | Aeroplane
-  HB-YHC       | GLAS     | Homebuilt Airplane
+  HB-FQN27     | PC12     | Aeroplane
+  HB-FSV26     | PC12     | Aeroplane
+  HB-FSX27     | PC12     | Aeroplane
+  HB-HXE5      | PC21     | Aeroplane
+  HB-JDL       | A20N     | Aeroplane
 
-🗑️  REMOVED AIRCRAFT (4)
+🗑️  REMOVED AIRCRAFT (2)
 ----------------------------------------------------------------------
-  HB-FSG27     | PC12     | Aeroplane
-  HB-FSI27     | PC12     | Aeroplane
-  HB-FSL27     | PC12     | Aeroplane
-  HB-XSK       | H269     | Helicopter
+  HB-FSH27     | PC12     | Aeroplane
+  HB-VSY4      | PC24     | Aeroplane
 
 ======================================================================
 NEXT STEPS:
