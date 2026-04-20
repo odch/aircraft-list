@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-04-13T07:54:24.949263+00:00",
-  "total_count": 3131,
+  "last_updated": "2026-04-20T07:57:34.889934+00:00",
+  "total_count": 3129,
   "aircraft": [
     {
       "registration": "D-0074",
@@ -1150,6 +1150,12 @@
       "mtom": 430
     },
     {
+      "registration": "HB-2130",
+      "icao_aircraft_type": "ZZZZ",
+      "aircraft_type": "Powered Glider",
+      "mtom": 297
+    },
+    {
       "registration": "HB-2132",
       "icao_aircraft_type": "AS25",
       "aircraft_type": "Powered Glider",
@@ -2144,6 +2150,12 @@
       "icao_aircraft_type": "ARCP",
       "aircraft_type": "Powered Glider",
       "mtom": 850
+    },
+    {
+      "registration": "HB-2530",
+      "icao_aircraft_type": "AS29",
+      "aircraft_type": "Powered Glider",
+      "mtom": 600
     },
     {
       "registration": "HB-2531",
@@ -6869,12 +6881,6 @@
     },
     {
       "registration": "HB-FSN27",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
-      "registration": "HB-FSO26",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
       "mtom": 4740
@@ -12400,12 +12406,6 @@
       "mtom": 952
     },
     {
-      "registration": "HB-QPU",
-      "icao_aircraft_type": "BALL",
-      "aircraft_type": "Balloon (Hot-air)",
-      "mtom": 1690
-    },
-    {
       "registration": "HB-QPW",
       "icao_aircraft_type": "BALL",
       "aircraft_type": "Balloon (Hot-air)",
@@ -13346,12 +13346,6 @@
       "icao_aircraft_type": "BALL",
       "aircraft_type": "Balloon (Hot-air)",
       "mtom": 1173
-    },
-    {
-      "registration": "HB-QZB",
-      "icao_aircraft_type": "BALL",
-      "aircraft_type": "Balloon (Hot-air)",
-      "mtom": 1850
     },
     {
       "registration": "HB-QZC",
@@ -17348,12 +17342,6 @@
       "icao_aircraft_type": "EC20",
       "aircraft_type": "Helicopter",
       "mtom": 1715
-    },
-    {
-      "registration": "HB-ZHG",
-      "icao_aircraft_type": "A109",
-      "aircraft_type": "Helicopter",
-      "mtom": 2600
     },
     {
       "registration": "HB-ZHH",

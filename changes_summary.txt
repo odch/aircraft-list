@@ -6,32 +6,31 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-04-20T07:57:34.889934+00:00
+            Count:   3,129
+
+Production: aircraft.json
+            Version: 1.0.36
             Updated: 2026-04-13T07:54:24.949263+00:00
             Count:   3,131
 
-Production: aircraft.json
-            Version: 1.0.35
-            Updated: 2026-04-06T07:22:03.167327+00:00
-            Count:   3,128
-
 CHANGE STATISTICS:
-  Added aircraft:         5
-  Removed aircraft:       2
+  Added aircraft:         2
+  Removed aircraft:       4
   Modified aircraft:      0
-  Total changes:          7
+  Total changes:          6
 
-📍 ADDED AIRCRAFT (5)
+📍 ADDED AIRCRAFT (2)
 ----------------------------------------------------------------------
-  HB-FQN27     | PC12     | Aeroplane
-  HB-FSV26     | PC12     | Aeroplane
-  HB-FSX27     | PC12     | Aeroplane
-  HB-HXE5      | PC21     | Aeroplane
-  HB-JDL       | A20N     | Aeroplane
+  HB-2130      | ZZZZ     | Powered Glider
+  HB-2530      | AS29     | Powered Glider
 
-🗑️  REMOVED AIRCRAFT (2)
+🗑️  REMOVED AIRCRAFT (4)
 ----------------------------------------------------------------------
-  HB-FSH27     | PC12     | Aeroplane
-  HB-VSY4      | PC24     | Aeroplane
+  HB-FSO26     | PC12     | Aeroplane
+  HB-QPU       | BALL     | Balloon (Hot-air)
+  HB-QZB       | BALL     | Balloon (Hot-air)
+  HB-ZHG       | A109     | Helicopter
 
 ======================================================================
 NEXT STEPS:
