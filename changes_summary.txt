@@ -6,31 +6,39 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
-            Updated: 2026-04-20T07:57:34.889934+00:00
+            Updated: 2026-04-27T08:12:03.440246+00:00
             Count:   3,129
 
 Production: aircraft.json
-            Version: 1.0.36
-            Updated: 2026-04-13T07:54:24.949263+00:00
-            Count:   3,131
+            Version: 1.0.37
+            Updated: 2026-04-20T07:57:34.889934+00:00
+            Count:   3,129
 
 CHANGE STATISTICS:
-  Added aircraft:         2
-  Removed aircraft:       4
+  Added aircraft:         7
+  Removed aircraft:       7
   Modified aircraft:      0
-  Total changes:          6
+  Total changes:         14
 
-📍 ADDED AIRCRAFT (2)
+📍 ADDED AIRCRAFT (7)
 ----------------------------------------------------------------------
-  HB-2130      | ZZZZ     | Powered Glider
-  HB-2530      | AS29     | Powered Glider
+  HB-FQO28     | PC12     | Aeroplane
+  HB-FQP28     | PC12     | Aeroplane
+  HB-FQQ28     | PC12     | Aeroplane
+  HB-FSY26     | PC12     | Aeroplane
+  HB-MTC       | E300     | Aeroplane
+  HB-VUF4      | PC24     | Aeroplane
+  HB-VUJ5      | PC24     | Aeroplane
 
-🗑️  REMOVED AIRCRAFT (4)
+🗑️  REMOVED AIRCRAFT (7)
 ----------------------------------------------------------------------
-  HB-FSO26     | PC12     | Aeroplane
-  HB-QPU       | BALL     | Balloon (Hot-air)
-  HB-QZB       | BALL     | Balloon (Hot-air)
-  HB-ZHG       | A109     | Helicopter
+  HB-1439      | GLID     | Glider
+  HB-FSA26     | PC12     | Aeroplane
+  HB-FSK27     | PC12     | Aeroplane
+  HB-FSM27     | PC12     | Aeroplane
+  HB-FUC       | PC12     | Aeroplane
+  HB-KWM       | S22T     | Aeroplane
+  HB-SYM       | PIVE     | Aeroplane
 
 ======================================================================
 NEXT STEPS:
