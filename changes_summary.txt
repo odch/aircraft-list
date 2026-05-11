@@ -6,37 +6,43 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-05-11T09:30:18.337496+00:00
+            Count:   3,136
+
+Production: aircraft.json
+            Version: 1.0.39
             Updated: 2026-05-04T08:22:29.629189+00:00
             Count:   3,131
 
-Production: aircraft.json
-            Version: 1.0.38
-            Updated: 2026-04-27T08:12:03.440246+00:00
-            Count:   3,129
-
 CHANGE STATISTICS:
-  Added aircraft:         7
-  Removed aircraft:       5
-  Modified aircraft:      0
-  Total changes:         12
+  Added aircraft:         8
+  Removed aircraft:       3
+  Modified aircraft:      2
+  Total changes:         13
 
-📍 ADDED AIRCRAFT (7)
+📍 ADDED AIRCRAFT (8)
 ----------------------------------------------------------------------
-  HB-ECH       | BR23     | Aeroplane
-  HB-FOX       | PC12     | Aeroplane
-  HB-FQR28     | PC12     | Aeroplane
-  HB-TGK       | C182     | Aeroplane
-  HB-VUL5      | PC24     | Aeroplane
-  HB-XLR       | R44      | Helicopter
-  HB-XTE       | EC35     | Helicopter
+  HB-2572      | JS3E     | Powered Glider
+  HB-FGR       | PC12     | Aeroplane
+  HB-FQS26     | PC12     | Aeroplane
+  HB-FQT28     | PC12     | Aeroplane
+  HB-FQV28     | PC12     | Aeroplane
+  HB-JTP       | FA6X     | Aeroplane
+  HB-SGJ       | DA40     | Aeroplane
+  HB-YAK       | GLST     | Homebuilt Airplane
 
-🗑️  REMOVED AIRCRAFT (5)
+🗑️  REMOVED AIRCRAFT (3)
 ----------------------------------------------------------------------
-  HB-FSJ26     | PC12     | Aeroplane
-  HB-FST27     | PC12     | Aeroplane
-  HB-MAA       | XA42     | Aeroplane
-  HB-OHC       | P28A     | Aeroplane
-  HB-VSW5      | PC24     | Aeroplane
+  HB-FSR27     | PC12     | Aeroplane
+  HB-FSS27     | PC12     | Aeroplane
+  HB-FSZ25     | PC12     | Aeroplane
+
+✏️  MODIFIED AIRCRAFT (2)
+----------------------------------------------------------------------
+  HB-SHW:
+    aircraft_type: Aeroplane → Homebuilt Airplane
+  HB-STU:
+    aircraft_type: Aeroplane → Homebuilt Airplane
 
 ======================================================================
 NEXT STEPS:
