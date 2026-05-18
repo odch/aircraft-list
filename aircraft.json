@@ -1,7 +1,7 @@
 {
-  "version": "1.0.40",
-  "last_updated": "2026-05-11T09:30:18.337496+00:00",
-  "total_count": 3136,
+  "version": "1.0.41",
+  "last_updated": "2026-05-18T09:50:40.861484+00:00",
+  "total_count": 3139,
   "aircraft": [
     {
       "registration": "D-0074",
@@ -6514,6 +6514,12 @@
       "mtom": 1043
     },
     {
+      "registration": "HB-ETX",
+      "icao_aircraft_type": "BR23",
+      "aircraft_type": "Aeroplane",
+      "mtom": 750
+    },
+    {
       "registration": "HB-EUO",
       "icao_aircraft_type": "DR10",
       "aircraft_type": "Aeroplane",
@@ -6694,6 +6700,12 @@
       "mtom": 2200
     },
     {
+      "registration": "HB-FDK",
+      "icao_aircraft_type": "PC12",
+      "aircraft_type": "Aeroplane",
+      "mtom": 4740
+    },
+    {
       "registration": "HB-FEM",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
@@ -6862,12 +6874,6 @@
       "mtom": 4740
     },
     {
-      "registration": "HB-FQN27",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
       "registration": "HB-FQO28",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
@@ -6904,7 +6910,25 @@
       "mtom": 4740
     },
     {
+      "registration": "HB-FQU28",
+      "icao_aircraft_type": "PC12",
+      "aircraft_type": "Aeroplane",
+      "mtom": 4740
+    },
+    {
       "registration": "HB-FQV28",
+      "icao_aircraft_type": "PC12",
+      "aircraft_type": "Aeroplane",
+      "mtom": 4740
+    },
+    {
+      "registration": "HB-FQW28",
+      "icao_aircraft_type": "PC12",
+      "aircraft_type": "Aeroplane",
+      "mtom": 4740
+    },
+    {
+      "registration": "HB-FQX27",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
       "mtom": 4740
@@ -6922,18 +6946,6 @@
       "mtom": 4740
     },
     {
-      "registration": "HB-FSP25",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
-      "registration": "HB-FSQ27",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
       "registration": "HB-FSU27",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
@@ -6941,12 +6953,6 @@
     },
     {
       "registration": "HB-FSV26",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
-      "registration": "HB-FSW27",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
       "mtom": 4740
@@ -7484,6 +7490,12 @@
       "icao_aircraft_type": "A321",
       "aircraft_type": "Aeroplane",
       "mtom": 83000
+    },
+    {
+      "registration": "HB-IPP",
+      "icao_aircraft_type": "GA7C",
+      "aircraft_type": "Aeroplane",
+      "mtom": 48806
     },
     {
       "registration": "HB-ISB",
@@ -10838,12 +10850,6 @@
       "icao_aircraft_type": "PA24",
       "aircraft_type": "Aeroplane",
       "mtom": 1315
-    },
-    {
-      "registration": "HB-OTW",
-      "icao_aircraft_type": "PA24",
-      "aircraft_type": "Aeroplane",
-      "mtom": 1361
     },
     {
       "registration": "HB-OUD",
@@ -14644,12 +14650,6 @@
       "mtom": 748
     },
     {
-      "registration": "HB-UAW",
-      "icao_aircraft_type": "CH7A",
-      "aircraft_type": "Aeroplane",
-      "mtom": 748
-    },
-    {
       "registration": "HB-UAY",
       "icao_aircraft_type": "GC7B",
       "aircraft_type": "Aeroplane",
@@ -15214,12 +15214,6 @@
       "mtom": 8500
     },
     {
-      "registration": "HB-VUD5",
-      "icao_aircraft_type": "PC24",
-      "aircraft_type": "Aeroplane",
-      "mtom": 8500
-    },
-    {
       "registration": "HB-VUE5",
       "icao_aircraft_type": "PC24",
       "aircraft_type": "Aeroplane",
@@ -15263,6 +15257,24 @@
     },
     {
       "registration": "HB-VUL5",
+      "icao_aircraft_type": "PC24",
+      "aircraft_type": "Aeroplane",
+      "mtom": 8500
+    },
+    {
+      "registration": "HB-VUM4",
+      "icao_aircraft_type": "PC24",
+      "aircraft_type": "Aeroplane",
+      "mtom": 8500
+    },
+    {
+      "registration": "HB-VUN5",
+      "icao_aircraft_type": "PC24",
+      "aircraft_type": "Aeroplane",
+      "mtom": 8500
+    },
+    {
+      "registration": "HB-VUP5",
       "icao_aircraft_type": "PC24",
       "aircraft_type": "Aeroplane",
       "mtom": 8500
@@ -15632,6 +15644,12 @@
       "icao_aircraft_type": "AS50",
       "aircraft_type": "Helicopter",
       "mtom": 2250
+    },
+    {
+      "registration": "HB-XGM",
+      "icao_aircraft_type": "R22",
+      "aircraft_type": "Helicopter",
+      "mtom": 621
     },
     {
       "registration": "HB-XHB",
@@ -18820,5 +18838,5 @@
       "mtom": 1300
     }
   ],
-  "released_at": "2026-05-11T09:42:03"
+  "released_at": "2026-05-18T09:52:00"
 }
