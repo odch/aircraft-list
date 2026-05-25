@@ -6,42 +6,42 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-05-25T09:55:25.800138+00:00
+            Count:   3,138
+
+Production: aircraft.json
+            Version: 1.0.41
             Updated: 2026-05-18T09:50:40.861484+00:00
             Count:   3,139
 
-Production: aircraft.json
-            Version: 1.0.40
-            Updated: 2026-05-11T09:30:18.337496+00:00
-            Count:   3,136
-
 CHANGE STATISTICS:
-  Added aircraft:        10
-  Removed aircraft:       7
+  Added aircraft:         8
+  Removed aircraft:       9
   Modified aircraft:      0
   Total changes:         17
 
-📍 ADDED AIRCRAFT (10)
+📍 ADDED AIRCRAFT (8)
 ----------------------------------------------------------------------
-  HB-ETX       | BR23     | Aeroplane
-  HB-FDK       | PC12     | Aeroplane
-  HB-FQU28     | PC12     | Aeroplane
-  HB-FQW28     | PC12     | Aeroplane
-  HB-FQX27     | PC12     | Aeroplane
-  HB-IPP       | GA7C     | Aeroplane
-  HB-VUM4      | PC24     | Aeroplane
-  HB-VUN5      | PC24     | Aeroplane
-  HB-VUP5      | PC24     | Aeroplane
-  HB-XGM       | R22      | Helicopter
+  HB-3482      | GLID     | Glider
+  HB-BTY       | BALL     | Balloon (Hot-air)
+  HB-FQY28     | PC12     | Aeroplane
+  HB-FRA27     | PC12     | Aeroplane
+  HB-VUO5      | PC24     | Aeroplane
+  HB-VUQ5      | PC24     | Aeroplane
+  HB-WNZ       | WT9      | Aeroplane
+  HB-XVS       | R44      | Helicopter
 
-🗑️  REMOVED AIRCRAFT (7)
+🗑️  REMOVED AIRCRAFT (9)
 ----------------------------------------------------------------------
-  HB-FQN27     | PC12     | Aeroplane
-  HB-FSP25     | PC12     | Aeroplane
-  HB-FSQ27     | PC12     | Aeroplane
-  HB-FSW27     | PC12     | Aeroplane
-  HB-OTW       | PA24     | Aeroplane
-  HB-UAW       | CH7A     | Aeroplane
-  HB-VUD5      | PC24     | Aeroplane
+  HB-1491      | GLID     | Glider
+  HB-3047      | GLID     | Glider
+  HB-443       | GLID     | Glider
+  HB-FSV26     | PC12     | Aeroplane
+  HB-FSX27     | PC12     | Aeroplane
+  HB-FUE       | PC12     | Aeroplane
+  HB-JJJ       | A319     | Aeroplane
+  HB-SYQ       | PIVE     | Aeroplane
+  HB-VSZ5      | PC24     | Aeroplane
 
 ======================================================================
 NEXT STEPS:
