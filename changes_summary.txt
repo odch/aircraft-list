@@ -6,42 +6,33 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
-            Updated: 2026-05-25T09:55:25.800138+00:00
+            Updated: 2026-06-01T11:20:46.880246+00:00
             Count:   3,138
 
 Production: aircraft.json
-            Version: 1.0.41
-            Updated: 2026-05-18T09:50:40.861484+00:00
-            Count:   3,139
+            Version: 1.0.42
+            Updated: 2026-05-25T09:55:25.800138+00:00
+            Count:   3,138
 
 CHANGE STATISTICS:
-  Added aircraft:         8
-  Removed aircraft:       9
+  Added aircraft:         4
+  Removed aircraft:       4
   Modified aircraft:      0
-  Total changes:         17
+  Total changes:          8
 
-📍 ADDED AIRCRAFT (8)
+📍 ADDED AIRCRAFT (4)
 ----------------------------------------------------------------------
-  HB-3482      | GLID     | Glider
-  HB-BTY       | BALL     | Balloon (Hot-air)
-  HB-FQY28     | PC12     | Aeroplane
-  HB-FRA27     | PC12     | Aeroplane
-  HB-VUO5      | PC24     | Aeroplane
-  HB-VUQ5      | PC24     | Aeroplane
-  HB-WNZ       | WT9      | Aeroplane
-  HB-XVS       | R44      | Helicopter
+  HB-FQZ28     | PC12     | Aeroplane
+  HB-FRB28     | PC12     | Aeroplane
+  HB-PGR       | P28A     | Aeroplane
+  HB-VBQ       | PC24     | Aeroplane
 
-🗑️  REMOVED AIRCRAFT (9)
+🗑️  REMOVED AIRCRAFT (4)
 ----------------------------------------------------------------------
-  HB-1491      | GLID     | Glider
-  HB-3047      | GLID     | Glider
-  HB-443       | GLID     | Glider
-  HB-FSV26     | PC12     | Aeroplane
-  HB-FSX27     | PC12     | Aeroplane
-  HB-FUE       | PC12     | Aeroplane
-  HB-JJJ       | A319     | Aeroplane
-  HB-SYQ       | PIVE     | Aeroplane
-  HB-VSZ5      | PC24     | Aeroplane
+  HB-FQP28     | PC12     | Aeroplane
+  HB-FSN27     | PC12     | Aeroplane
+  HB-VMS       | C68A     | Aeroplane
+  HB-XFX       | AS50     | Helicopter
 
 ======================================================================
 NEXT STEPS:
