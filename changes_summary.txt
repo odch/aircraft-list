@@ -6,34 +6,43 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-06-15T11:52:37.865689+00:00
+            Count:   3,136
+
+Production: aircraft.json
+            Version: 1.0.44
             Updated: 2026-06-08T10:25:20.005684+00:00
             Count:   3,141
 
-Production: aircraft.json
-            Version: 1.0.43
-            Updated: 2026-06-01T11:20:46.880246+00:00
-            Count:   3,138
-
 CHANGE STATISTICS:
-  Added aircraft:         6
-  Removed aircraft:       3
-  Modified aircraft:      0
-  Total changes:          9
+  Added aircraft:         4
+  Removed aircraft:       9
+  Modified aircraft:      1
+  Total changes:         14
 
-📍 ADDED AIRCRAFT (6)
+📍 ADDED AIRCRAFT (4)
 ----------------------------------------------------------------------
-  HB-FRC28     | PC12     | Aeroplane
-  HB-FRD28     | PC12     | Aeroplane
-  HB-LZA       | DA42     | Aeroplane
-  HB-SHD       | DV20     | Aeroplane
-  HB-TIP       | EC45     | Helicopter
-  HB-VUS4      | PC24     | Aeroplane
+  HB-FRF27     | PC12     | Aeroplane
+  HB-JOO       | A320     | Aeroplane
+  HB-VUR4      | PC24     | Aeroplane
+  HB-XBB       | EC30     | Helicopter
 
-🗑️  REMOVED AIRCRAFT (3)
+🗑️  REMOVED AIRCRAFT (9)
 ----------------------------------------------------------------------
-  HB-FQQ28     | PC12     | Aeroplane
-  HB-FWA       | PC12     | Aeroplane
-  HB-VUE5      | PC24     | Aeroplane
+  HB-FQO28     | PC12     | Aeroplane
+  HB-FSU27     | PC12     | Aeroplane
+  HB-FUF       | PC12     | Aeroplane
+  HB-FUG       | PC12     | Aeroplane
+  HB-LAV       | DA42     | Aeroplane
+  HB-LUT       | P180     | Aeroplane
+  HB-VUF4      | PC24     | Aeroplane
+  HB-VUI5      | PC24     | Aeroplane
+  HB-VUK5      | PC24     | Aeroplane
+
+✏️  MODIFIED AIRCRAFT (1)
+----------------------------------------------------------------------
+  HB-KIW:
+    mtom: 1542 → 1499
 
 ======================================================================
 NEXT STEPS:
