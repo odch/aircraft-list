@@ -1,7 +1,7 @@
 {
-  "version": "1.0.44",
-  "last_updated": "2026-06-08T10:25:20.005684+00:00",
-  "total_count": 3141,
+  "version": "1.0.45",
+  "last_updated": "2026-06-15T11:52:37.865689+00:00",
+  "total_count": 3136,
   "aircraft": [
     {
       "registration": "D-0074",
@@ -6868,12 +6868,6 @@
       "mtom": 4740
     },
     {
-      "registration": "HB-FQO28",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
       "registration": "HB-FQR28",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
@@ -6952,31 +6946,19 @@
       "mtom": 4740
     },
     {
+      "registration": "HB-FRF27",
+      "icao_aircraft_type": "PC12",
+      "aircraft_type": "Aeroplane",
+      "mtom": 4740
+    },
+    {
       "registration": "HB-FSC26",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
       "mtom": 4740
     },
     {
-      "registration": "HB-FSU27",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
       "registration": "HB-FSY26",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
-      "registration": "HB-FUF",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
-      "registration": "HB-FUG",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
       "mtom": 4740
@@ -8188,6 +8170,12 @@
       "mtom": 75500
     },
     {
+      "registration": "HB-JOO",
+      "icao_aircraft_type": "A320",
+      "aircraft_type": "Aeroplane",
+      "mtom": 77000
+    },
+    {
       "registration": "HB-JOP",
       "icao_aircraft_type": "A320",
       "aircraft_type": "Aeroplane",
@@ -9007,7 +8995,7 @@
       "registration": "HB-KIW",
       "icao_aircraft_type": "BE33",
       "aircraft_type": "Aeroplane",
-      "mtom": 1542
+      "mtom": 1499
     },
     {
       "registration": "HB-KJC",
@@ -9568,12 +9556,6 @@
       "mtom": 1785
     },
     {
-      "registration": "HB-LAV",
-      "icao_aircraft_type": "DA42",
-      "aircraft_type": "Aeroplane",
-      "mtom": 1999
-    },
-    {
       "registration": "HB-LBU",
       "icao_aircraft_type": "P06T",
       "aircraft_type": "Aeroplane",
@@ -9812,12 +9794,6 @@
       "icao_aircraft_type": "P68",
       "aircraft_type": "Aeroplane",
       "mtom": 2084
-    },
-    {
-      "registration": "HB-LUT",
-      "icao_aircraft_type": "P180",
-      "aircraft_type": "Aeroplane",
-      "mtom": 5489
     },
     {
       "registration": "HB-LUU",
@@ -15208,12 +15184,6 @@
       "mtom": 8500
     },
     {
-      "registration": "HB-VUF4",
-      "icao_aircraft_type": "PC24",
-      "aircraft_type": "Aeroplane",
-      "mtom": 8500
-    },
-    {
       "registration": "HB-VUG5",
       "icao_aircraft_type": "PC24",
       "aircraft_type": "Aeroplane",
@@ -15226,19 +15196,7 @@
       "mtom": 8500
     },
     {
-      "registration": "HB-VUI5",
-      "icao_aircraft_type": "PC24",
-      "aircraft_type": "Aeroplane",
-      "mtom": 8500
-    },
-    {
       "registration": "HB-VUJ5",
-      "icao_aircraft_type": "PC24",
-      "aircraft_type": "Aeroplane",
-      "mtom": 8500
-    },
-    {
-      "registration": "HB-VUK5",
       "icao_aircraft_type": "PC24",
       "aircraft_type": "Aeroplane",
       "mtom": 8500
@@ -15275,6 +15233,12 @@
     },
     {
       "registration": "HB-VUQ5",
+      "icao_aircraft_type": "PC24",
+      "aircraft_type": "Aeroplane",
+      "mtom": 8500
+    },
+    {
+      "registration": "HB-VUR4",
       "icao_aircraft_type": "PC24",
       "aircraft_type": "Aeroplane",
       "mtom": 8500
@@ -15596,6 +15560,12 @@
       "icao_aircraft_type": "EC20",
       "aircraft_type": "Helicopter",
       "mtom": 1715
+    },
+    {
+      "registration": "HB-XBB",
+      "icao_aircraft_type": "EC30",
+      "aircraft_type": "Helicopter",
+      "mtom": 2500
     },
     {
       "registration": "HB-XBE",
@@ -18850,5 +18820,5 @@
       "mtom": 1300
     }
   ],
-  "released_at": "2026-06-08T11:19:33"
+  "released_at": "2026-06-15T12:02:52"
 }
