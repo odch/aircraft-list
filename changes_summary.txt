@@ -6,43 +6,47 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-06-22T07:58:52.801786+00:00
+            Count:   3,139
+
+Production: aircraft.json
+            Version: 1.0.45
             Updated: 2026-06-15T11:52:37.865689+00:00
             Count:   3,136
 
-Production: aircraft.json
-            Version: 1.0.44
-            Updated: 2026-06-08T10:25:20.005684+00:00
-            Count:   3,141
-
 CHANGE STATISTICS:
-  Added aircraft:         4
-  Removed aircraft:       9
-  Modified aircraft:      1
-  Total changes:         14
+  Added aircraft:         9
+  Removed aircraft:       6
+  Modified aircraft:      2
+  Total changes:         17
 
-📍 ADDED AIRCRAFT (4)
+📍 ADDED AIRCRAFT (9)
 ----------------------------------------------------------------------
-  HB-FRF27     | PC12     | Aeroplane
-  HB-JOO       | A320     | Aeroplane
-  HB-VUR4      | PC24     | Aeroplane
-  HB-XBB       | EC30     | Helicopter
+  HB-FRE28     | PC12     | Aeroplane
+  HB-FRG28     | PC12     | Aeroplane
+  HB-JET       | E550     | Aeroplane
+  HB-VUT4      | PC24     | Aeroplane
+  HB-VUU5      | PC24     | Aeroplane
+  HB-VUV5      | PC24     | Aeroplane
+  HB-XDG       | AS50     | Helicopter
+  HB-XKX       | AS50     | Helicopter
+  HB-ZEA       | AS50     | Helicopter
 
-🗑️  REMOVED AIRCRAFT (9)
+🗑️  REMOVED AIRCRAFT (6)
 ----------------------------------------------------------------------
-  HB-FQO28     | PC12     | Aeroplane
-  HB-FSU27     | PC12     | Aeroplane
-  HB-FUF       | PC12     | Aeroplane
-  HB-FUG       | PC12     | Aeroplane
-  HB-LAV       | DA42     | Aeroplane
-  HB-LUT       | P180     | Aeroplane
-  HB-VUF4      | PC24     | Aeroplane
-  HB-VUI5      | PC24     | Aeroplane
-  HB-VUK5      | PC24     | Aeroplane
+  HB-FQR28     | PC12     | Aeroplane
+  HB-FQT28     | PC12     | Aeroplane
+  HB-FQV28     | PC12     | Aeroplane
+  HB-FQW28     | PC12     | Aeroplane
+  HB-QKF       | BALL     | Balloon (Gas)
+  HB-VUH5      | PC24     | Aeroplane
 
-✏️  MODIFIED AIRCRAFT (1)
+✏️  MODIFIED AIRCRAFT (2)
 ----------------------------------------------------------------------
+  HB-2506:
+    mtom: 630 → 700
   HB-KIW:
-    mtom: 1542 → 1499
+    mtom: 1499 → 1542
 
 ======================================================================
 NEXT STEPS:
