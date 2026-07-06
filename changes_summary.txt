@@ -6,36 +6,45 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-07-06T07:31:31.794351+00:00
+            Count:   3,145
+
+Production: aircraft.json
+            Version: 1.0.47
             Updated: 2026-06-29T07:41:09.122233+00:00
             Count:   3,140
 
-Production: aircraft.json
-            Version: 1.0.46
-            Updated: 2026-06-22T07:58:52.801786+00:00
-            Count:   3,139
-
 CHANGE STATISTICS:
-  Added aircraft:         6
+  Added aircraft:        10
   Removed aircraft:       5
-  Modified aircraft:      0
-  Total changes:         11
+  Modified aircraft:      1
+  Total changes:         16
 
-📍 ADDED AIRCRAFT (6)
+📍 ADDED AIRCRAFT (10)
 ----------------------------------------------------------------------
-  HB-EKA       | BR23     | Aeroplane
-  HB-KBB       | S22T     | Aeroplane
-  HB-KNE       | P208     | Aeroplane
-  HB-KNF       | P208     | Aeroplane
-  HB-SHE       | DV20     | Aeroplane
-  HB-XIX       | AS50     | Helicopter
+  HB-BAU       | BALL     | Balloon (Hot-air)
+  HB-FRH28     | PC12     | Aeroplane
+  HB-FRI27     | PC12     | Aeroplane
+  HB-FRJ27     | PC12     | Aeroplane
+  HB-FRK28     | PC12     | Aeroplane
+  HB-FRL28     | PC12     | Aeroplane
+  HB-LAO       | DHC6     | Aeroplane
+  HB-NPT       | PIVI     | Aeroplane
+  HB-SHF       | DV20     | Aeroplane
+  HB-VUW5      | PC24     | Aeroplane
 
 🗑️  REMOVED AIRCRAFT (5)
 ----------------------------------------------------------------------
-  HB-FQS26     | PC12     | Aeroplane
-  HB-FQX27     | PC12     | Aeroplane
-  HB-FSY26     | PC12     | Aeroplane
-  HB-KWP       | BE36     | Aeroplane
-  HB-LZT       | DA42     | Aeroplane
+  HB-FQY28     | PC12     | Aeroplane
+  HB-QAC       | BALL     | Balloon (Hot-air)
+  HB-QYZ       | BALL     | Balloon (Hot-air)
+  HB-VUG5      | PC24     | Aeroplane
+  HB-YGO       | JAB4     | Homebuilt Airplane
+
+✏️  MODIFIED AIRCRAFT (1)
+----------------------------------------------------------------------
+  HB-JDB:
+    mtom: 73500 → 77000
 
 ======================================================================
 NEXT STEPS:
