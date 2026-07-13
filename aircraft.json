@@ -1,7 +1,7 @@
 {
-  "version": "1.0.48",
-  "last_updated": "2026-07-06T07:31:31.794351+00:00",
-  "total_count": 3145,
+  "version": "1.0.49",
+  "last_updated": "2026-07-13T08:56:56.716474+00:00",
+  "total_count": 3139,
   "aircraft": [
     {
       "registration": "D-0074",
@@ -4804,6 +4804,12 @@
       "mtom": 770
     },
     {
+      "registration": "HB-BRM",
+      "icao_aircraft_type": "BALL",
+      "aircraft_type": "Balloon (Hot-air)",
+      "mtom": 1270
+    },
+    {
       "registration": "HB-BRZ",
       "icao_aircraft_type": "BALL",
       "aircraft_type": "Balloon (Hot-air)",
@@ -6880,13 +6886,7 @@
       "mtom": 4740
     },
     {
-      "registration": "HB-FQU28",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
-      "registration": "HB-FQZ28",
+      "registration": "HB-FQD28",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
       "mtom": 4740
@@ -6899,12 +6899,6 @@
     },
     {
       "registration": "HB-FRB28",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
-      "registration": "HB-FRC28",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
       "mtom": 4740
@@ -6959,6 +6953,18 @@
     },
     {
       "registration": "HB-FRL28",
+      "icao_aircraft_type": "PC12",
+      "aircraft_type": "Aeroplane",
+      "mtom": 4740
+    },
+    {
+      "registration": "HB-FRM28",
+      "icao_aircraft_type": "PC12",
+      "aircraft_type": "Aeroplane",
+      "mtom": 4740
+    },
+    {
+      "registration": "HB-FRN26",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
       "mtom": 4740
@@ -7792,12 +7798,6 @@
       "mtom": 31751
     },
     {
-      "registration": "HB-JFR",
-      "icao_aircraft_type": "FA7X",
-      "aircraft_type": "Aeroplane",
-      "mtom": 31751
-    },
-    {
       "registration": "HB-JFS",
       "icao_aircraft_type": "FA7X",
       "aircraft_type": "Aeroplane",
@@ -7954,6 +7954,12 @@
       "mtom": 77000
     },
     {
+      "registration": "HB-JKF",
+      "icao_aircraft_type": "GLEX",
+      "aircraft_type": "Aeroplane",
+      "mtom": 45132
+    },
+    {
       "registration": "HB-JKK",
       "icao_aircraft_type": "FA8X",
       "aircraft_type": "Aeroplane",
@@ -7964,12 +7970,6 @@
       "icao_aircraft_type": "GLF6",
       "aircraft_type": "Aeroplane",
       "mtom": 46992
-    },
-    {
-      "registration": "HB-JKR",
-      "icao_aircraft_type": "CL35",
-      "aircraft_type": "Aeroplane",
-      "mtom": 18416
     },
     {
       "registration": "HB-JKV",
@@ -8264,12 +8264,6 @@
       "icao_aircraft_type": "FA8X",
       "aircraft_type": "Aeroplane",
       "mtom": 33112
-    },
-    {
-      "registration": "HB-JTC",
-      "icao_aircraft_type": "F2TH",
-      "aircraft_type": "Aeroplane",
-      "mtom": 18597
     },
     {
       "registration": "HB-JTH",
@@ -8872,12 +8866,6 @@
       "mtom": 750
     },
     {
-      "registration": "HB-KGK",
-      "icao_aircraft_type": "BR23",
-      "aircraft_type": "Aeroplane",
-      "mtom": 750
-    },
-    {
       "registration": "HB-KGN",
       "icao_aircraft_type": "BR23",
       "aircraft_type": "Aeroplane",
@@ -9352,12 +9340,6 @@
       "mtom": 620
     },
     {
-      "registration": "HB-KOR",
-      "icao_aircraft_type": "TBM8",
-      "aircraft_type": "Aeroplane",
-      "mtom": 3354
-    },
-    {
       "registration": "HB-KOV",
       "icao_aircraft_type": "XL2",
       "aircraft_type": "Aeroplane",
@@ -9560,6 +9542,12 @@
       "icao_aircraft_type": "BR23",
       "aircraft_type": "Aeroplane",
       "mtom": 750
+    },
+    {
+      "registration": "HB-KZG",
+      "icao_aircraft_type": "TBM9",
+      "aircraft_type": "Aeroplane",
+      "mtom": 3354
     },
     {
       "registration": "HB-LAL",
@@ -12268,12 +12256,6 @@
       "mtom": 1569
     },
     {
-      "registration": "HB-QNZ",
-      "icao_aircraft_type": "BALL",
-      "aircraft_type": "Balloon (Hot-air)",
-      "mtom": 1450
-    },
-    {
       "registration": "HB-QOB",
       "icao_aircraft_type": "BALL",
       "aircraft_type": "Balloon (Hot-air)",
@@ -13264,6 +13246,12 @@
       "mtom": 727
     },
     {
+      "registration": "HB-QYD",
+      "icao_aircraft_type": "BALL",
+      "aircraft_type": "Balloon (Hot-air)",
+      "mtom": 1365
+    },
+    {
       "registration": "HB-QYH",
       "icao_aircraft_type": "BALL",
       "aircraft_type": "Balloon (Hot-air)",
@@ -13835,12 +13823,6 @@
     },
     {
       "registration": "HB-SDP",
-      "icao_aircraft_type": "DA40",
-      "aircraft_type": "Aeroplane",
-      "mtom": 1150
-    },
-    {
-      "registration": "HB-SDR",
       "icao_aircraft_type": "DA40",
       "aircraft_type": "Aeroplane",
       "mtom": 1150
@@ -15214,31 +15196,13 @@
       "mtom": 8500
     },
     {
-      "registration": "HB-VUL5",
-      "icao_aircraft_type": "PC24",
-      "aircraft_type": "Aeroplane",
-      "mtom": 8500
-    },
-    {
       "registration": "HB-VUM4",
       "icao_aircraft_type": "PC24",
       "aircraft_type": "Aeroplane",
       "mtom": 8500
     },
     {
-      "registration": "HB-VUN5",
-      "icao_aircraft_type": "PC24",
-      "aircraft_type": "Aeroplane",
-      "mtom": 8500
-    },
-    {
       "registration": "HB-VUO5",
-      "icao_aircraft_type": "PC24",
-      "aircraft_type": "Aeroplane",
-      "mtom": 8500
-    },
-    {
-      "registration": "HB-VUP5",
       "icao_aircraft_type": "PC24",
       "aircraft_type": "Aeroplane",
       "mtom": 8500
@@ -15281,6 +15245,12 @@
     },
     {
       "registration": "HB-VUW5",
+      "icao_aircraft_type": "PC24",
+      "aircraft_type": "Aeroplane",
+      "mtom": 8500
+    },
+    {
+      "registration": "HB-VUX5",
       "icao_aircraft_type": "PC24",
       "aircraft_type": "Aeroplane",
       "mtom": 8500
@@ -15680,12 +15650,6 @@
       "icao_aircraft_type": "B06",
       "aircraft_type": "Helicopter",
       "mtom": 1450
-    },
-    {
-      "registration": "HB-XIX",
-      "icao_aircraft_type": "AS50",
-      "aircraft_type": "Helicopter",
-      "mtom": 2250
     },
     {
       "registration": "HB-XJJ",
@@ -18874,5 +18838,5 @@
       "mtom": 1300
     }
   ],
-  "released_at": "2026-07-06T16:54:14"
+  "released_at": "2026-07-13T08:58:54"
 }
