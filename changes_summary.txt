@@ -6,44 +6,35 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-07-20T08:47:23.232547+00:00
+            Count:   3,141
+
+Production: aircraft.json
+            Version: 1.0.49
             Updated: 2026-07-13T08:56:56.716474+00:00
             Count:   3,139
 
-Production: aircraft.json
-            Version: 1.0.48
-            Updated: 2026-07-06T07:31:31.794351+00:00
-            Count:   3,145
-
 CHANGE STATISTICS:
-  Added aircraft:         8
-  Removed aircraft:      14
+  Added aircraft:         6
+  Removed aircraft:       4
   Modified aircraft:      0
-  Total changes:         22
+  Total changes:         10
 
-📍 ADDED AIRCRAFT (8)
+📍 ADDED AIRCRAFT (6)
 ----------------------------------------------------------------------
-  HB-BRM       | BALL     | Balloon (Hot-air)
-  HB-FQD28     | PC12     | Aeroplane
-  HB-FRM28     | PC12     | Aeroplane
-  HB-FRN26     | PC12     | Aeroplane
-  HB-JKF       | GLEX     | Aeroplane
-  HB-KZG       | TBM9     | Aeroplane
-  HB-QYD       | BALL     | Balloon (Hot-air)
-  HB-VUX5      | PC24     | Aeroplane
+  HB-BHB       | BALL     | Balloon (Hot-air)
+  HB-FRO25     | PC12     | Aeroplane
+  HB-FRP24     | PC12     | Aeroplane
+  HB-FRQ24     | PC12     | Aeroplane
+  HB-HKK       | PC7      | Aeroplane
+  HB-VUY5      | PC24     | Aeroplane
 
-🗑️  REMOVED AIRCRAFT (14)
+🗑️  REMOVED AIRCRAFT (4)
 ----------------------------------------------------------------------
-  HB-FQU28     | PC12     | Aeroplane
-  HB-FQZ28     | PC12     | Aeroplane
-  HB-FRC28     | PC12     | Aeroplane
-  HB-JFR       | FA7X     | Aeroplane
-  HB-JKR       | CL35     | Aeroplane
-  HB-JTC       | F2TH     | Aeroplane
-  HB-KGK       | BR23     | Aeroplane
-  HB-KOR       | TBM8     | Aeroplane
-  HB-QNZ       | BALL     | Balloon (Hot-air)
-  HB-SDR       | DA40     | Aeroplane
-  ... and 4 more
+  HB-FRA27     | PC12     | Aeroplane
+  HB-FRE28     | PC12     | Aeroplane
+  HB-FRF27     | PC12     | Aeroplane
+  HB-VUM4      | PC24     | Aeroplane
 
 ======================================================================
 NEXT STEPS:
