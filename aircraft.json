@@ -1,7 +1,7 @@
 {
-  "version": "1.0.51",
-  "last_updated": "2026-07-27T09:38:21.887452+00:00",
-  "total_count": 3143,
+  "version": "1.0.52",
+  "last_updated": "2026-08-03T09:31:43.397735+00:00",
+  "total_count": 3142,
   "aircraft": [
     {
       "registration": "D-0074",
@@ -1682,6 +1682,12 @@
       "icao_aircraft_type": "LAE1",
       "aircraft_type": "Powered Glider",
       "mtom": 660
+    },
+    {
+      "registration": "HB-2415",
+      "icao_aircraft_type": "ARCP",
+      "aircraft_type": "Powered Glider",
+      "mtom": 800
     },
     {
       "registration": "HB-2418",
@@ -6886,12 +6892,6 @@
       "mtom": 4740
     },
     {
-      "registration": "HB-FRB28",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
       "registration": "HB-FRD28",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
@@ -6904,19 +6904,7 @@
       "mtom": 4740
     },
     {
-      "registration": "HB-FRH28",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
       "registration": "HB-FRI27",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
-      "registration": "HB-FRJ27",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
       "mtom": 4740
@@ -6965,6 +6953,24 @@
     },
     {
       "registration": "HB-FRR24",
+      "icao_aircraft_type": "PC12",
+      "aircraft_type": "Aeroplane",
+      "mtom": 4740
+    },
+    {
+      "registration": "HB-FRU27",
+      "icao_aircraft_type": "PC12",
+      "aircraft_type": "Aeroplane",
+      "mtom": 4740
+    },
+    {
+      "registration": "HB-FRV28",
+      "icao_aircraft_type": "PC12",
+      "aircraft_type": "Aeroplane",
+      "mtom": 4740
+    },
+    {
+      "registration": "HB-FRW28",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
       "mtom": 4740
@@ -7796,12 +7802,6 @@
       "icao_aircraft_type": "E50P",
       "aircraft_type": "Aeroplane",
       "mtom": 4750
-    },
-    {
-      "registration": "HB-JFP",
-      "icao_aircraft_type": "GLF6",
-      "aircraft_type": "Aeroplane",
-      "mtom": 46992
     },
     {
       "registration": "HB-JFQ",
@@ -9026,6 +9026,12 @@
       "icao_aircraft_type": "TBM9",
       "aircraft_type": "Aeroplane",
       "mtom": 3454
+    },
+    {
+      "registration": "HB-KJK",
+      "icao_aircraft_type": "BR23",
+      "aircraft_type": "Aeroplane",
+      "mtom": 750
     },
     {
       "registration": "HB-KJR",
@@ -10271,12 +10277,6 @@
     },
     {
       "registration": "HB-NPJ",
-      "icao_aircraft_type": "PIVI",
-      "aircraft_type": "Aeroplane",
-      "mtom": 600
-    },
-    {
-      "registration": "HB-NPN",
       "icao_aircraft_type": "PIVI",
       "aircraft_type": "Aeroplane",
       "mtom": 600
@@ -12020,12 +12020,6 @@
       "icao_aircraft_type": "BALL",
       "aircraft_type": "Balloon (Hot-air)",
       "mtom": 1520
-    },
-    {
-      "registration": "HB-QHI",
-      "icao_aircraft_type": "BALL",
-      "aircraft_type": "Balloon (Hot-air)",
-      "mtom": 760
     },
     {
       "registration": "HB-QIB",
@@ -15232,12 +15226,6 @@
       "mtom": 8500
     },
     {
-      "registration": "HB-VUS4",
-      "icao_aircraft_type": "PC24",
-      "aircraft_type": "Aeroplane",
-      "mtom": 8500
-    },
-    {
       "registration": "HB-VUT4",
       "icao_aircraft_type": "PC24",
       "aircraft_type": "Aeroplane",
@@ -15314,6 +15302,12 @@
       "icao_aircraft_type": "E55P",
       "aircraft_type": "Aeroplane",
       "mtom": 8150
+    },
+    {
+      "registration": "HB-VZA5",
+      "icao_aircraft_type": "PC24",
+      "aircraft_type": "Aeroplane",
+      "mtom": 8500
     },
     {
       "registration": "HB-WAC",
@@ -16255,7 +16249,7 @@
       "registration": "HB-YFW",
       "icao_aircraft_type": "ACAM",
       "aircraft_type": "Homebuilt Airplane",
-      "mtom": 862
+      "mtom": 855
     },
     {
       "registration": "HB-YFX",
@@ -18862,5 +18856,5 @@
       "mtom": 1300
     }
   ],
-  "released_at": "2026-07-27T10:23:29"
+  "released_at": "2026-08-03T20:12:17"
 }
