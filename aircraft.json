@@ -1,7 +1,7 @@
 {
-  "version": "1.0.52",
-  "last_updated": "2026-08-03T09:31:43.397735+00:00",
-  "total_count": 3142,
+  "version": "1.0.53",
+  "last_updated": "2026-08-10T07:18:48.120696+00:00",
+  "total_count": 3139,
   "aircraft": [
     {
       "registration": "D-0074",
@@ -1886,12 +1886,6 @@
       "icao_aircraft_type": "AS26",
       "aircraft_type": "Powered Glider",
       "mtom": 525
-    },
-    {
-      "registration": "HB-2470",
-      "icao_aircraft_type": "ARCP",
-      "aircraft_type": "Powered Glider",
-      "mtom": 800
     },
     {
       "registration": "HB-2471",
@@ -6922,12 +6916,6 @@
       "mtom": 4740
     },
     {
-      "registration": "HB-FRM28",
-      "icao_aircraft_type": "PC12",
-      "aircraft_type": "Aeroplane",
-      "mtom": 4740
-    },
-    {
       "registration": "HB-FRN26",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
@@ -6971,6 +6959,12 @@
     },
     {
       "registration": "HB-FRW28",
+      "icao_aircraft_type": "PC12",
+      "aircraft_type": "Aeroplane",
+      "mtom": 4740
+    },
+    {
+      "registration": "HB-FRX28",
       "icao_aircraft_type": "PC12",
       "aircraft_type": "Aeroplane",
       "mtom": 4740
@@ -10718,12 +10712,6 @@
       "icao_aircraft_type": "P28R",
       "aircraft_type": "Aeroplane",
       "mtom": 1202
-    },
-    {
-      "registration": "HB-OQS",
-      "icao_aircraft_type": "P28A",
-      "aircraft_type": "Aeroplane",
-      "mtom": 1055
     },
     {
       "registration": "HB-OQT",
@@ -15214,18 +15202,6 @@
       "mtom": 8500
     },
     {
-      "registration": "HB-VUQ5",
-      "icao_aircraft_type": "PC24",
-      "aircraft_type": "Aeroplane",
-      "mtom": 8500
-    },
-    {
-      "registration": "HB-VUR4",
-      "icao_aircraft_type": "PC24",
-      "aircraft_type": "Aeroplane",
-      "mtom": 8500
-    },
-    {
       "registration": "HB-VUT4",
       "icao_aircraft_type": "PC24",
       "aircraft_type": "Aeroplane",
@@ -15305,6 +15281,12 @@
     },
     {
       "registration": "HB-VZA5",
+      "icao_aircraft_type": "PC24",
+      "aircraft_type": "Aeroplane",
+      "mtom": 8500
+    },
+    {
+      "registration": "HB-VZB5",
       "icao_aircraft_type": "PC24",
       "aircraft_type": "Aeroplane",
       "mtom": 8500
@@ -18856,5 +18838,5 @@
       "mtom": 1300
     }
   ],
-  "released_at": "2026-08-03T20:12:17"
+  "released_at": "2026-08-10T08:51:11"
 }
