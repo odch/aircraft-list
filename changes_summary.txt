@@ -6,44 +6,33 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-08-24T06:42:54.332021+00:00
+            Count:   3,132
+
+Production: aircraft.json
+            Version: 1.0.54
             Updated: 2026-08-17T06:40:13.778055+00:00
             Count:   3,136
 
-Production: aircraft.json
-            Version: 1.0.53
-            Updated: 2026-08-10T07:18:48.120696+00:00
-            Count:   3,139
-
 CHANGE STATISTICS:
-  Added aircraft:         8
-  Removed aircraft:      11
+  Added aircraft:         2
+  Removed aircraft:       6
   Modified aircraft:      0
-  Total changes:         19
+  Total changes:          8
 
-📍 ADDED AIRCRAFT (8)
+📍 ADDED AIRCRAFT (2)
 ----------------------------------------------------------------------
-  HB-2833      | N/A      | Powered Glider
-  HB-FRY27     | PC12     | Aeroplane
-  HB-FRZ28     | PC12     | Aeroplane
-  HB-FSA27     | PC12     | Aeroplane
-  HB-HCA8      | PC7      | Aeroplane
-  HB-HCB8      | PC7      | Aeroplane
-  HB-JDM       | A20N     | Aeroplane
-  HB-VZC5      | PC24     | Aeroplane
+  HB-FSB28     | PC12     | Aeroplane
+  HB-VZE5      | PC24     | Aeroplane
 
-🗑️  REMOVED AIRCRAFT (11)
+🗑️  REMOVED AIRCRAFT (6)
 ----------------------------------------------------------------------
-  HB-3315      | GLID     | Glider
-  HB-FQB28     | PC12     | Aeroplane
-  HB-FQC26     | PC12     | Aeroplane
-  HB-FRG28     | PC12     | Aeroplane
-  HB-FRI27     | PC12     | Aeroplane
-  HB-FRK28     | PC12     | Aeroplane
-  HB-QRW       | BALL     | Balloon (Hot-air)
-  HB-VUT4      | PC24     | Aeroplane
-  HB-VUU5      | PC24     | Aeroplane
-  HB-XVX       | AS50     | Helicopter
-  ... and 1 more
+  HB-3404      | GLID     | Glider
+  HB-LUZ       | P68      | Aeroplane
+  HB-VUW5      | PC24     | Aeroplane
+  HB-XWR       | AS50     | Helicopter
+  HB-XWS       | AS50     | Helicopter
+  HB-ZTE       | AS50     | Helicopter
 
 ======================================================================
 NEXT STEPS:
