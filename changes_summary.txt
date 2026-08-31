@@ -6,33 +6,45 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
-            Updated: 2026-08-24T06:42:54.332021+00:00
+            Updated: 2026-08-31T12:25:34.720826+00:00
             Count:   3,132
 
 Production: aircraft.json
-            Version: 1.0.54
-            Updated: 2026-08-17T06:40:13.778055+00:00
-            Count:   3,136
+            Version: 1.0.55
+            Updated: 2026-08-24T06:42:54.332021+00:00
+            Count:   3,132
 
 CHANGE STATISTICS:
-  Added aircraft:         2
-  Removed aircraft:       6
+  Added aircraft:        10
+  Removed aircraft:      10
   Modified aircraft:      0
-  Total changes:          8
+  Total changes:         20
 
-📍 ADDED AIRCRAFT (2)
+📍 ADDED AIRCRAFT (10)
 ----------------------------------------------------------------------
-  HB-FSB28     | PC12     | Aeroplane
-  HB-VZE5      | PC24     | Aeroplane
+  HB-CYN       | C182     | Aeroplane
+  HB-DGD       | M20T     | Aeroplane
+  HB-FRS24     | PC12     | Aeroplane
+  HB-FRT24     | PC12     | Aeroplane
+  HB-FSD27     | PC12     | Aeroplane
+  HB-FSE27     | PC12     | Aeroplane
+  HB-FSF28     | PC12     | Aeroplane
+  HB-TIR       | EC45     | Helicopter
+  HB-VZD5      | PC24     | Aeroplane
+  HB-VZF5      | PC24     | Aeroplane
 
-🗑️  REMOVED AIRCRAFT (6)
+🗑️  REMOVED AIRCRAFT (10)
 ----------------------------------------------------------------------
-  HB-3404      | GLID     | Glider
-  HB-LUZ       | P68      | Aeroplane
-  HB-VUW5      | PC24     | Aeroplane
-  HB-XWR       | AS50     | Helicopter
-  HB-XWS       | AS50     | Helicopter
-  HB-ZTE       | AS50     | Helicopter
+  HB-CDN       | C172     | Aeroplane
+  HB-FRP24     | PC12     | Aeroplane
+  HB-FRQ24     | PC12     | Aeroplane
+  HB-GJI       | BE20     | Aeroplane
+  HB-KAG       | S22T     | Aeroplane
+  HB-LTG       | DHC6     | Aeroplane
+  HB-NPJ       | PIVI     | Aeroplane
+  HB-VUC5      | PC24     | Aeroplane
+  HB-VUO5      | PC24     | Aeroplane
+  HB-VUX5      | PC24     | Aeroplane
 
 ======================================================================
 NEXT STEPS:
