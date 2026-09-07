@@ -6,45 +6,39 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-09-07T11:20:06.114574+00:00
+            Count:   3,133
+
+Production: aircraft.json
+            Version: 1.0.56
             Updated: 2026-08-31T12:25:34.720826+00:00
             Count:   3,132
 
-Production: aircraft.json
-            Version: 1.0.55
-            Updated: 2026-08-24T06:42:54.332021+00:00
-            Count:   3,132
-
 CHANGE STATISTICS:
-  Added aircraft:        10
-  Removed aircraft:      10
-  Modified aircraft:      0
-  Total changes:         20
+  Added aircraft:         5
+  Removed aircraft:       4
+  Modified aircraft:      1
+  Total changes:         10
 
-📍 ADDED AIRCRAFT (10)
+📍 ADDED AIRCRAFT (5)
 ----------------------------------------------------------------------
-  HB-CYN       | C182     | Aeroplane
-  HB-DGD       | M20T     | Aeroplane
-  HB-FRS24     | PC12     | Aeroplane
-  HB-FRT24     | PC12     | Aeroplane
-  HB-FSD27     | PC12     | Aeroplane
-  HB-FSE27     | PC12     | Aeroplane
-  HB-FSF28     | PC12     | Aeroplane
-  HB-TIR       | EC45     | Helicopter
-  HB-VZD5      | PC24     | Aeroplane
-  HB-VZF5      | PC24     | Aeroplane
+  HB-FSG28     | PC12     | Aeroplane
+  HB-FSH28     | PC12     | Aeroplane
+  HB-VZH5      | PC24     | Aeroplane
+  HB-VZI5      | PC24     | Aeroplane
+  HB-ZJF       | EC45     | Helicopter
 
-🗑️  REMOVED AIRCRAFT (10)
+🗑️  REMOVED AIRCRAFT (4)
 ----------------------------------------------------------------------
-  HB-CDN       | C172     | Aeroplane
-  HB-FRP24     | PC12     | Aeroplane
-  HB-FRQ24     | PC12     | Aeroplane
-  HB-GJI       | BE20     | Aeroplane
-  HB-KAG       | S22T     | Aeroplane
-  HB-LTG       | DHC6     | Aeroplane
-  HB-NPJ       | PIVI     | Aeroplane
-  HB-VUC5      | PC24     | Aeroplane
-  HB-VUO5      | PC24     | Aeroplane
-  HB-VUX5      | PC24     | Aeroplane
+  HB-FRL28     | PC12     | Aeroplane
+  HB-FRN26     | PC12     | Aeroplane
+  HB-FRO25     | PC12     | Aeroplane
+  HB-VUV5      | PC24     | Aeroplane
+
+✏️  MODIFIED AIRCRAFT (1)
+----------------------------------------------------------------------
+  HB-POD:
+    mtom: 794 → 907
 
 ======================================================================
 NEXT STEPS:
