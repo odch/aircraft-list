@@ -6,40 +6,42 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-09-21T11:43:51.661365+00:00
+            Count:   3,140
+
+Production: aircraft.json
+            Version: 1.0.58
             Updated: 2026-09-14T11:29:43.721055+00:00
             Count:   3,138
 
-Production: aircraft.json
-            Version: 1.0.57
-            Updated: 2026-09-07T11:20:06.114574+00:00
-            Count:   3,133
-
 CHANGE STATISTICS:
-  Added aircraft:        10
+  Added aircraft:         7
   Removed aircraft:       5
-  Modified aircraft:      0
-  Total changes:         15
+  Modified aircraft:      1
+  Total changes:         13
 
-📍 ADDED AIRCRAFT (10)
+📍 ADDED AIRCRAFT (7)
 ----------------------------------------------------------------------
-  HB-FSI28     | PC12     | Aeroplane
-  HB-HDA7      | PC7      | Aeroplane
-  HB-IFC       | A359     | Aeroplane
-  HB-KBC       | S22T     | Aeroplane
-  HB-KJN       | BR23     | Aeroplane
-  HB-KJO       | BR23     | Aeroplane
-  HB-KJP       | BR23     | Aeroplane
-  HB-VCC       | SF50     | Aeroplane
-  HB-VZG5      | PC24     | Aeroplane
-  HB-YBM       | BUSH     | Homebuilt Airplane
+  HB-FSJ27     | PC12     | Aeroplane
+  HB-FSK28     | PC12     | Aeroplane
+  HB-FSL28     | PC12     | Aeroplane
+  HB-HID       | PC7      | Aeroplane
+  HB-VZJ5      | PC24     | Aeroplane
+  HB-VZK5      | PC24     | Aeroplane
+  HB-ZZA       | AS32     | Helicopter
 
 🗑️  REMOVED AIRCRAFT (5)
 ----------------------------------------------------------------------
-  HB-FRR24     | PC12     | Aeroplane
-  HB-FRU27     | PC12     | Aeroplane
-  HB-FRW28     | PC12     | Aeroplane
-  HB-SYO       | PIVE     | Aeroplane
-  HB-VZA5      | PC24     | Aeroplane
+  HB-3278      | GLID     | Glider
+  HB-FRV28     | PC12     | Aeroplane
+  HB-FRY27     | PC12     | Aeroplane
+  HB-FSA27     | PC12     | Aeroplane
+  HB-VUZ4      | PC24     | Aeroplane
+
+✏️  MODIFIED AIRCRAFT (1)
+----------------------------------------------------------------------
+  HB-2152:
+    mtom: 270 → 297
 
 ======================================================================
 NEXT STEPS:
