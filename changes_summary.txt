@@ -6,42 +6,41 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-09-28T12:39:09.676622+00:00
+            Count:   3,133
+
+Production: aircraft.json
+            Version: 1.0.59
             Updated: 2026-09-21T11:43:51.661365+00:00
             Count:   3,140
 
-Production: aircraft.json
-            Version: 1.0.58
-            Updated: 2026-09-14T11:29:43.721055+00:00
-            Count:   3,138
-
 CHANGE STATISTICS:
-  Added aircraft:         7
-  Removed aircraft:       5
-  Modified aircraft:      1
-  Total changes:         13
+  Added aircraft:         5
+  Removed aircraft:      12
+  Modified aircraft:      0
+  Total changes:         17
 
-📍 ADDED AIRCRAFT (7)
+📍 ADDED AIRCRAFT (5)
 ----------------------------------------------------------------------
-  HB-FSJ27     | PC12     | Aeroplane
-  HB-FSK28     | PC12     | Aeroplane
-  HB-FSL28     | PC12     | Aeroplane
-  HB-HID       | PC7      | Aeroplane
-  HB-VZJ5      | PC24     | Aeroplane
-  HB-VZK5      | PC24     | Aeroplane
-  HB-ZZA       | AS32     | Helicopter
+  HB-FSM28     | PC12     | Aeroplane
+  HB-FSN28     | PC12     | Aeroplane
+  HB-JAB       | FA8X     | Aeroplane
+  HB-VZL5      | PC24     | Aeroplane
+  HB-ZDA       | AS50     | Helicopter
 
-🗑️  REMOVED AIRCRAFT (5)
+🗑️  REMOVED AIRCRAFT (12)
 ----------------------------------------------------------------------
-  HB-3278      | GLID     | Glider
-  HB-FRV28     | PC12     | Aeroplane
-  HB-FRY27     | PC12     | Aeroplane
-  HB-FSA27     | PC12     | Aeroplane
-  HB-VUZ4      | PC24     | Aeroplane
-
-✏️  MODIFIED AIRCRAFT (1)
-----------------------------------------------------------------------
-  HB-2152:
-    mtom: 270 → 297
+  HB-3129      | GLID     | Glider
+  HB-3352      | GLID     | Glider
+  HB-FRS24     | PC12     | Aeroplane
+  HB-FRX28     | PC12     | Aeroplane
+  HB-HXA5      | PC21     | Aeroplane
+  HB-HXB5      | PC21     | Aeroplane
+  HB-HXC5      | PC21     | Aeroplane
+  HB-HXD5      | PC21     | Aeroplane
+  HB-IOH       | A321     | Aeroplane
+  HB-KGN       | BR23     | Aeroplane
+  ... and 2 more
 
 ======================================================================
 NEXT STEPS:
