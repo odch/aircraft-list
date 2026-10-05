@@ -6,41 +6,41 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-10-05T13:19:43.466986+00:00
+            Count:   3,134
+
+Production: aircraft.json
+            Version: 1.0.60
             Updated: 2026-09-28T12:39:09.676622+00:00
             Count:   3,133
 
-Production: aircraft.json
-            Version: 1.0.59
-            Updated: 2026-09-21T11:43:51.661365+00:00
-            Count:   3,140
-
 CHANGE STATISTICS:
-  Added aircraft:         5
-  Removed aircraft:      12
-  Modified aircraft:      0
-  Total changes:         17
+  Added aircraft:         6
+  Removed aircraft:       5
+  Modified aircraft:      1
+  Total changes:         12
 
-📍 ADDED AIRCRAFT (5)
+📍 ADDED AIRCRAFT (6)
 ----------------------------------------------------------------------
-  HB-FSM28     | PC12     | Aeroplane
-  HB-FSN28     | PC12     | Aeroplane
-  HB-JAB       | FA8X     | Aeroplane
-  HB-VZL5      | PC24     | Aeroplane
-  HB-ZDA       | AS50     | Helicopter
+  HB-DIS       | M20P     | Aeroplane
+  HB-FSO27     | PC12     | Aeroplane
+  HB-FSP26     | PC12     | Aeroplane
+  HB-FSQ28     | PC12     | Aeroplane
+  HB-HDB7      | PC7      | Aeroplane
+  HB-TIQ       | EC45     | Helicopter
 
-🗑️  REMOVED AIRCRAFT (12)
+🗑️  REMOVED AIRCRAFT (5)
 ----------------------------------------------------------------------
-  HB-3129      | GLID     | Glider
-  HB-3352      | GLID     | Glider
-  HB-FRS24     | PC12     | Aeroplane
-  HB-FRX28     | PC12     | Aeroplane
-  HB-HXA5      | PC21     | Aeroplane
-  HB-HXB5      | PC21     | Aeroplane
-  HB-HXC5      | PC21     | Aeroplane
-  HB-HXD5      | PC21     | Aeroplane
-  HB-IOH       | A321     | Aeroplane
-  HB-KGN       | BR23     | Aeroplane
-  ... and 2 more
+  HB-FRZ28     | PC12     | Aeroplane
+  HB-FSD27     | PC12     | Aeroplane
+  HB-PJE       | P32R     | Aeroplane
+  HB-VUJ5      | PC24     | Aeroplane
+  HB-VZD5      | PC24     | Aeroplane
+
+✏️  MODIFIED AIRCRAFT (1)
+----------------------------------------------------------------------
+  HB-HID:
+    mtom: 2700 → 2380
 
 ======================================================================
 NEXT STEPS:
