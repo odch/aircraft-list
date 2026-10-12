@@ -6,41 +6,35 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-10-12T14:09:37.743442+00:00
+            Count:   3,132
+
+Production: aircraft.json
+            Version: 1.0.61
             Updated: 2026-10-05T13:19:43.466986+00:00
             Count:   3,134
 
-Production: aircraft.json
-            Version: 1.0.60
-            Updated: 2026-09-28T12:39:09.676622+00:00
-            Count:   3,133
-
 CHANGE STATISTICS:
-  Added aircraft:         6
-  Removed aircraft:       5
-  Modified aircraft:      1
-  Total changes:         12
+  Added aircraft:         4
+  Removed aircraft:       6
+  Modified aircraft:      0
+  Total changes:         10
 
-📍 ADDED AIRCRAFT (6)
+📍 ADDED AIRCRAFT (4)
 ----------------------------------------------------------------------
-  HB-DIS       | M20P     | Aeroplane
-  HB-FSO27     | PC12     | Aeroplane
-  HB-FSP26     | PC12     | Aeroplane
-  HB-FSQ28     | PC12     | Aeroplane
-  HB-HDB7      | PC7      | Aeroplane
-  HB-TIQ       | EC45     | Helicopter
+  HB-BTA       | BALL     | Balloon (Hot-air)
+  HB-FSR28     | PC12     | Aeroplane
+  HB-FSS28     | PC12     | Aeroplane
+  HB-VZN5      | PC24     | Aeroplane
 
-🗑️  REMOVED AIRCRAFT (5)
+🗑️  REMOVED AIRCRAFT (6)
 ----------------------------------------------------------------------
-  HB-FRZ28     | PC12     | Aeroplane
-  HB-FSD27     | PC12     | Aeroplane
-  HB-PJE       | P32R     | Aeroplane
-  HB-VUJ5      | PC24     | Aeroplane
-  HB-VZD5      | PC24     | Aeroplane
-
-✏️  MODIFIED AIRCRAFT (1)
-----------------------------------------------------------------------
-  HB-HID:
-    mtom: 2700 → 2380
+  HB-FSB28     | PC12     | Aeroplane
+  HB-FSF28     | PC12     | Aeroplane
+  HB-QOT       | BALL     | Balloon (Hot-air)
+  HB-VZE5      | PC24     | Aeroplane
+  HB-ZGE       | A139     | Helicopter
+  HB-ZRU       | A109     | Helicopter
 
 ======================================================================
 NEXT STEPS:
