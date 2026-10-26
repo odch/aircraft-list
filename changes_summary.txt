@@ -6,36 +6,46 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
-            Updated: 2026-10-19T11:50:10.003519+00:00
+            Updated: 2026-10-26T12:05:04.683745+00:00
             Count:   3,131
 
 Production: aircraft.json
-            Version: 1.0.62
-            Updated: 2026-10-12T14:09:37.743442+00:00
-            Count:   3,132
+            Version: 1.0.63
+            Updated: 2026-10-19T11:50:10.003519+00:00
+            Count:   3,131
 
 CHANGE STATISTICS:
-  Added aircraft:         5
-  Removed aircraft:       6
-  Modified aircraft:      0
-  Total changes:         11
+  Added aircraft:         7
+  Removed aircraft:       7
+  Modified aircraft:      2
+  Total changes:         16
 
-📍 ADDED AIRCRAFT (5)
+📍 ADDED AIRCRAFT (7)
 ----------------------------------------------------------------------
-  HB-FST28     | PC12     | Aeroplane
-  HB-FSU28     | PC12     | Aeroplane
-  HB-FSW28     | PC12     | Aeroplane
-  HB-VZM4      | PC24     | Aeroplane
-  HB-VZO5      | PC24     | Aeroplane
+  HB-BOB       | BALL     | Balloon (Hot-air)
+  HB-FSV27     | PC12     | Aeroplane
+  HB-HCC8      | PC7      | Aeroplane
+  HB-JAD       | E550     | Aeroplane
+  HB-SHG       | DV20     | Aeroplane
+  HB-VZP5      | PC24     | Aeroplane
+  HB-ZZC       | AS32     | Helicopter
 
-🗑️  REMOVED AIRCRAFT (6)
+🗑️  REMOVED AIRCRAFT (7)
 ----------------------------------------------------------------------
-  HB-FRT24     | PC12     | Aeroplane
-  HB-JFQ       | FA7X     | Aeroplane
-  HB-KGP       | BR23     | Aeroplane
-  HB-VZG5      | PC24     | Aeroplane
-  HB-VZI5      | PC24     | Aeroplane
-  HB-YRB       | LEG2     | Homebuilt Airplane
+  HB-FSG28     | PC12     | Aeroplane
+  HB-FSJ27     | PC12     | Aeroplane
+  HB-FSL28     | PC12     | Aeroplane
+  HB-JMB       | A343     | Aeroplane
+  HB-VER       | C25A     | Aeroplane
+  HB-VZB5      | PC24     | Aeroplane
+  HB-ZZL       | B06      | Helicopter
+
+✏️  MODIFIED AIRCRAFT (2)
+----------------------------------------------------------------------
+  HB-OYM:
+    mtom: 794 → 907
+  HB-SHD:
+    mtom: 730 → 800
 
 ======================================================================
 NEXT STEPS:
