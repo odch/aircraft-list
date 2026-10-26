@@ -4,10 +4,27 @@ on:
   issue_comment:
     types: [created]
 
+  # Hourly check for small updates whose auto-release time has passed
+  schedule:
+    - cron: '17 * * * *'
+
+permissions:
+  contents: write
+  issues: write
+
 jobs:
-  release:
+  decide:
     runs-on: ubuntu-latest
-    if: github.event.issue.state == 'open' && contains(github.event.issue.labels.*.name, 'automated-sync') && startsWith(github.event.comment.body, '!')
+    if: github.event_name == 'schedule' || (github.event.issue.state == 'open' && contains(github.event.issue.labels.*.name, 'automated-sync') && contains(github.event.comment.body, '!'))
+    outputs:
+      action: ${{ steps.parse.outputs.action }}
+      trigger: ${{ steps.parse.outputs.trigger }}
+      issue_number: ${{ steps.parse.outputs.issue_number }}
+      version_type: ${{ steps.parse.outputs.version_type }}
+      description: ${{ steps.parse.outputs.description }}
+      due: ${{ steps.parse.outputs.due }}
+      staging_sha256: ${{ steps.parse.outputs.staging_sha256 }}
+      production_sha256: ${{ steps.parse.outputs.production_sha256 }}
 
     steps:
     - name: Parse command
@@ -15,16 +32,105 @@ jobs:
       uses: actions/github-script@v6
       with:
         script: |
-          const comment = context.payload.comment.body.trim();
-          console.log(`Processing comment: "${comment}"`);
+          if (context.eventName === 'schedule') {
+            // Hourly run: release a small update once its auto-release time has passed
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'automated-sync,auto-release'
+            });
 
-          // Parse release commands
-          const releaseMatch = comment.match(/^!release\s+(patch|minor|major)(?:\s+(.+))?$/i);
-          const rejectMatch = comment.match(/^!reject(?:\s+(.+))?$/i);
+            for (const issue of issues) {
+              if (issue.user.login !== 'github-actions[bot]') {
+                console.log(`Issue #${issue.number} was not created by the sync workflow, skipping`);
+                continue;
+              }
+              if (issue.state_reason === 'reopened') {
+                console.log(`Issue #${issue.number} was closed and reopened, it needs an explicit !release`);
+                continue;
+              }
+
+              const marker = (issue.body || '').match(/<!-- auto-release due=(\S+) staging-sha256=([0-9a-f]{64}) production-sha256=([0-9a-f]{64}) -->/);
+              const due = marker ? Date.parse(marker[1]) : NaN;
+
+              if (Number.isNaN(due)) {
+                console.log(`Issue #${issue.number} has no valid auto-release marker, skipping`);
+                continue;
+              }
+              if (due > Date.now()) {
+                console.log(`Issue #${issue.number} will be auto-released after ${marker[1]}`);
+                continue;
+              }
+
+              console.log(`Auto-release of issue #${issue.number} is due (${marker[1]})`);
+              core.setOutput('action', 'release');
+              core.setOutput('trigger', 'auto');
+              core.setOutput('issue_number', issue.number);
+              core.setOutput('version_type', 'patch');
+              core.setOutput('description', '');
+              core.setOutput('due', marker[1]);
+              core.setOutput('staging_sha256', marker[2]);
+              core.setOutput('production_sha256', marker[3]);
+              return;
+            }
+
+            console.log('No auto-release due');
+            core.setOutput('action', 'none');
+            return;
+          }
+
+          const comment = context.payload.comment.body.trim();
+          const commenter = context.payload.comment.user.login;
+
+          // The command is the first line starting with "!<letter>", ignoring quoted lines
+          // ("> ...") and leading formatting such as backticks, bold or @mentions
+          const lines = comment.split(/\r?\n/);
+          const clean = line => line.trim().replace(/^(@\S+\s+)+/, '').replace(/^[`*_~]+/, '').replace(/[`*_~]+$/, '');
+          const commandIndex = lines.findIndex(line => !line.trim().startsWith('>') && /^![a-z]/i.test(clean(line)));
+
+          if (commandIndex === -1) {
+            console.log('Not a command');
+            core.setOutput('action', 'none');
+            return;
+          }
+
+          console.log(`Processing comment from ${commenter}: "${comment}"`);
+
+          // Only people with write access may release, reject or hold
+          let permission = 'none';
+          try {
+            const { data } = await github.rest.repos.getCollaboratorPermissionLevel({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              username: commenter
+            });
+            permission = data.permission;
+          } catch (e) {
+            // Fail visibly unless the user is simply not a collaborator, so a lost !hold gets noticed
+            if (e.status !== 404) throw e;
+          }
+
+          if (!['admin', 'maintain', 'write'].includes(permission)) {
+            console.log(`Ignoring command from ${commenter} (permission: ${permission})`);
+            core.setOutput('action', 'none');
+            return;
+          }
+
+          core.setOutput('trigger', 'comment');
+          core.setOutput('issue_number', context.issue.number);
+
+          // Everything after the command word, including further lines, is the version and
+          // description (!release) or the reason (!reject, !hold)
+          const commandLine = clean(lines[commandIndex]);
+          const commandMatch = commandLine.match(/^!(release|reject|hold)\b[\s.,:;!*`_~-]*(.*)$/i);
+          const command = commandMatch ? commandMatch[1].toLowerCase() : null;
+          const args = commandMatch ? [commandMatch[2], ...lines.slice(commandIndex + 1)].join('\n').trim() : '';
+          const releaseMatch = command === 'release' ? args.match(/^(patch|minor|major)\b[\s.,:;!*`_~-]*([\s\S]*)$/i) : null;
 
           if (releaseMatch) {
             const versionType = releaseMatch[1].toLowerCase();
-            const description = releaseMatch[2] || '';
+            const description = releaseMatch[2].trim();
 
             core.setOutput('action', 'release');
             core.setOutput('version_type', versionType);
@@ -34,8 +140,8 @@ jobs:
             return;
           }
 
-          if (rejectMatch) {
-            const reason = rejectMatch[1] || 'No reason provided';
+          if (command === 'reject') {
+            const reason = args || 'No reason provided';
 
             core.setOutput('action', 'reject');
             core.setOutput('reason', reason);
@@ -44,74 +150,227 @@ jobs:
             return;
           }
 
-          console.log('No valid command detected');
-          core.setOutput('action', 'none');
+          if (command === 'hold') {
+            core.setOutput('action', 'hold');
+            core.setOutput('reason', args);
+
+            console.log('Hold command detected');
+            return;
+          }
+
+          // Anything else (e.g. a typo) puts the update on hold, so a failed attempt to stop
+          // a release never lets it through
+          console.log('Unrecognized command - putting the update on hold');
+          core.setOutput('action', 'hold');
+          core.setOutput('unrecognized', commandLine);
 
     - name: React to comment
-      if: steps.parse.outputs.action != 'none'
+      if: steps.parse.outputs.trigger == 'comment' && steps.parse.outputs.action != 'none'
+      continue-on-error: true
       uses: actions/github-script@v6
+      env:
+        ACTION: ${{ steps.parse.outputs.action }}
+        UNRECOGNIZED: ${{ steps.parse.outputs.unrecognized }}
       with:
         script: |
-          const action = '${{ steps.parse.outputs.action }}';
-          const reaction = action === 'release' ? 'rocket' : 'confused';
+          const reactions = { release: 'rocket', reject: 'confused', hold: process.env.UNRECOGNIZED ? 'confused' : 'eyes' };
 
           await github.rest.reactions.createForIssueComment({
             owner: context.repo.owner,
             repo: context.repo.repo,
             comment_id: context.payload.comment.id,
-            content: reaction
+            content: reactions[process.env.ACTION]
           });
 
     - name: Handle rejection
       if: steps.parse.outputs.action == 'reject'
       uses: actions/github-script@v6
+      env:
+        REASON: ${{ steps.parse.outputs.reason }}
       with:
         script: |
-          const reason = '${{ steps.parse.outputs.reason }}';
+          const reason = process.env.REASON;
+          const { data: issue } = await github.rest.issues.get({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.issue.number
+          });
 
-          // Close the issue with rejection comment
+          if (issue.state !== 'open') {
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              body: `⚠️ This update was already closed (${issue.labels.map(label => label.name).join(', ')}) before your comment was processed, so nothing was changed.`
+            });
+            return;
+          }
+
+          // Close the issue first, so the auto-release is stopped even if commenting fails
+          await github.rest.issues.update({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: issue.number,
+            state: 'closed',
+            labels: ['automated-sync', 'rejected']
+          });
+
           await github.rest.issues.createComment({
             owner: context.repo.owner,
             repo: context.repo.repo,
-            issue_number: context.issue.number,
+            issue_number: issue.number,
             body: `## ❌ Release Rejected
 
             **Reason**: ${reason}
 
-            The staging changes will remain uncommitted. If you change your mind, you can still approve with \`!release patch\` (or \`minor\`/\`major\`).
+            The staging changes will remain uncommitted, and the next update will wait for a manual decision. If you change your mind before the next sync, reopen this issue and comment \`!release patch\` (or \`minor\`/\`major\`).
 
             ---
             *This issue was automatically closed due to rejection.*`
           });
 
+    - name: Handle hold
+      if: steps.parse.outputs.action == 'hold'
+      uses: actions/github-script@v6
+      env:
+        REASON: ${{ steps.parse.outputs.reason }}
+        UNRECOGNIZED: ${{ steps.parse.outputs.unrecognized }}
+      with:
+        script: |
+          const { data: issue } = await github.rest.issues.get({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.issue.number
+          });
+
+          if (issue.state !== 'open') {
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              body: `⚠️ This update was already closed (${issue.labels.map(label => label.name).join(', ')}) before your comment was processed, so nothing was changed.`
+            });
+            return;
+          }
+
+          // Remove the auto-release label first, so the release is stopped even if commenting fails
           await github.rest.issues.update({
             owner: context.repo.owner,
             repo: context.repo.repo,
-            issue_number: context.issue.number,
-            state: 'closed',
-            labels: ['automated-sync', 'rejected']
+            issue_number: issue.number,
+            title: issue.title.replace('Auto-Release Scheduled', 'Manual Review Required'),
+            labels: ['automated-sync', 'review-required', 'on-hold']
           });
 
+          let reason = process.env.REASON ? `\n**Reason**: ${process.env.REASON}\n` : '';
+          if (process.env.UNRECOGNIZED) {
+            reason = `\n⚠️ \`${process.env.UNRECOGNIZED}\` is not a known command, so to be safe this update was put on hold.\n`;
+          }
+
+          await github.rest.issues.createComment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: issue.number,
+            body: `## ⏸️ On Hold
+            ${reason}
+            These changes will **not** be released automatically, and neither will the next update. When you have decided, comment:
+
+            - \`!release patch\` (or \`minor\`/\`major\`) - Release them
+            - \`!reject\` - Discard them
+
+            ---
+            *🤖 Processed from your comment.*`
+          });
+
+  release:
+    needs: decide
+    if: needs.decide.outputs.action == 'release'
+    runs-on: ubuntu-latest
+    # Never run two releases at the same time (e.g. a !release comment and an auto-release)
+    concurrency:
+      group: registry-release
+      cancel-in-progress: false
+    env:
+      ISSUE_NUMBER: ${{ needs.decide.outputs.issue_number }}
+      RELEASE_TRIGGER: ${{ needs.decide.outputs.trigger }}
+      VERSION_TYPE: ${{ needs.decide.outputs.version_type }}
+      DESCRIPTION: ${{ needs.decide.outputs.description }}
+      AUTO_RELEASE_DUE: ${{ needs.decide.outputs.due }}
+      STAGING_SHA256: ${{ needs.decide.outputs.staging_sha256 }}
+      PRODUCTION_SHA256: ${{ needs.decide.outputs.production_sha256 }}
+
+    steps:
     - name: Checkout repository
-      if: steps.parse.outputs.action == 'release'
       uses: actions/checkout@v4
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         fetch-depth: 0
 
+    - name: Check release is still wanted
+      id: guard
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const { data: issue } = await github.rest.issues.get({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: Number(process.env.ISSUE_NUMBER)
+          });
+
+          if (issue.state !== 'open') {
+            console.log(`Issue #${issue.number} was closed in the meantime - nothing to release`);
+            core.setOutput('skip', 'true');
+            return;
+          }
+
+          // An older (e.g. reopened) issue no longer describes the current staging data
+          const { data: [newest] } = await github.rest.issues.listForRepo({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            state: 'all',
+            labels: 'automated-sync',
+            per_page: 1
+          });
+          if (newest && newest.number !== issue.number) {
+            core.exportVariable('FAILURE_REASON', `The newer update #${newest.number} replaces this one, please release that one instead.`);
+            core.setFailed(`Issue #${issue.number} is not the newest automated-sync issue (#${newest.number})`);
+            return;
+          }
+
+          if (process.env.RELEASE_TRIGGER !== 'auto') {
+            return;
+          }
+
+          if (!issue.labels.some(label => label.name === 'auto-release')) {
+            console.log(`Auto-release of issue #${issue.number} was cancelled in the meantime`);
+            core.setOutput('skip', 'true');
+            return;
+          }
+
+          // Only auto-release exactly what the issue announced: the same staging data on top
+          // of the same production data
+          const crypto = require('crypto');
+          const fs = require('fs');
+          const sha256 = file => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+
+          if (sha256('aircraft-staging.json') !== process.env.STAGING_SHA256 || sha256('aircraft.json') !== process.env.PRODUCTION_SHA256) {
+            core.exportVariable('FAILURE_REASON', 'The staging or production data changed after this issue was created, so the changes listed here are no longer what would be released.');
+            core.setFailed('Staging or production data does not match the announced hashes');
+          }
+
     - name: Set up Python
-      if: steps.parse.outputs.action == 'release'
+      if: steps.guard.outputs.skip != 'true'
       uses: actions/setup-python@v4
       with:
         python-version: '3.11'
 
     - name: Install dependencies
-      if: steps.parse.outputs.action == 'release'
+      if: steps.guard.outputs.skip != 'true'
       run: |
         pip install -r requirements.txt
 
     - name: Validate staging data
-      if: steps.parse.outputs.action == 'release'
+      if: steps.guard.outputs.skip != 'true'
       id: validate
       run: |
         echo "🔍 Validating staging data..."
@@ -151,7 +410,7 @@ jobs:
         "
 
     - name: Calculate version bump
-      if: steps.parse.outputs.action == 'release'
+      if: steps.guard.outputs.skip != 'true'
       id: version
       run: |
         echo "🏷️ Calculating version bump..."
@@ -164,7 +423,6 @@ jobs:
         IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT_VERSION"
 
         # Bump version based on type
-        VERSION_TYPE="${{ steps.parse.outputs.version_type }}"
         case $VERSION_TYPE in
           "patch")
             PATCH=$((PATCH + 1))
@@ -192,7 +450,7 @@ jobs:
         echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
 
     - name: Create backup
-      if: steps.parse.outputs.action == 'release'
+      if: steps.guard.outputs.skip != 'true'
       run: |
         echo "💾 Creating backup of current production..."
 
@@ -208,7 +466,7 @@ jobs:
         fi
 
     - name: Release to production
-      if: steps.parse.outputs.action == 'release'
+      if: steps.guard.outputs.skip != 'true'
       run: |
         echo "🚀 Releasing to production..."
 
@@ -240,7 +498,7 @@ jobs:
         echo "✅ VERSION file updated"
 
     - name: Commit and tag release
-      if: steps.parse.outputs.action == 'release'
+      if: steps.guard.outputs.skip != 'true'
       run: |
         echo "📝 Committing release..."
 
@@ -250,7 +508,6 @@ jobs:
 
         # Get statistics for commit message
         TOTAL_COUNT=$(jq '.total_count' aircraft.json)
-        DESCRIPTION="${{ steps.parse.outputs.description }}"
         NEW_VERSION="${{ steps.version.outputs.new_version }}"
 
         # Add files and commit
@@ -276,8 +533,28 @@ jobs:
 
         echo "✅ Commit and tag created"
 
+    - name: Check release was not stopped meanwhile
+      if: steps.guard.outputs.skip != 'true'
+      id: recheck
+      uses: actions/github-script@v6
+      with:
+        script: |
+          // A !hold or !reject may have arrived while the release was being prepared
+          const { data: issue } = await github.rest.issues.get({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: Number(process.env.ISSUE_NUMBER)
+          });
+
+          const autoReleaseCancelled = process.env.RELEASE_TRIGGER === 'auto' && !issue.labels.some(label => label.name === 'auto-release');
+          if (issue.state !== 'open' || autoReleaseCancelled) {
+            console.log(`Release of issue #${issue.number} was stopped while it was being prepared - not pushing`);
+            core.setOutput('skip', 'true');
+          }
+
     - name: Push changes
-      if: steps.parse.outputs.action == 'release'
+      if: steps.guard.outputs.skip != 'true' && steps.recheck.outputs.skip != 'true'
+      id: push
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -285,12 +562,12 @@ jobs:
         tags: true
 
     - name: Close issue with success
-      if: steps.parse.outputs.action == 'release'
+      if: steps.guard.outputs.skip != 'true' && steps.recheck.outputs.skip != 'true'
       uses: actions/github-script@v6
       with:
         script: |
           const newVersion = '${{ steps.version.outputs.new_version }}';
-          const description = '${{ steps.parse.outputs.description }}';
+          const description = process.env.DESCRIPTION;
           const totalCount = require('fs').readFileSync('aircraft.json', 'utf8');
           const data = JSON.parse(totalCount);
 
@@ -299,10 +576,14 @@ jobs:
             releaseTitle += ` - ${description}`;
           }
 
+          const footer = process.env.RELEASE_TRIGGER === 'auto'
+            ? `*🤖 This release was processed automatically: nobody commented \`!hold\` or \`!reject\` before the scheduled time (${process.env.AUTO_RELEASE_DUE}).*`
+            : `*🤖 This release was automatically processed from your \`!release ${process.env.VERSION_TYPE}\` command.*`;
+
           await github.rest.issues.createComment({
             owner: context.repo.owner,
             repo: context.repo.repo,
-            issue_number: context.issue.number,
+            issue_number: Number(process.env.ISSUE_NUMBER),
             body: `## 🚀 Release Completed Successfully!
 
             ### 📦 **${releaseTitle}**
@@ -326,28 +607,73 @@ jobs:
 
             ---
 
-            *🤖 This release was automatically processed from your \`!release ${{ steps.parse.outputs.version_type }}\` command.*`
+            ${footer}`
           });
 
           await github.rest.issues.update({
             owner: context.repo.owner,
             repo: context.repo.repo,
-            issue_number: context.issue.number,
+            issue_number: Number(process.env.ISSUE_NUMBER),
             state: 'closed',
             labels: ['automated-sync', 'released']
           });
 
     - name: Handle workflow failure
-      if: failure() && steps.parse.outputs.action == 'release'
+      if: failure()
       uses: actions/github-script@v6
+      env:
+        PUSH_OUTCOME: ${{ steps.push.outcome }}
       with:
         script: |
+          const issueNumber = Number(process.env.ISSUE_NUMBER);
+
+          if (process.env.PUSH_OUTCOME === 'success') {
+            // The new version is out; only updating the issue failed
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              state: 'closed',
+              labels: ['automated-sync', 'released']
+            });
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              body: `## ⚠️ Released, With Errors
+
+              The new version was pushed and tagged, but a later step failed. Please check the [workflow logs](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}). Do not release again.`
+            });
+            return;
+          }
+
+          const reason = process.env.FAILURE_REASON ? `\n**Reason**: ${process.env.FAILURE_REASON}\n` : '';
+          let autoNote = '';
+
+          const { data: issue } = await github.rest.issues.get({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: issueNumber
+          });
+
+          if (issue.labels.some(label => label.name === 'auto-release')) {
+            // Stop the hourly check from retrying - this update now needs a manual decision
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              title: issue.title.replace('Auto-Release Scheduled', 'Manual Review Required'),
+              labels: [...issue.labels.map(label => label.name).filter(name => name !== 'auto-release'), 'review-required']
+            });
+            autoNote = '\n**Automatic release is switched off for this update.** Release it with `!release patch` or discard it with `!reject`.\n';
+          }
+
           await github.rest.issues.createComment({
             owner: context.repo.owner,
             repo: context.repo.repo,
-            issue_number: context.issue.number,
+            issue_number: issueNumber,
             body: `## ❌ Release Failed
-
+            ${reason}${autoNote}
             The automated release process encountered an error. Please check the [workflow logs](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}) for details.
 
             ### 🔧 Manual Steps Required

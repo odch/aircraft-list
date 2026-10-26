@@ -8,6 +8,14 @@ on:
   # Allow manual trigger
   workflow_dispatch:
 
+env:
+  # Small updates (at or below both limits) are released automatically after
+  # AUTO_RELEASE_DELAY_HOURS unless someone comments !hold or !reject on the
+  # review issue. Larger updates always wait for a manual !release.
+  AUTO_RELEASE_MAX_CHANGES: 50
+  AUTO_RELEASE_MAX_REMOVALS: 25
+  AUTO_RELEASE_DELAY_HOURS: 24
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -60,7 +68,13 @@ jobs:
             echo "📋 Changes will be available for manual review"
 
             # Create a summary of changes for the commit
-            python3 review_changes.py > changes_summary.txt || true
+            python3 review_changes.py --limit "$AUTO_RELEASE_MAX_CHANGES" > changes_summary.txt || true
+
+            # Decide whether the changes are small enough for auto-release
+            # (falls back to manual review if the check itself fails)
+            python3 check_auto_release.py || echo "AUTO_RELEASE=false" >> $GITHUB_ENV
+            echo "STAGING_SHA256=$(sha256sum aircraft-staging.json | cut -d' ' -f1)" >> $GITHUB_ENV
+            echo "PRODUCTION_SHA256=$(sha256sum aircraft.json 2>/dev/null | cut -d' ' -f1)" >> $GITHUB_ENV
 
             echo "CHANGES_DETECTED=true" >> $GITHUB_ENV
           else
@@ -92,7 +106,7 @@ jobs:
         📈 Change count: ${CHANGE_COUNT:+${CHANGE_COUNT}}
         🕐 Sync time: $(date -u +'%Y-%m-%d %H:%M:%S UTC')
 
-        ⚠️ MANUAL REVIEW REQUIRED
+        📋 See the automated-sync issue to review, hold or reject
         Run 'python3 review_changes.py' to see changes
         Run 'python3 release.py' to promote to production"
 
@@ -121,11 +135,29 @@ jobs:
             labels: 'automated-sync'
           });
 
+          // A hold or a rejection carries over to the next update, because those changes are
+          // still part of the new staging data. The newest earlier update decides: it blocks
+          // auto-release if it was put on hold, rejected, or closed by hand without a release.
+          const { data: [previous] } = await github.rest.issues.listForRepo({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            state: 'all',
+            labels: 'automated-sync',
+            per_page: 1
+          });
+          const previousLabels = previous ? previous.labels.map(label => label.name) : [];
+          const carriedOver = previous && (
+            previousLabels.includes('on-hold') || previousLabels.includes('rejected') ||
+            (previous.state === 'closed' && !previousLabels.includes('released') && !previousLabels.includes('superseded'))
+          ) ? previous : null;
+
           if (existingIssues.data.length > 0) {
             console.log(`📝 Found ${existingIssues.data.length} existing open automated-sync issues`);
 
             for (const issue of existingIssues.data) {
               console.log(`🔒 Closing stale issue #${issue.number}: ${issue.title}`);
+              const held = issue.labels.some(label => label.name === 'on-hold');
+              const holdNote = held ? '\n⏸️ **The hold carries over**: the new issue also waits for a manual release.\n' : '';
 
               // Add a comment explaining why it's being closed
               await github.rest.issues.createComment({
@@ -137,7 +169,7 @@ jobs:
                 This issue has been automatically closed because a newer sync has detected changes.
 
                 **Only the latest staging data is relevant for releases.**
-
+                ${holdNote}
                 ➡️ Please refer to the newest automated-sync issue for current changes.
 
                 ---
@@ -150,7 +182,7 @@ jobs:
                 repo: context.repo.repo,
                 issue_number: issue.number,
                 state: 'closed',
-                labels: ['automated-sync', 'superseded']
+                labels: held ? ['automated-sync', 'superseded', 'on-hold'] : ['automated-sync', 'superseded']
               });
             }
 
@@ -166,12 +198,41 @@ jobs:
             console.log("Could not read changes summary");
           }
 
-          const issueTitle = `🤖 Aircraft Registry Update Available - Manual Review Required`;
+          // Small updates get a due time; the release workflow's hourly check
+          // releases them once it has passed, unless the issue was held/rejected.
+          // The staging hash ensures exactly the reviewed data gets released.
+          const autoRelease = process.env.AUTO_RELEASE === 'true' && !carriedOver;
+          const dueAt = new Date(Date.now() + Number(process.env.AUTO_RELEASE_DELAY_HOURS) * 60 * 60 * 1000);
+          const dueText = dueAt.toISOString().substring(0, 16).replace('T', ' ') + ' UTC';
+
+          const manualReason = carriedOver
+            ? `the previous update #${carriedOver.number} was ${previousLabels.includes('on-hold') ? 'put on hold' : previousLabels.includes('rejected') ? 'rejected' : 'closed without a release'} and its changes may be part of this one`
+            : process.env.AUTO_RELEASE_REASON || 'the auto-release check did not complete';
+
+          const reviewSection = autoRelease ? `
+          ## ⏰ Auto-Release Scheduled
+
+          This is a small update (${process.env.AUTO_RELEASE_REASON}), so it will be **released automatically as a patch on ${dueText}** unless someone with write access comments:
+
+          - \`!hold\` - Don't release automatically, keep this issue open for a manual decision
+          - \`!reject\` or \`!reject Reason\` - Discard these changes
+          - \`!release patch\` - Release right away
+
+          <!-- auto-release due=${dueAt.toISOString()} staging-sha256=${process.env.STAGING_SHA256} production-sha256=${process.env.PRODUCTION_SHA256} -->
+          ` : `
+          ## ✋ Manual Review Required
+
+          These changes will not be released automatically: ${manualReason}.
+          `;
+
+          const issueTitle = autoRelease
+            ? `🤖 Aircraft Registry Update Available - Auto-Release Scheduled`
+            : `🤖 Aircraft Registry Update Available - Manual Review Required`;
           const issueBody = `
           ## 🔄 Automated Sync Completed
 
           A new aircraft registry sync has been completed and is ready for your review.
-
+          ${reviewSection}
           ## 📋 Changes Summary
 
           \`\`\`
@@ -190,13 +251,15 @@ jobs:
 
           **To reject**: Comment \`!reject\` or \`!reject Reason for rejection\`
 
+          **To stop an automatic release** and decide later: Comment \`!hold\`
+
           The automated workflow will handle version bumping, backups, and release automatically!
 
           ### 🖥️ **Manual Release (Legacy)**
 
           1. **Review changes**: Run \`python3 review_changes.py\`
           2. **If approved**: Run \`python3 release.py\`
-          3. **If rejected**: No action needed, changes stay in staging
+          3. **If rejected**: Comment \`!reject\` (small updates are otherwise released automatically)
 
           ## 📁 Files Modified
 
@@ -211,15 +274,17 @@ jobs:
 
           ---
 
-          This issue was created automatically. Close it after reviewing and releasing (or rejecting) the changes.
+          This issue was created automatically and is closed automatically when the changes are released or rejected. Closing it by hand cancels a scheduled automatic release.
           `;
 
-          github.rest.issues.create({
+          await github.rest.issues.create({
             owner: context.repo.owner,
             repo: context.repo.repo,
             title: issueTitle,
             body: issueBody,
-            labels: ['automated-sync', 'review-required']
+            labels: autoRelease ? ['automated-sync', 'auto-release']
+              : carriedOver ? ['automated-sync', 'review-required', 'on-hold']
+              : ['automated-sync', 'review-required']
           });
 
     - name: No changes detected

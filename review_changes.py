@@ -20,9 +20,11 @@ class ChangeReviewer:
     
     def __init__(self, 
                  staging_file: str = "aircraft-staging.json",
-                 production_file: str = "aircraft.json"):
+                 production_file: str = "aircraft.json",
+                 limit: int = 10):
         self.staging_file = staging_file
         self.production_file = production_file
+        self.limit = limit  # entries listed per category, 0 = all
 
     def load_registry(self, filename: str) -> Dict:
         """Load aircraft registry from JSON file."""
@@ -146,35 +148,35 @@ class ChangeReviewer:
         if changes["added"]:
             print(f"\n📍 ADDED AIRCRAFT ({len(changes['added'])})")
             print("-" * 70)
-            for reg, aircraft in list(changes["added"].items())[:10]:  # Show first 10
+            for reg, aircraft in list(changes["added"].items())[:self.limit or None]:
                 print(f"  {reg:<12} | {aircraft.get('icao_aircraft_type', 'N/A'):<8} | {aircraft.get('aircraft_type', 'N/A')}")
             
-            if len(changes["added"]) > 10:
-                print(f"  ... and {len(changes['added']) - 10} more")
+            if self.limit and len(changes["added"]) > self.limit:
+                print(f"  ... and {len(changes['added']) - self.limit} more")
         
         if changes["removed"]:
             print(f"\n🗑️  REMOVED AIRCRAFT ({len(changes['removed'])})")
             print("-" * 70)
-            for reg, aircraft in list(changes["removed"].items())[:10]:  # Show first 10
+            for reg, aircraft in list(changes["removed"].items())[:self.limit or None]:
                 print(f"  {reg:<12} | {aircraft.get('icao_aircraft_type', 'N/A'):<8} | {aircraft.get('aircraft_type', 'N/A')}")
             
-            if len(changes["removed"]) > 10:
-                print(f"  ... and {len(changes['removed']) - 10} more")
+            if self.limit and len(changes["removed"]) > self.limit:
+                print(f"  ... and {len(changes['removed']) - self.limit} more")
         
         if changes["modified"]:
             print(f"\n✏️  MODIFIED AIRCRAFT ({len(changes['modified'])})")
             print("-" * 70)
             count = 0
             for reg, mods in changes["modified"].items():
-                if count >= 10:  # Show first 10
+                if self.limit and count >= self.limit:
                     break
                 print(f"  {reg}:")
                 for field, change in mods.items():
                     print(f"    {field}: {change['old']} → {change['new']}")
                 count += 1
             
-            if len(changes["modified"]) > 10:
-                print(f"  ... and {len(changes['modified']) - 10} more")
+            if self.limit and len(changes["modified"]) > self.limit:
+                print(f"  ... and {len(changes['modified']) - self.limit} more")
 
     def review(self):
         """Main review method."""
@@ -188,7 +190,7 @@ class ChangeReviewer:
                 print(f"\n{'='*70}")
                 print("NEXT STEPS:")
                 print("  To approve changes: python3 release.py")
-                print("  To reject changes:  Do nothing (changes remain in staging)")
+                print("  To reject changes:  Comment !reject on the review issue")
                 print("="*70)
             
             return total_changes > 0
@@ -213,10 +215,16 @@ def main():
         default='aircraft.json',
         help='Path to production aircraft file'
     )
+    parser.add_argument(
+        '--limit',
+        type=int,
+        default=10,
+        help='Maximum entries listed per category (0 = all)'
+    )
     
     args = parser.parse_args()
     
-    reviewer = ChangeReviewer(args.staging, args.production)
+    reviewer = ChangeReviewer(args.staging, args.production, args.limit)
     has_changes = reviewer.review()
     
     exit(0 if has_changes else 1)
