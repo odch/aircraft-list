@@ -95,6 +95,23 @@ When automation detects changes, you receive a GitHub Issue with:
 - Instructions for next steps
 - Automatic labels for easy tracking
 
+**⏰ Auto-Release for Small Updates**
+
+Most weekly updates are small, so they don't wait for a manual `!release`:
+
+- If the sync finds **at most 50 changes and at most 25 removals**, the issue is labeled `auto-release` and shows the time it will be released (**24 hours** after the sync).
+- An hourly check releases it as a **patch** once that time has passed, unless someone with write access commented `!hold` or `!reject`.
+- Larger updates (e.g. a broken source download that removes many aircraft) are labeled `review-required` and always wait for a manual `!release`.
+
+You can still review every update and stop it:
+- `!hold` - Don't release automatically, keep the issue open for a manual decision
+- `!reject` - Discard the changes
+- `!release patch` - Release right away without waiting
+
+A hold, a rejection, or closing the issue by hand carries over: the next update waits for a manual `!release` as well, because the held or rejected changes are usually still part of it. A command that is not recognized (e.g. a typo like `!hodl`) also puts the update on hold. Commands only count in new comments, not when an existing comment is edited.
+
+Only people with write access to the repository can use these commands. The limits and the delay are set in the `env` block at the top of `.github/workflows/sync.yml`; run `python3 check_auto_release.py` to see how the current staging data would be classified (pass `--max-changes` / `--max-removals` if you changed the limits).
+
 **🤖 Automated Release (Recommended)**
 
 Simply comment on the GitHub Issue with one of these commands:
@@ -107,6 +124,9 @@ Simply comment on the GitHub Issue with one of these commands:
 
 **To reject:**
 - `!reject` or `!reject Reason for rejection`
+
+**To stop an automatic release** and decide later:
+- `!hold`
 
 What happens automatically:
 1. ✅ Validates staging data
@@ -121,7 +141,7 @@ What happens automatically:
 For local development or when automation fails:
 - **Review:** Run `python3 review_changes.py` to see detailed changes
 - **Approve:** Run `python3 release.py` to promote staging → production
-- **Reject:** Do nothing, changes remain in staging only
+- **Reject:** Comment `!reject` on the issue (small updates are otherwise released automatically)
 
 #### 📁 Key Files
 
@@ -129,11 +149,13 @@ For local development or when automation fails:
 - `aircraft-staging.json` - 🟡 **STAGING** (automated updates)
 - `sync_aircraft.py` - Downloads and processes source data
 - `review_changes.py` - Shows differences between staging and production
+- `check_auto_release.py` - Decides whether an update is small enough for auto-release
 - `release.py` - Promotes staging to production with backups
 
 #### 🔒 Safety Features
 
-- **Production never touched by automation** - Always requires manual approval
+- **Production only changes after review** - Small updates are released after a 24-hour review window in which you can `!hold` or `!reject` them; larger ones always require manual approval
+- **Only the announced data is auto-released** - The auto-release is aborted if the staging or production data changed after the review issue was created
 - **Automatic backups** created before each release
 - **Rollback capability** if issues arise
 - **Data validation** before promotion using JSON schema
@@ -143,8 +165,8 @@ For local development or when automation fails:
 
 The project includes two main workflows:
 
-- **Sync Workflow** (`.github/workflows/sync.yml`) - Daily automated data sync (6:00 AM UTC)
-- **Release Workflow** (`.github/workflows/release.yml`) - Issue-based release management with `!release` and `!reject` commands
+- **Sync Workflow** (`.github/workflows/sync.yml`) - Weekly automated data sync (Mondays 6:00 AM UTC)
+- **Release Workflow** (`.github/workflows/release.yml`) - Issue-based release management with `!release`, `!reject` and `!hold` commands, plus an hourly check that auto-releases small updates
 
 ### Custom Overrides
 
