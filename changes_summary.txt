@@ -6,40 +6,39 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-11-09T14:54:55.787043+00:00
+            Count:   3,136
+
+Production: aircraft.json
+            Version: 1.0.65
             Updated: 2026-11-02T14:30:38.889842+00:00
             Count:   3,132
 
-Production: aircraft.json
-            Version: 1.0.64
-            Updated: 2026-10-26T12:05:04.683745+00:00
-            Count:   3,131
-
 CHANGE STATISTICS:
-  Added aircraft:         8
-  Removed aircraft:       7
+  Added aircraft:         9
+  Removed aircraft:       5
   Modified aircraft:      0
-  Total changes:         15
+  Total changes:         14
 
-📍 ADDED AIRCRAFT (8)
+📍 ADDED AIRCRAFT (9)
 ----------------------------------------------------------------------
-  HB-FMM       | PC12     | Aeroplane
-  HB-FSX28     | PC12     | Aeroplane
-  HB-FSY27     | PC12     | Aeroplane
-  HB-HDC7      | PC7      | Aeroplane
-  HB-IHD       | A359     | Aeroplane
-  HB-SHI       | DV20     | Aeroplane
-  HB-VZQ4      | PC24     | Aeroplane
-  HB-XER       | B407     | Helicopter
+  HB-2675      | A33E     | Powered Glider
+  HB-AWA       | A21N     | Aeroplane
+  HB-BPB       | BALL     | Balloon (Hot-air)
+  HB-FQE28     | PC12     | Aeroplane
+  HB-FQN28     | PC12     | Aeroplane
+  HB-LAP       | DHC6     | Aeroplane
+  HB-TIS       | EC45     | Helicopter
+  HB-VBG       | PC24     | Aeroplane
+  HB-ZBE       | AS50     | Helicopter
 
-🗑️  REMOVED AIRCRAFT (7)
+🗑️  REMOVED AIRCRAFT (5)
 ----------------------------------------------------------------------
-  HB-2491      | DG80     | Powered Glider
-  HB-FSK28     | PC12     | Aeroplane
-  HB-FSM28     | PC12     | Aeroplane
-  HB-NPD       | PIVI     | Aeroplane
-  HB-VZH5      | PC24     | Aeroplane
-  HB-VZK5      | PC24     | Aeroplane
-  HB-ZNM       | EC30     | Helicopter
+  HB-5555      | ULAC     | Ultralight (3-axis control)
+  HB-FSE27     | PC12     | Aeroplane
+  HB-FSO27     | PC12     | Aeroplane
+  HB-IJP       | A320     | Aeroplane
+  HB-IOF       | A321     | Aeroplane
 
 ======================================================================
 NEXT STEPS:
