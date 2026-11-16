@@ -6,39 +6,45 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-11-16T14:31:07.245844+00:00
+            Count:   3,131
+
+Production: aircraft.json
+            Version: 1.0.66
             Updated: 2026-11-09T14:54:55.787043+00:00
             Count:   3,136
 
-Production: aircraft.json
-            Version: 1.0.65
-            Updated: 2026-11-02T14:30:38.889842+00:00
-            Count:   3,132
-
 CHANGE STATISTICS:
-  Added aircraft:         9
-  Removed aircraft:       5
-  Modified aircraft:      0
-  Total changes:         14
+  Added aircraft:         5
+  Removed aircraft:      10
+  Modified aircraft:      1
+  Total changes:         16
 
-📍 ADDED AIRCRAFT (9)
+📍 ADDED AIRCRAFT (5)
 ----------------------------------------------------------------------
-  HB-2675      | A33E     | Powered Glider
-  HB-AWA       | A21N     | Aeroplane
-  HB-BPB       | BALL     | Balloon (Hot-air)
-  HB-FQE28     | PC12     | Aeroplane
-  HB-FQN28     | PC12     | Aeroplane
-  HB-LAP       | DHC6     | Aeroplane
-  HB-TIS       | EC45     | Helicopter
-  HB-VBG       | PC24     | Aeroplane
-  HB-ZBE       | AS50     | Helicopter
+  HB-FQP29     | PC12     | Aeroplane
+  HB-LLJ       | P180     | Aeroplane
+  HB-VZS5      | PC24     | Aeroplane
+  HB-VZT5      | PC24     | Aeroplane
+  HB-YGR       | PT80     | Homebuilt Airplane
 
-🗑️  REMOVED AIRCRAFT (5)
+🗑️  REMOVED AIRCRAFT (10)
 ----------------------------------------------------------------------
-  HB-5555      | ULAC     | Ultralight (3-axis control)
-  HB-FSE27     | PC12     | Aeroplane
-  HB-FSO27     | PC12     | Aeroplane
-  HB-IJP       | A320     | Aeroplane
-  HB-IOF       | A321     | Aeroplane
+  HB-2315      | AS24     | Powered Glider
+  HB-2560      | S32M     | Powered Glider
+  HB-3182      | GLID     | Glider
+  HB-FSH28     | PC12     | Aeroplane
+  HB-FSI28     | PC12     | Aeroplane
+  HB-KLL       | S22T     | Aeroplane
+  HB-QIM       | BALL     | Balloon (Hot-air)
+  HB-XRA       | LAMA     | Helicopter
+  HB-XSV       | LAMA     | Helicopter
+  HB-ZMV       | LAMA     | Helicopter
+
+✏️  MODIFIED AIRCRAFT (1)
+----------------------------------------------------------------------
+  HB-YAK:
+    mtom: 1066 → 1040
 
 ======================================================================
 NEXT STEPS:
