@@ -6,45 +6,36 @@ AIRCRAFT REGISTRY CHANGE SUMMARY
 
 Staging:    aircraft-staging.json
             Version: 1.0.0
+            Updated: 2026-11-23T17:06:00.692459+00:00
+            Count:   3,134
+
+Production: aircraft.json
+            Version: 1.0.67
             Updated: 2026-11-16T14:31:07.245844+00:00
             Count:   3,131
 
-Production: aircraft.json
-            Version: 1.0.66
-            Updated: 2026-11-09T14:54:55.787043+00:00
-            Count:   3,136
-
 CHANGE STATISTICS:
-  Added aircraft:         5
-  Removed aircraft:      10
-  Modified aircraft:      1
-  Total changes:         16
+  Added aircraft:         7
+  Removed aircraft:       4
+  Modified aircraft:      0
+  Total changes:         11
 
-📍 ADDED AIRCRAFT (5)
+📍 ADDED AIRCRAFT (7)
 ----------------------------------------------------------------------
-  HB-FQP29     | PC12     | Aeroplane
-  HB-LLJ       | P180     | Aeroplane
-  HB-VZS5      | PC24     | Aeroplane
-  HB-VZT5      | PC24     | Aeroplane
-  HB-YGR       | PT80     | Homebuilt Airplane
+  HB-AWB       | A21N     | Aeroplane
+  HB-EDJ       | RALL     | Aeroplane
+  HB-FSZ26     | PC12     | Aeroplane
+  HB-HDD7      | PC7      | Aeroplane
+  HB-JAC       | FA8X     | Aeroplane
+  HB-TIT       | EC45     | Helicopter
+  HB-VZR5      | PC24     | Aeroplane
 
-🗑️  REMOVED AIRCRAFT (10)
+🗑️  REMOVED AIRCRAFT (4)
 ----------------------------------------------------------------------
-  HB-2315      | AS24     | Powered Glider
-  HB-2560      | S32M     | Powered Glider
-  HB-3182      | GLID     | Glider
-  HB-FSH28     | PC12     | Aeroplane
-  HB-FSI28     | PC12     | Aeroplane
-  HB-KLL       | S22T     | Aeroplane
-  HB-QIM       | BALL     | Balloon (Hot-air)
-  HB-XRA       | LAMA     | Helicopter
-  HB-XSV       | LAMA     | Helicopter
-  HB-ZMV       | LAMA     | Helicopter
-
-✏️  MODIFIED AIRCRAFT (1)
-----------------------------------------------------------------------
-  HB-YAK:
-    mtom: 1066 → 1040
+  HB-FQD28     | PC12     | Aeroplane
+  HB-FSQ28     | PC12     | Aeroplane
+  HB-VZJ5      | PC24     | Aeroplane
+  HB-VZO5      | PC24     | Aeroplane
 
 ======================================================================
 NEXT STEPS:
